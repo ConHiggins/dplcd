@@ -10,6 +10,7 @@ export default function AllPosts() {
             .fetch(
                 `*[_type == "post"]{
         title,
+        subtext,
         slug,
         mainImage{
           asset->{
