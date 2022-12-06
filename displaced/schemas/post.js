@@ -37,6 +37,11 @@ export default {
             },
         },
         {
+            name: "video",
+            title: "Video",
+            type: "url",
+        },
+        {
             name: "categories",
             title: "Categories",
             type: "array",
