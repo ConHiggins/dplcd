@@ -2,7 +2,7 @@
 
 .App {
   text-align: center;
-  font-family: "kanit", sans-serif;
+  font-family: "kanit", sans-serif, cursive !important;
 }
 
 .App-logo {
