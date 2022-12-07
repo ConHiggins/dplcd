@@ -57,6 +57,7 @@ const Home = ({}) => {
                             content={"displaced"}
                             charIncInterval={40}
                         ></ShuffleText>
+                        <h1>displaced</h1>
                     </div>
                     <div className="home__showcase-post">
                         {scPostsData.map((post, index) => (
