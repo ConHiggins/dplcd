@@ -2,7 +2,7 @@
   "name": "displaced-site",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://conhiggins.github.io/displaced-site",
+  "homepage":"https://www.dsplaced.co.uk/",
   "dependencies": {
     "@sanity/client": "^3.4.1",
     "@testing-library/jest-dom": "^5.16.5",
