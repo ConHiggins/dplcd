@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import sanityClient from "../../client.js";
 import ShuffleText from "react-shuffle-text";
 import "./Home.scss";
+import videoBG from "../../Assets/Teaser_Breakdown_30seconds_1080p.mp4";
 
 const Home = ({}) => {
     const [scPostsData, setScPosts] = useState(null);
@@ -49,6 +50,7 @@ const Home = ({}) => {
 
     return (
         <div className="home">
+            <video className="home__bg-vid" src={videoBG} autoPlay loop muted />
             {scPostsData && (
                 <>
                     <div className="home__splash" style={bgStyle}>
