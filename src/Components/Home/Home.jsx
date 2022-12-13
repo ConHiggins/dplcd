@@ -50,7 +50,14 @@ const Home = ({}) => {
 
     return (
         <div className="home">
-            <video className="home__bg-vid" src={videoBG} autoPlay loop muted />
+            <video
+                className="home__bg-vid"
+                src={videoBG}
+                autoPlay
+                loop
+                muted
+                playsInline
+            />
             {scPostsData && (
                 <>
                     <div className="home__splash" style={bgStyle}>
