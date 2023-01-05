@@ -26,8 +26,6 @@ const Home = ({}) => {
         });
     }, [offset]);
 
-    //console.log(bgStyle);
-
     useEffect(() => {
         sanityClient
             .fetch(
@@ -35,8 +33,10 @@ const Home = ({}) => {
                 `*[_type == "post"]{  
         title,
         subtext,
+        client,
         body,
         slug,
+        video,
         mainImage{
           asset->{
           _id,
@@ -59,23 +59,32 @@ const Home = ({}) => {
                 <div className="home__showcase-post">
                     {scPostsData.map((post, index) => (
                         <>
-                            <div
-                                className="home__showcase-post-bg"
-                                style={{
-                                    backgroundImage: `url(${post.mainImage?.asset.url})`,
-                                }}
-                            ></div>
-                            <Link className="home__showcase-post__link" to={"/" + post.slug.current} key={post.slug.current}>
-                                <span key={index}>
-                                    <img className="home__showcase-post__image" src={post.mainImage?.asset.url} alt="" />
-                                    <span>
-                                        <h1>{post.title}</h1>
-                                    </span>
-                                </span>
-                            </Link>
-                            <h3 className="home__showcase-post__subtext">
+                            <Link className="home__showcase-post__link" to="#" /*" + post.slug.current}*/ key={post.slug.current}></Link>
+                            {post.mainImage && (
+                                <div
+                                    className="home__showcase-post-bg"
+                                    style={{
+                                        backgroundImage: `url(${post.mainImage?.asset.url})`,
+                                    }}
+                                ></div>
+                            )}
+                            {post.video && (
+                                <iframe
+                                    className="home__showcase-post__vid"
+                                    src={post.video}
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen
+                                ></iframe>
+                            )}
+                            <h1 className="home__showcase-post__client">{post.client}</h1>
+                            <h2 className="home__showcase-post__subtext">
                                 <em>{post.subtext}</em>
-                            </h3>
+                            </h2>
+                            {post.mainImage && <img className="home__showcase-post__image" src={post.mainImage?.asset.url} alt="" />}
+                            <h2 className="home__showcase-post__title">{post.title}</h2>
+
                             <div className="home__showcase-post__body">
                                 {post.body[0].children.map((item) => {
                                     ///URL's are stored in .markDefs

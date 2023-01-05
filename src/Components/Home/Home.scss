@@ -9,7 +9,7 @@
     }
 
     html {
-        scroll-snap-type: y mandatory;
+        scroll-snap-type: y proximity;
     }
 
 .home{
@@ -63,13 +63,14 @@
         height: auto;
         position: absolute;
         padding: 1rem;
+        margin-top: 4rem;
         top: 50%;
         z-index: 100;
         overflow-x: hidden;
         overflow-y: hidden;
         text-align: left;
         border-top: 2px solid whitesmoke;
-        scroll-snap-align: start none;
+        scroll-snap-align: center none;
 
         &-bg{
             content: "";
@@ -81,8 +82,20 @@
             background-size: cover;
         }
 
+        &__vid{
+            aspect-ratio: 16/9;
+            width: 100%;
+        }
+
         &__link{
             text-decoration: none;
+            color: whitesmoke;
+        }
+
+        &__client {
+            color:whitesmoke;
+        }
+        &__title{
             color: whitesmoke;
         }
 
@@ -102,10 +115,7 @@
             transform: translateZ(100px);
         }
     }
-
 }
-
-
 .shuffle-text {
     font-size: 2rem;
     text-align: center;
@@ -113,8 +123,6 @@
     font-style: italic;
     color: whitesmoke;
     ///color: #6d0000;
-    
-
     &-char{
         animation: none;
     }
@@ -128,13 +136,66 @@
         font-size: 4rem;
     }
 
+    .home{
+        &__showcase-post{
+            width: 80vw;
+            
+            display: grid;
+            grid-template-columns: 0.1fr 1.5fr;
+            grid-template-rows: 1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+            
+            &__vid{
+                grid-column: 1/3;
+                grid-row: 1/2;
+            }
+
+            &__link{
+                min-height: 0;
+                grid-column: 2;
+            }
+
+            &__client {
+                font-size: 5rem;
+                font-style: italic;
+                text-align: left;
+                line-height: 4rem;
+                grid-column: 1;
+                grid-row: 2/5;
+                padding-left: 10rem;
+                min-width: 2rem;
+                min-height: 0;
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+            }
+            &__title{
+                grid-column: 2;
+                grid-row: 3;
+                margin: 0;
+            }
+
+            &__subtext{
+                grid-column: 2;
+                grid-row: 2;
+                margin: 0;
+            }
+
+            &__body{
+                grid-row: 4;
+                grid-column: 2;
+            }
+            
+            &__image{
+                
+            }
+        }
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
 
     .home{
         &__showcase-post{
-            width: 50vw;
             font-size: 1.5rem;
         }
     }
