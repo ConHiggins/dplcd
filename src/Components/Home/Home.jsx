@@ -68,6 +68,9 @@ const Home = ({}) => {
                     onCanPlay={() => {
                         setVideoLoaded(1);
                     }}
+                    onLoadedMetadata={() => {
+                        setVideoLoaded(1);
+                    }}
                 />
             </div>
             {scPostsData && (
