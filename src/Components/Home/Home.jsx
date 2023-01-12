@@ -7,7 +7,7 @@ import videoBG from "../../Assets/Teaser_Breakdown_30seconds_1080p.mp4";
 
 const Home = ({}) => {
     const [scPostsData, setScPosts] = useState(null);
-    const [videoLoaded, setVideoLoaded] = useState(0);
+    const [videoLoaded, setVideoLoaded] = useState(0.01);
     const [offset, setOffset] = useState(0);
     const [bgStyle, setBgStyle] = useState({ opacity: 1 });
 
