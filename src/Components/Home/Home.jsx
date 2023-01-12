@@ -65,7 +65,7 @@ const Home = ({}) => {
                     muted
                     playsInline
                     style={{ opacity: videoLoaded }}
-                    onLoadedData={() => {
+                    onCanPlay={() => {
                         setVideoLoaded(1);
                     }}
                 />
