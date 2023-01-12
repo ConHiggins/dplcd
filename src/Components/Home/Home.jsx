@@ -7,6 +7,7 @@ import videoBG from "../../Assets/Teaser_Breakdown_30seconds_1080p.mp4";
 
 const Home = ({}) => {
     const [scPostsData, setScPosts] = useState(null);
+    const [videoLoaded, setVideoLoaded] = useState(0);
     const [offset, setOffset] = useState(0);
     const [bgStyle, setBgStyle] = useState({ opacity: 1 });
 
@@ -53,7 +54,21 @@ const Home = ({}) => {
         <div className="home">
             <div className="home__splash" style={bgStyle}>
                 <ShuffleText className="home__title" content={"displaced."} charIncInterval={40}></ShuffleText>
-                <video className="home__splash__bg-vid" src={videoBG} autoPlay loop muted playsInline />
+
+                <video
+                    className="home__splash__bg-vid"
+                    id="bg-vid"
+                    src={videoBG}
+                    preload="metadata"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{ opacity: videoLoaded }}
+                    onLoadedData={() => {
+                        setVideoLoaded(1);
+                    }}
+                />
             </div>
             {scPostsData && (
                 <div className="home__showcase-post">
