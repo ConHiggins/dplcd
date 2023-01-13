@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import sanityClient from "../../client.js";
 import ShuffleText from "react-shuffle-text";
+import Loading from "../Loading/Loading.jsx";
 import "./Home.scss";
 import videoBG from "../../Assets/Teaser_Breakdown_30seconds_1080p.mp4";
 
@@ -10,6 +11,14 @@ const Home = ({}) => {
     const [videoLoaded, setVideoLoaded] = useState(0.5);
     const [offset, setOffset] = useState(0);
     const [bgStyle, setBgStyle] = useState({ opacity: 1 });
+    const [displayLoading, setDisplayLoading] = useState(true);
+    const showShuffleText = false; /////REMOVE LATER IF NOT NEEDED
+
+    useEffect(() => {
+        const mainTimeout = setTimeout(() => {
+            setDisplayLoading(false);
+        }, 2000);
+    });
 
     useEffect(() => {
         const onScroll = () => {
@@ -53,25 +62,27 @@ const Home = ({}) => {
     return (
         <div className="home">
             <div className="home__splash" style={bgStyle}>
-                <ShuffleText role="title" className="home__title" content={"displaced."} charIncInterval={40}></ShuffleText>
-
-                <video
-                    className="home__splash__bg-vid"
-                    role="video"
-                    src={videoBG}
-                    preload="metadata"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    style={{ opacity: videoLoaded }}
-                    onCanPlay={() => {
-                        setVideoLoaded(1);
-                    }}
-                    onLoadedMetadata={() => {
-                        setVideoLoaded(1);
-                    }}
-                />
+                {showShuffleText && (
+                    <ShuffleText role="title" className="home__title" content={"displaced."} charIncInterval={40}></ShuffleText>
+                )}
+                {displayLoading ? (
+                    <Loading display={displayLoading} />
+                ) : (
+                    <video
+                        className="home__splash__bg-vid"
+                        role="video"
+                        src={videoBG}
+                        preload="metadata"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        style={{ opacity: videoLoaded }}
+                        onCanPlay={() => {
+                            setVideoLoaded(1);
+                        }}
+                    />
+                )}
             </div>
             {scPostsData && (
                 <div className="home__showcase-post">

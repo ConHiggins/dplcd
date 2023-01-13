@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import AllPosts from "./Components/AllPosts/AllPosts.jsx";
 import SinglePost from "./Components/SinglePost/SinglePost.jsx";
+import NavBar from "./Components/NavBar/NavBar";
 
 function App() {
     const getRandomInt = (max) => {
@@ -15,12 +16,9 @@ function App() {
     return (
         <BrowserRouter>
             <div>
+                <NavBar />
                 <Routes>
-                    <Route
-                        element={<Home getRandomInt={getRandomInt} />}
-                        path="/"
-                        exact
-                    />
+                    <Route element={<Home getRandomInt={getRandomInt} />} path="/" exact />
                     <Route element={<AllPosts />} path="/all-posts" exact />
                     <Route element={<SinglePost />} path="/:slug" exact />
                 </Routes>

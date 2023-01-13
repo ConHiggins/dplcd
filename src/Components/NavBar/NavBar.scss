@@ -1,0 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Kanit:ital,wght@1,300&display=swap');
+.navbar {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    padding-left: 10vw;
+    font-size: min(4rem, 8vw);
+    
+    font-style: italic;
+    letter-spacing: 0.3vw;
+    color: whitesmoke;
+    position: fixed;
+}

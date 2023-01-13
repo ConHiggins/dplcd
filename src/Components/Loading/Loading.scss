@@ -1,0 +1,17 @@
+.loading{
+    
+    font-size: 8rem;
+    width: auto;
+     background: linear-gradient( whitesmoke 0%, transparent 95%), url(../../Assets/grain.svg) ;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-clip-path: url(../../Assets/grain.svg);
+    clip-path: url(../../Assets/grain.svg);
+    filter: contrast(170%) brightness(1000%) saturate(2000%) blur(10%);
+    
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+}
