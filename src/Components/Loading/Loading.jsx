@@ -46,8 +46,9 @@ const Loading = ({ display }) => {
         display && (
             <>
                 <div className="loading loading__container">
-                    <div className="loading loading__element">{`${loadingText[0]} ${loadingText[1]} `}</div>
-                    <div className="loading loading__element">{`${loadingText[2]} ${loadingText[3]}`}</div>
+                    <div className="loading loading__element">{`${loadingText[0]}`}</div>
+                    <div className="loading loading__element">{`${loadingText[1]} ${loadingText[2]}`}</div>
+                    <div className="loading loading__element">{`${loadingText[3]}`}</div>
                 </div>
             </>
         )
