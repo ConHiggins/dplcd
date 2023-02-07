@@ -29,7 +29,6 @@ const Loading = ({ display }) => {
             let j = Math.floor(Math.random() * arr.length);
             [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
         }
-        console.log(newArr);
         return newArr;
     };
 

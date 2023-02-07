@@ -1,17 +1,17 @@
 .loading{
     
-    font-size: 8rem;
+    font-size: 4rem;
     width: auto;
-    line-height: 8rem;
+    line-height: 4rem;
     letter-spacing: 1rem;
     font-style: italic;
-     background: linear-gradient( whitesmoke 0%, transparent 95%), url(../../Assets/grain.svg) ;
+     background: linear-gradient( transparent 0%, #ed0000 50%), url(../../Assets/grain.svg) ;
     background-size: cover;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-clip-path: url(../../Assets/grain.svg);
     clip-path: url(../../Assets/grain.svg);
-    filter: contrast(170%) brightness(1000%) saturate(2000%) blur(10%);
+    filter: contrast(170%) brightness(1000%) saturate(2000%);
     
     &__container {
         display: flex;

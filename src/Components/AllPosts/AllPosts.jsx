@@ -4,58 +4,59 @@ import sanityClient from "../../client.js";
 
 import "./AllPosts.scss";
 
-export default function AllPosts() {
-    const [allPostsData, setAllPosts] = useState(null);
-
-    useEffect(() => {
-        sanityClient
-            .fetch(
-                /// * all of type: post
-                `*[_type == "post"]{  
-                    title,
-                    subtext,
-                    slug,
-                    video,
-                    mainImage{
-                    asset->{
-                    _id,
-                    url
-                    }
-                },
-                    
-    }`
-            )
-            .then((data) => setAllPosts(data))
-            .catch(console.error);
-    }, []);
-
+export default function AllPosts({ postsData }) {
     return (
         <div className="all-posts-container">
-            <h2>All posts</h2>
+            <h2 className="all-posts__title">projects.</h2>
             <div className="all-posts-container">
-                {allPostsData &&
-                    allPostsData.map((post, index) => (
-                        <Link
-                            to={"/" + post.slug.current}
-                            key={post.slug.current}
-                        >
-                            <span className="post-container" key={index}>
-                                <img src={post.mainImage?.asset.url} alt="" />
+                {postsData && (
+                    <div className="post">
+                        {postsData.map((post, index) => (
+                            <>
+                                <Link className="post__link" to="#" /*" + post.slug.current}*/ key={post.slug.current}></Link>
+                                {post.mainImage && (
+                                    <div
+                                        className="post-bg"
+                                        style={{
+                                            backgroundImage: `url(${post.mainImage?.asset.url})`,
+                                        }}
+                                    ></div>
+                                )}
                                 {post.video && (
                                     <iframe
+                                        className="post__vid"
                                         src={post.video}
-                                        width="720"
-                                        height="480"
-                                        frameBorder="0"
-                                        allow="autoplay; encrypted-media"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowFullScreen
-                                        title="video"
-                                    />
+                                    ></iframe>
                                 )}
-                                <h2>{post.title}</h2>
-                            </span>
-                        </Link>
-                    ))}
+                                <h1 className="post__client">{post.client}</h1>
+                                <h2 className="post__subtext">
+                                    <em>{post.subtext}</em>
+                                </h2>
+                                {post.mainImage && <img className="post__image" src={post.mainImage?.asset.url} alt="" />}
+                                <h2 className="post__title">{post.title}</h2>
+
+                                <div className="post__body">
+                                    {post.body[0].children.map((item) => {
+                                        ///URL's are stored in .markDefs
+                                        ///If a markDef._key exists that matches the item's key
+                                        const markDefMatchingIndex = post.body[0].markDefs.findIndex((x) => x._key);
+                                        const itemMark = item.marks[0] !== "undefined" ? item.marks[0] : "";
+
+                                        return markDefMatchingIndex !== "undefined" &&
+                                            post.body[0].markDefs[markDefMatchingIndex]._key === item.marks[0] ? ( ///Match the URL to the text
+                                            <a href={post.body[0].markDefs[markDefMatchingIndex].href}>{Object.values(item.text)}</a>
+                                        ) : (
+                                            Object.values(item.text)
+                                        );
+                                    })}
+                                </div>
+                            </>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );

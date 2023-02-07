@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import sanityClient from "../../client.js";
-import ShuffleText from "react-shuffle-text";
+import Button from "../Button/Button.jsx";
 import Loading from "../Loading/Loading.jsx";
 import "./Home.scss";
-import videoBG from "../../Assets/Teaser_Breakdown_30seconds_1080p.mp4";
+//import videoBG from "../../Assets/Teaser_Breakdown_30seconds_1080p.mp4";
 
-const Home = ({}) => {
-    const [scPostsData, setScPosts] = useState(null);
-    const [videoLoaded, setVideoLoaded] = useState(0.5);
-    const [offset, setOffset] = useState(0);
-    const [bgStyle, setBgStyle] = useState({ opacity: 1 });
+const Home = ({ scPostsData, bgStyle }) => {
+    const splashContentArray = [
+        "dsplaced.",
+        "dsplaced. is a multi-disciplinary creative practice producing work that spans art-direction, film, photography, music, design, fashion and more.",
+    ];
+
     const [displayLoading, setDisplayLoading] = useState(true);
-    const showShuffleText = false; /////REMOVE LATER IF NOT NEEDED
+    const [splashContentIndex, setSplashContentIndex] = useState(0);
 
     useEffect(() => {
         const mainTimeout = setTimeout(() => {
@@ -21,54 +21,17 @@ const Home = ({}) => {
     });
 
     useEffect(() => {
-        const onScroll = () => {
-            setOffset(window.pageYOffset);
-        };
-        // clean up code
-        window.removeEventListener("scroll", onScroll);
-        window.addEventListener("scroll", onScroll, { passive: true });
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+        const contentTimeout = setTimeout(() => {});
+    });
 
-    useEffect(() => {
-        setBgStyle({
-            opacity: 1 - (offset - 1) / (window.innerHeight * 0.5 - 1),
-        });
-    }, [offset]);
+    const handleUpdateContent = () => {
+        console.log(document.querySelector("#home__splash-content"));
+        const elementToChange = document.querySelector("#home__splash-content");
+        elementToChange.classList.contains("active") ? elementToChange.classList.remove("active") : elementToChange.classList.add("active");
+        splashContentIndex >= splashContentArray.length - 1 ? setSplashContentIndex(0) : setSplashContentIndex(splashContentIndex + 1);
+    };
 
-    useEffect(() => {
-        sanityClient
-            .fetch(
-                /// * all of type:
-                `*[_type == "post"]{  
-        title,
-        subtext,
-        client,
-        body,
-        slug,
-        video,
-        mainImage{
-          asset->{
-          _id,
-          url
-        }
-      }
-    }`
-            )
-            .then((data) => setScPosts(data))
-            .catch(console.error);
-    }, []);
-
-    return (
-        <div className="home">
-            <div className="home__splash" style={bgStyle}>
-                {showShuffleText && (
-                    <ShuffleText role="title" className="home__title" content={"displaced."} charIncInterval={40}></ShuffleText>
-                )}
-                {displayLoading ? (
-                    <Loading display={displayLoading} />
-                ) : (
-                    <video
+    /* <video
                         className="home__splash__bg-vid"
                         role="video"
                         src={videoBG}
@@ -78,10 +41,36 @@ const Home = ({}) => {
                         muted
                         playsInline
                         style={{ opacity: videoLoaded }}
-                        onCanPlay={() => {
-                            setVideoLoaded(1);
+                        onLoadedMetadata={() => {
+                            if (videoLoaded !== 1) setVideoLoaded(1);
                         }}
-                    />
+                        onCanPlay={() => {
+                            if (videoLoaded !== 1) setVideoLoaded(1);
+                        }}
+                    /> */
+
+    return (
+        <div className="home">
+            <div className="home__splash" style={bgStyle}>
+                {displayLoading ? (
+                    <Loading display={displayLoading} />
+                ) : (
+                    <>
+                        <div className="centre-buffer" />
+                        <div className="home__splash-content" onClick={handleUpdateContent}>
+                            <p key={+new Date()} id="home__splash-content">
+                                {splashContentArray[splashContentIndex]}
+                            </p>
+                        </div>
+                        <Button
+                            className={"button button__primary home__splash__projects-button"}
+                            content="view projects"
+                            link="/all-posts"
+                            onClick={() => {
+                                console.log("here");
+                            }}
+                        />
+                    </>
                 )}
             </div>
             {scPostsData && (
@@ -102,9 +91,8 @@ const Home = ({}) => {
                                     className="home__showcase-post__vid"
                                     src={post.video}
                                     title="YouTube video player"
-                                    frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen
+                                    allowFullScreen
                                 ></iframe>
                             )}
                             <h1 className="home__showcase-post__client">{post.client}</h1>

@@ -2,12 +2,10 @@ import "./NavBar.scss";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
-    const linkStyle = { textDecoration: "none", color: "whitesmoke" };
-
+const NavBar = ({}) => {
     return (
         <div className="navbar">
-            <Link to="/" classname="navbar__link navbar__home" style={linkStyle}>
+            <Link to="/" className="navbar__link navbar__home">
                 dsplaced.
             </Link>
         </div>
