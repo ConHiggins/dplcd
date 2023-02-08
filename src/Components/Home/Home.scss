@@ -5,7 +5,6 @@
 
     body{
         background: black;
-        scroll-behavior: smooth;
     }
 
     html {
@@ -68,7 +67,7 @@
         text-align: center;
         opacity: 0;
         pointer-events: all;
-        scroll-snap-align:  center;
+        scroll-snap-align:  start;
         pointer-events: all;
 
 

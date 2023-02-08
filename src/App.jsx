@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import sanityClient from "./client.js";
 import Home from "./Components/Home/Home";
 import AllPosts from "./Components/AllPosts/AllPosts.jsx";
@@ -59,7 +59,7 @@ function App() {
     }, []);
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <>
                 <NavBar bgStyle={bgStyle} />
                 <Routes>
@@ -68,7 +68,7 @@ function App() {
                     <Route element={<SinglePost />} path="/:slug" exact />
                 </Routes>
             </>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
