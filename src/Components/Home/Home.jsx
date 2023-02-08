@@ -59,7 +59,7 @@ const Home = ({ scPostsData, bgStyle }) => {
                 {displayLoading ? (
                     <Loading display={displayLoading} />
                 ) : (
-                    <div key={+new Date()} className={splashContentClass} onClick={handleUpdateContent}>
+                    <div className={splashContentClass} onClick={handleUpdateContent}>
                         <p>{splashContentArray[splashContentIndex]}</p>
                     </div>
                 )}
