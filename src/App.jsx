@@ -60,14 +60,14 @@ function App() {
 
     return (
         <BrowserRouter>
-            <div>
+            <>
                 <NavBar bgStyle={bgStyle} />
                 <Routes>
                     <Route element={<Home getRandomInt={getRandomInt} scPostsData={scPostsData} bgStyle={bgStyle} />} path="/" exact />
                     <Route element={<AllPosts postsData={scPostsData} />} path="/all-posts" exact />
                     <Route element={<SinglePost />} path="/:slug" exact />
                 </Routes>
-            </div>
+            </>
         </BrowserRouter>
     );
 }

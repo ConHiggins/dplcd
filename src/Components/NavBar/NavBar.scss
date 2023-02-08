@@ -3,19 +3,33 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    justify-content:end;
+    width: 80vw;
     padding-left: 10vw;
-    font-size: min(3rem, 6vw);
-    font-style: italic;
+    font-size: min(2rem, 6vw);
+    font-weight: bold;
     letter-spacing: 0.3vw;
     color: whitesmoke;
     position: fixed;
+    top: 0;
     opacity: 0;
     animation: fadeIn 4s ease forwards;
     animation-delay: 2s;
+    z-index: 999;
 
     &__link{
-        color: whitesmoke;
+        color: #ed0000;
         text-decoration: none;
+            background-color: white;
+            background: linear-gradient( transparent 0%, #ed0000 60%), url(../../Assets/grain.svg) ;
+            background-size: cover;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-clip-path: url(../../Assets/grain.svg);
+            clip-path: url(../../Assets/grain.svg);
+            filter: contrast(170%) brightness(1000%) saturate(2000%);
+        &:hover{
+            color: white;
+        }
     }
 }
