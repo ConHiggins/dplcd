@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.498e2e4c.css",
-    "main.js": "/static/js/main.32bc6639.js",
+    "main.css": "/static/css/main.2b5ffe2d.css",
+    "main.js": "/static/js/main.edd2023c.js",
     "static/js/787.453b9108.chunk.js": "/static/js/787.453b9108.chunk.js",
+    "static/media/Stolzl-Light.eot": "/static/media/Stolzl-Light.9a916affac0fc7125349.eot",
+    "static/media/Stolzl-Light.ttf": "/static/media/Stolzl-Light.eebb93c56eff3ba2295c.ttf",
+    "static/media/Stolzl-Light.woff": "/static/media/Stolzl-Light.17ef5b7aae843f90662f.woff",
+    "static/media/Stolzl-Light.woff2": "/static/media/Stolzl-Light.bd8e08da3f45d3fe2166.woff2",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
     "static/media/grain.svg": "/static/media/grain.5a99b25d68d68deca02f.svg",
-    "main.498e2e4c.css.map": "/static/css/main.498e2e4c.css.map",
-    "main.32bc6639.js.map": "/static/js/main.32bc6639.js.map",
+    "main.2b5ffe2d.css.map": "/static/css/main.2b5ffe2d.css.map",
+    "main.edd2023c.js.map": "/static/js/main.edd2023c.js.map",
     "787.453b9108.chunk.js.map": "/static/js/787.453b9108.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.498e2e4c.css",
-    "static/js/main.32bc6639.js"
+    "static/css/main.2b5ffe2d.css",
+    "static/js/main.edd2023c.js"
   ]
 }
