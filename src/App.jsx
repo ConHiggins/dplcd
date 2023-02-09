@@ -14,6 +14,7 @@ function App() {
 
     const [offset, setOffset] = useState(0);
     const [bgStyle, setBgStyle] = useState({ opacity: 1 });
+    const [invertBgStyle, setInvertBgStyle] = useState({ opacity: 0 });
 
     const getRandomInt = (max) => {
         return Math.floor(Math.random() * max);
@@ -33,6 +34,7 @@ function App() {
         setBgStyle({
             opacity: 1 - (offset - 1) / (window.innerHeight * 0.5 - 1),
         });
+        setInvertBgStyle({ opacity: offset / (window.innerHeight * 0.5 - 1) });
     }, [offset]);
 
     useEffect(() => {
@@ -61,7 +63,7 @@ function App() {
     return (
         <HashRouter>
             <>
-                <NavBar bgStyle={bgStyle} />
+                <NavBar style={invertBgStyle} />
                 <Routes>
                     <Route element={<Home getRandomInt={getRandomInt} scPostsData={scPostsData} bgStyle={bgStyle} />} path="/" exact />
                     <Route element={<AllPosts postsData={scPostsData} />} path="/all-posts" exact />
