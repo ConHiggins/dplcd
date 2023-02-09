@@ -30,10 +30,11 @@
 }
 
 @keyframes dropdown {
-    0%{transform:translateX(-70%); scroll-snap-align: none;}
+    0%{transform:translateX(-70%); }
     99%{transform:translateX(0); }
-    100%{transform:translateX(0); scroll-snap-align: start;}
+    100%{transform:translateX(0); }
 }
 
 .dropper-project {
+    scroll-snap-align: none;
 } 

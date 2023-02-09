@@ -72,9 +72,7 @@ const Home = ({ scPostsData, bgStyle }) => {
             </div>
             {scPostsData && (
                 <div className="post-container home__post-container">
-                    {scPostsData.map((post, index) => (
-                        <SinglePost post={post} />
-                    ))}
+                    <SinglePost parentClass={"post-snap"} post={scPostsData[0]} />
                 </div>
             )}
         </div>
