@@ -5,6 +5,7 @@ import "./ProjectDropper.scss";
 
 const ProjectDropper = ({ post }) => {
     const [showPost, setShowPost] = useState(false);
+    const parentClass = "dropper-project";
 
     const toggleShowPost = () => {
         setShowPost(!showPost);
@@ -17,7 +18,7 @@ const ProjectDropper = ({ post }) => {
                     {post.client} // {post.subtext} - {post.title}
                 </h2>
             </div>
-            {showPost && <SinglePost key={Math.random() + new Date()} className="dropper-project" post={post} />}
+            {showPost && <SinglePost parentClass={parentClass} post={post} />}
         </div>
     );
 };

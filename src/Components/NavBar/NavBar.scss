@@ -21,6 +21,9 @@
     &__link{
         color: whitesmoke;
         text-decoration: none;
+        &:visited {
+            color: whitesmoke;
+        }
         
         &:hover{
             color: whitesmoke;

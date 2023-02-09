@@ -12,8 +12,10 @@
         scroll-snap-type: y mandatory;
     }
 
-#home__splash-content.active{
+.active{
     animation: fadeIn 0.5s ease;
+    font-family: "Stolzl";
+    font-style: normal;
     font-size: min(1.7rem, 6vw);
     pointer-events: all;
 }
@@ -21,6 +23,7 @@
 .inactive{
     font-size: min(2rem, 6vw);
     pointer-events: all;
+    font-family: "Kanit";
 }
 
 .centre-buffer{
@@ -50,7 +53,7 @@
     }
     
     &__splash{
-        font-family: "Kanit";
+        
         background-color: whitesmoke;
         color: #ed0000;
         font-style: italic;

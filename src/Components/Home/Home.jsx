@@ -23,9 +23,15 @@ const Home = ({ scPostsData, bgStyle }) => {
     });
 
     useEffect(() => {
-        const contentTimeout = setTimeout(() => {
-            if (splashContentIndex !== 0) handleUpdateContent();
-        }, 7000);
+        let contentTimeout;
+        return () => {
+            clearTimeout(contentTimeout);
+            contentTimeout = setTimeout(() => {
+                if (splashContentIndex !== 0) {
+                    handleUpdateContent();
+                }
+            }, 7000);
+        };
     }, [splashContentIndex]);
 
     const handleUpdateContent = () => {
