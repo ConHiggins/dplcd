@@ -2,17 +2,19 @@ import { Link } from "react-router-dom";
 import "./SinglePost.scss";
 
 const SinglePost = ({ post, parentClass }) => {
-    const postBody = post.body[0].children.map((item) => {
-        ///URL's are stored in .markDefs
-        ///If a markDef._key exists that matches the item's key
-        const markDefMatchingIndex = post.body[0].markDefs.findIndex((x) => x._key);
+    const postBody =
+        post.body &&
+        post.body[0].children.map((item) => {
+            ///URL's are stored in .markDefs
+            ///If a markDef._key exists that matches the item's key
+            const markDefMatchingIndex = post.body[0].markDefs.findIndex((x) => x._key);
 
-        return markDefMatchingIndex !== "undefined" && post.body[0].markDefs[markDefMatchingIndex]._key === item.marks[0] ? ( ///Match the URL to the text
-            <a href={post.body[0].markDefs[markDefMatchingIndex].href}>{Object.values(item.text)}</a>
-        ) : (
-            Object.values(item.text)
-        );
-    });
+            return markDefMatchingIndex !== "undefined" && post.body[0].markDefs[markDefMatchingIndex]._key === item.marks[0] ? ( ///Match the URL to the text
+                <a href={post.body[0].markDefs[markDefMatchingIndex].href}>{Object.values(item.text)}</a>
+            ) : (
+                Object.values(item.text)
+            );
+        });
 
     return (
         <div>
@@ -35,13 +37,15 @@ const SinglePost = ({ post, parentClass }) => {
                         allowFullScreen
                     ></iframe>
                 )}
-                <h1 className="post__client">{post.client}</h1>
-                <h2 className="post__subtext">
-                    <em>{post.subtext}</em>
-                </h2>
+                {post.client && <h1 className="post__client">{post.client}</h1>}
+                {post.subtext && (
+                    <h2 className="post__subtext">
+                        <em>{post.subtext}</em>
+                    </h2>
+                )}
                 {post.mainImage && <img className="post__image" src={post.mainImage?.asset.url} alt="" />}
-                <h2 className="post__title">{post.title}</h2>
-                <div className="post__body">{postBody}</div>
+                {post.title && <h2 className="post__title">{post.title}</h2>}
+                {post.body && <div className="post__body">{postBody}</div>}
             </div>
         </div>
     );
