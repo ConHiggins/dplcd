@@ -5,10 +5,11 @@
 
     body{
         background: black;
+        scroll-snap-type: y mandatory;
     }
 
     html {
-        scroll-snap-type: y proximity;
+        scroll-snap-type: y mandatory;
     }
 
 #home__splash-content.active{
