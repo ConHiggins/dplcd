@@ -1,6 +1,6 @@
 import "./NavBar.scss";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = ({ invertBgStyle, setInvertBgStyle }) => {
     const pages = [
@@ -12,6 +12,10 @@ const NavBar = ({ invertBgStyle, setInvertBgStyle }) => {
     const handleContentChange = () => {
         setButtonContent(pages[buttonContent.changeTo]);
     };
+
+    useEffect(() => {
+        handleContentChange();
+    }, []);
 
     return (
         <>
