@@ -11,7 +11,7 @@
         max-height: 100vh;
         padding: 1rem;
         margin-top: 10vh;
-        padding-top: 10vh;
+        padding-top: 1vh;
         
         text-align: left;
         pointer-events: all;
@@ -76,12 +76,14 @@
 @media screen and (min-width: 768px) {
     .post{
             width: 80vw;
-            margin: 2rem;
+            margin: 0;
+            margin-left: 0;
+            padding-left: 0;
             display: grid;
             box-sizing: border-box;
             align-items: end;
             gap: 1rem;
-            grid-template-columns: 0.2fr 1.8fr;
+            grid-template-columns: 0.15fr 1.8fr;
             grid-template-rows: 1fr 0.1fr 0.1fr 0.1fr 0.1fr;
             
             &__vid{
