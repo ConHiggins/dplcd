@@ -2,17 +2,16 @@
 @media screen and (min-width: 320px) {
 @keyframes rotate {
     0%{transform: rotate(180deg) rotate3d(0,1,0,0);}
-    50%{transform: rotate(180deg) rotate3d(0,1,0,180deg);}
-    100%{transform: rotate(180deg) rotate3d(0,1,0,360deg);}
+    50%{transform: rotate(180deg) rotate3d(0,1,1,180deg);}
+    100%{transform: rotate(180deg) rotate3d(0,1,1,360deg);}
 }
 .post{
         
         width: 90vw;
         max-height: 100vh;
         padding: 1rem;
-        margin-top: 10vh;
-        padding-top: 1vh;
-        
+        margin-top:10vh;
+        padding-top: 10vh;
         text-align: left;
         pointer-events: all;
         animation: dropdown 0.5s ease forwards;
@@ -37,7 +36,6 @@
             margin-bottom: 1rem;
             margin-top: 1rem;
             border: none;
-            
             
         }
 
