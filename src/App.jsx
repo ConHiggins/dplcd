@@ -34,7 +34,7 @@ function App() {
         setBgStyle({
             opacity: 1 - (offset - 1) / (window.innerHeight * 0.5 - 1),
         });
-        setInvertBgStyle({ left: (-offset * 200) / (window.innerHeight * 0.5 - 1) });
+        setInvertBgStyle({ left: (-offset * 220) / (window.innerHeight * 0.5 - 1) });
     }, [offset]);
 
     useEffect(() => {
