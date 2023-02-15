@@ -63,7 +63,7 @@ function App() {
     return (
         <HashRouter>
             <>
-                <NavBar invertBgStyle={invertBgStyle} setInvertBgStyle={setInvertBgStyle} />
+                <NavBar key={new Date()} invertBgStyle={invertBgStyle} setInvertBgStyle={setInvertBgStyle} />
                 <Routes>
                     <Route element={<Home getRandomInt={getRandomInt} scPostsData={scPostsData} bgStyle={bgStyle} />} path="/" exact />
                     <Route element={<AllPosts postsData={scPostsData} />} path="/all-posts" exact />
