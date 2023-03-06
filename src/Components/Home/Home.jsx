@@ -9,7 +9,7 @@ import "./Home.scss";
 const Home = ({ scPostsData, bgStyle }) => {
     const splashContentArray = [
         "dsplaced.",
-        "dsplaced. is a multi-disciplinary creative practice producing work that spans creative-direction, film, photography, music, design, fashion and more.",
+        "dsplaced. is a multi-disciplinary creative practice producing work that spans creative-direction, visual strategy, film, photography, music, design, clothing and more.",
     ];
 
     const [displayLoading, setDisplayLoading] = useState(false);
@@ -72,7 +72,7 @@ const Home = ({ scPostsData, bgStyle }) => {
             </div>
             {scPostsData && (
                 <div className="post-container home__post-container">
-                    <SinglePost parentClass={"post-snap"} post={scPostsData[0]} />
+                    <SinglePost parentClass={"post-snap"} post={scPostsData[scPostsData.length - 1]} />
                 </div>
             )}
         </div>

@@ -6,6 +6,12 @@
   font-family: "kanit", sans-serif, cursive !important;
 }
 
+.site{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 a{
   color: #ed0000;
   text-decoration: none;

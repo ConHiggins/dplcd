@@ -2,12 +2,13 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import React, { useEffect, useState } from "react";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import sanityClient from "./client.js";
 import Home from "./Components/Home/Home";
 import AllPosts from "./Components/AllPosts/AllPosts.jsx";
 import SinglePost from "./Components/SinglePost/SinglePost.jsx";
 import NavBar from "./Components/NavBar/NavBar";
+import Footer from "./Footer/Footer";
 
 function App() {
     const [scPostsData, setScPosts] = useState(null);
@@ -61,16 +62,17 @@ function App() {
     }, []);
 
     return (
-        <HashRouter>
-            <>
+        <BrowserRouter>
+            <div className="site">
                 <NavBar key={new Date()} invertBgStyle={invertBgStyle} setInvertBgStyle={setInvertBgStyle} />
                 <Routes>
                     <Route element={<Home getRandomInt={getRandomInt} scPostsData={scPostsData} bgStyle={bgStyle} />} path="/" exact />
                     <Route element={<AllPosts postsData={scPostsData} />} path="/all-posts" exact />
                     <Route element={<SinglePost />} path="/:slug" exact />
                 </Routes>
-            </>
-        </HashRouter>
+                <Footer />
+            </div>
+        </BrowserRouter>
     );
 }
 

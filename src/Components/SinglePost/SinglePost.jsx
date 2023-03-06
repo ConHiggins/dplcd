@@ -20,14 +20,7 @@ const SinglePost = ({ post, parentClass }) => {
         <div>
             <div className={`post ${parentClass}`}>
                 <Link className="post__link" to="#" /*" + post.slug.current}*/ key={post.slug.current}></Link>
-                {post.mainImage && (
-                    <div
-                        className="post-bg"
-                        style={{
-                            backgroundImage: `url(${post.mainImage?.asset.url})`,
-                        }}
-                    ></div>
-                )}
+
                 {post.video && (
                     <iframe
                         className="post__vid"
@@ -37,13 +30,14 @@ const SinglePost = ({ post, parentClass }) => {
                         allowFullScreen
                     ></iframe>
                 )}
+                {post.mainImage && <img className="post__image" src={post.mainImage?.asset.url} alt="" />}
                 {post.client && <h1 className="post__client">{post.client}</h1>}
                 {post.subtext && (
                     <h2 className="post__subtext">
                         <em>{post.subtext}</em>
                     </h2>
                 )}
-                {post.mainImage && <img className="post__image" src={post.mainImage?.asset.url} alt="" />}
+
                 {post.title && <h2 className="post__title">{post.title}</h2>}
                 {post.body && <div className="post__body">{postBody}</div>}
             </div>

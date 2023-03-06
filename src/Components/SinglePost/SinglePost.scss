@@ -64,8 +64,9 @@
         }
         
         &__image{
-            width: 50vw;
-            height: auto;
+            max-height: 40vh;
+            max-width: auto;
+            
             transform: translateZ(100px);
         }
     }
@@ -128,7 +129,10 @@
             }
             
             &__image{
-                
+                padding: 1rem;
+                max-height: 40vh;
+                grid-column: 2/4;
+                grid-row: 1/2;
             }
         }
 }
@@ -141,6 +145,11 @@
             &__vid{
                 width: 70%;
                 grid-column: 2;
+            }
+
+            &__image{
+
+                max-height: 50vh;
             }
         }
     }

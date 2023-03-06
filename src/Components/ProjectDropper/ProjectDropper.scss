@@ -1,10 +1,12 @@
 .project-dropper {
     margin-top: 2rem;
+    margin-left: 3rem;
     width: 100vw;
     transition-property: color, background-color;
     transition-duration: 0.5s;
     transition-timing-function: ease;
     cursor: pointer;
+    font-size: min(0.75rem, 4vw);
 
     &__wrapper{
         display: flex;
@@ -20,7 +22,7 @@
             -webkit-clip-path: url(../../Assets/grain.svg);
             clip-path: url(../../Assets/grain.svg);
             filter: contrast(170%) brightness(1000%) saturate(2000%);
-    }
+        }
     }
 
     &__title{

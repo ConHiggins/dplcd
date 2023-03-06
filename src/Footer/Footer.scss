@@ -1,0 +1,16 @@
+
+
+.footer {
+    width: 90vw;
+    height: 4rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    align-self: flex-end;
+
+    &-content{
+
+        width: 100vw;
+        height: 100%;
+    }
+}
