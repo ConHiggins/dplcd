@@ -9,7 +9,7 @@ import "./Home.scss";
 const Home = ({ scPostsData, bgStyle }) => {
     const splashContentArray = [
         "dsplaced.",
-        "dsplaced. is a multi-disciplinary creative practice producing work that spans creative-direction, visual strategy, film, photography, music, design, clothing and more.",
+        "dsplaced. is a multidisciplinary creative practice producing work that spans creative-direction, filmmaking, photography, music production, sound design, consulting and more.",
     ];
 
     const [displayLoading, setDisplayLoading] = useState(false);

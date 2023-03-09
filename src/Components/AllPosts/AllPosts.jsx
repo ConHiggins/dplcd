@@ -11,7 +11,7 @@ export default function AllPosts({ postsData }) {
         <div className="all-posts-container">
             {postsData && (
                 <div className="post-container">
-                    {postsData.map((post, index) => (
+                    {postsData.reverse().map((post, index) => (
                         <ProjectDropper post={post} />
                     ))}
                 </div>

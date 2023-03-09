@@ -4,8 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 
 const NavBar = ({ invertBgStyle, setInvertBgStyle }) => {
     const pages = [
-        { label: "projects", current: "/", to: "/all-posts", changeTo: 1 },
-        { label: "home", current: "/all-posts", to: "/", changeTo: 0 },
+        { label: "projects", current: "/", to: "/projects", changeTo: 1 },
+        { label: "home", current: "/projects", to: "/", changeTo: 0 },
     ];
 
     const location = useLocation();
@@ -19,7 +19,7 @@ const NavBar = ({ invertBgStyle, setInvertBgStyle }) => {
         if (buttonContent.current !== location.pathname) {
             handleContentChange();
         }
-    }, []);
+    }, [location]);
 
     return (
         <>

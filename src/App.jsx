@@ -67,7 +67,7 @@ function App() {
                 <NavBar key={new Date()} invertBgStyle={invertBgStyle} setInvertBgStyle={setInvertBgStyle} />
                 <Routes>
                     <Route element={<Home getRandomInt={getRandomInt} scPostsData={scPostsData} bgStyle={bgStyle} />} path="/" exact />
-                    <Route element={<AllPosts postsData={scPostsData} />} path="/all-posts" exact />
+                    <Route element={<AllPosts postsData={scPostsData} />} path="/projects" exact />
                     <Route element={<SinglePost />} path="/:slug" exact />
                 </Routes>
                 <Footer />
