@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e2ae157a.css",
-    "main.js": "/static/js/main.2b1bac37.js",
+    "main.css": "/static/css/main.a1062a30.css",
+    "main.js": "/static/js/main.05d7d5d2.js",
     "static/js/787.453b9108.chunk.js": "/static/js/787.453b9108.chunk.js",
     "static/media/Stolzl-Light.eot": "/static/media/Stolzl-Light.9a916affac0fc7125349.eot",
     "static/media/Stolzl-Light.ttf": "/static/media/Stolzl-Light.eebb93c56eff3ba2295c.ttf",
@@ -10,12 +10,12 @@
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
     "static/media/grain.svg": "/static/media/grain.5a99b25d68d68deca02f.svg",
-    "main.e2ae157a.css.map": "/static/css/main.e2ae157a.css.map",
-    "main.2b1bac37.js.map": "/static/js/main.2b1bac37.js.map",
+    "main.a1062a30.css.map": "/static/css/main.a1062a30.css.map",
+    "main.05d7d5d2.js.map": "/static/js/main.05d7d5d2.js.map",
     "787.453b9108.chunk.js.map": "/static/js/787.453b9108.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2ae157a.css",
-    "static/js/main.2b1bac37.js"
+    "static/css/main.a1062a30.css",
+    "static/js/main.05d7d5d2.js"
   ]
 }
