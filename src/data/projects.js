@@ -1,21 +1,6 @@
 import fthmlssSheets from "../Assets/Fthmlss-Sheet.jpg";
 const projects = [
     {
-        slug: "mix-series-001",
-        title: "Mix series 001",
-        subtext: "dsplaced.",
-        client: "Fthmlss",
-        video: "https://www.youtube.com/embed/7gjrt-0vkoc",
-        body: (
-            <p>
-                Fthmlss brings a selection of his own sounds to the first of our mix series.{" "}
-                <a target="_blank" href="https://www.instagram.com/fthmlss">
-                    Follow him on Instagram
-                </a>
-            </p>
-        ),
-    },
-    {
         slug: "stillness",
         title: "Stillness",
         subtext: "Alan Johnson",
@@ -34,7 +19,6 @@ const projects = [
             </p>
         ),
     },
-
     {
         slug: "fthmlss-profile-artwork",
         title: "Profile Artwork",
@@ -58,6 +42,21 @@ const projects = [
         client: "Fthmlss",
         video: "https://www.youtube.com/embed/DBRWbYFIodQ",
         body: <p>dsplaced. creates performance video for Fthmlss' latest release "Niagra". Performance by Olivia Richards.</p>,
+    },
+    {
+        slug: "mix-series-001",
+        title: "Mix series 001",
+        subtext: "dsplaced.",
+        client: "Fthmlss",
+        video: "https://www.youtube.com/embed/7gjrt-0vkoc",
+        body: (
+            <p>
+                Fthmlss brings a selection of his own sounds to the first of our mix series.{" "}
+                <a target="_blank" href="https://www.instagram.com/fthmlss">
+                    Follow him on Instagram
+                </a>
+            </p>
+        ),
     },
 ];
 

@@ -8,7 +8,7 @@ export default function AllPosts({ postsData }) {
         <div className="all-posts-container">
             {postsData && (
                 <div className="post-container">
-                    {postsData.reverse().map((post, index) => (
+                    {postsData.map((post, index) => (
                         <ProjectDropper post={post} />
                     ))}
                 </div>
