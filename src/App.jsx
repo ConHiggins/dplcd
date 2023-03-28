@@ -15,7 +15,7 @@ import projects from "./data/projects";
 function App() {
     //const [scPostsData, setScPosts] = useState(null);
 
-    const scPostsData = projects.reverse();
+    const scPostsData = projects;
     const [offset, setOffset] = useState(0);
     const [bgStyle, setBgStyle] = useState({ opacity: 1 });
     const [invertBgStyle, setInvertBgStyle] = useState({ opacity: 0 });
