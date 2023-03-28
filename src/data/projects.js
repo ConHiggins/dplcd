@@ -8,7 +8,10 @@ const projects = [
         video: "https://www.youtube.com/embed/7gjrt-0vkoc",
         body: (
             <p>
-                Fthmlss brings a selection of his own sounds to the first of our mix series. <a href="#">Follow him on Instagram</a>
+                Fthmlss brings a selection of his own sounds to the first of our mix series.{" "}
+                <a target="_blank" href="https://www.instagram.com/fthmlss">
+                    Follow him on Instagram
+                </a>
             </p>
         ),
     },
@@ -23,7 +26,11 @@ const projects = [
                 dsplaced. creates visual for the title track of the latest <i>Alan Johnson</i> EP, <i>Stillness</i>. Created for
                 <i>Sneaker Social Club</i>, the video explores expression, both physical and mental. Looking at emotion, mood and mind, the
                 video looks to complement the track's calm to frantic evolution. The video can be seen on the
-                <a href="#"> FACT website</a>, with an additional write-up there.
+                <a target="_blank" href="https://www.factmag.com/2022/12/13/alan-johnson-stillness/">
+                    {" "}
+                    FACT website
+                </a>
+                , with an additional write-up there.
             </p>
         ),
     },
@@ -36,7 +43,11 @@ const projects = [
         mainImage: fthmlssSheets,
         body: (
             <p>
-                Profile artwork created by dsplaced. for upcoming <a href="#">fthmlss</a> album <i>Cycles</i>, out early June.
+                Profile artwork created by dsplaced. for upcoming{" "}
+                <a target="_blank" href="https://www.instagram.com/fthmlss/">
+                    fthmlss
+                </a>{" "}
+                album <i>Cycles</i>, out early June.
             </p>
         ),
     },
