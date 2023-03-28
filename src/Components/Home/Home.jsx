@@ -41,24 +41,6 @@ const Home = ({ scPostsData, bgStyle }) => {
         splashContentIndex >= splashContentArray.length - 1 ? setSplashContentIndex(0) : setSplashContentIndex(splashContentIndex + 1);
     };
 
-    /* <video
-                        className="home__splash__bg-vid"
-                        role="video"
-                        src={videoBG}
-                        preload="metadata"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        style={{ opacity: videoLoaded }}
-                        onLoadedMetadata={() => {
-                            if (videoLoaded !== 1) setVideoLoaded(1);
-                        }}
-                        onCanPlay={() => {
-                            if (videoLoaded !== 1) setVideoLoaded(1);
-                        }}
-                    /> */
-
     return (
         <div className="home">
             <div className="home__splash" style={bgStyle}>

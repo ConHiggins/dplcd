@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import sanityClient from "../../client.js";
 import ProjectDropper from "../ProjectDropper/ProjectDropper.jsx";
-import SinglePost from "../SinglePost/SinglePost.jsx";
 
 import "./AllPosts.scss";
 

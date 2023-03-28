@@ -10,9 +10,12 @@ import SinglePost from "./Components/SinglePost/SinglePost.jsx";
 import NavBar from "./Components/NavBar/NavBar";
 import Footer from "./Footer/Footer";
 
-function App() {
-    const [scPostsData, setScPosts] = useState(null);
+import projects from "./data/projects";
 
+function App() {
+    //const [scPostsData, setScPosts] = useState(null);
+
+    const scPostsData = projects.reverse();
     const [offset, setOffset] = useState(0);
     const [bgStyle, setBgStyle] = useState({ opacity: 1 });
     const [invertBgStyle, setInvertBgStyle] = useState({ opacity: 0 });
@@ -38,7 +41,7 @@ function App() {
         setInvertBgStyle({ left: (-offset * 220) / (window.innerHeight * 0.5 - 1) });
     }, [offset]);
 
-    useEffect(() => {
+    /*useEffect(() => {
         sanityClient
             .fetch(
                 /// * all of type:
@@ -59,7 +62,7 @@ function App() {
             )
             .then((data) => setScPosts(data))
             .catch(console.error);
-    }, []);
+    }, []);*/
 
     return (
         <BrowserRouter>

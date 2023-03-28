@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./SinglePost.scss";
 
 const SinglePost = ({ post, parentClass }) => {
-    const postBody =
+    /*const postBody =
         post.body &&
         post.body[0].children.map((item) => {
             ///URL's are stored in .markDefs
@@ -14,7 +14,7 @@ const SinglePost = ({ post, parentClass }) => {
             ) : (
                 Object.values(item.text)
             );
-        });
+        });*/
 
     return (
         <div>
@@ -30,7 +30,7 @@ const SinglePost = ({ post, parentClass }) => {
                         allowFullScreen
                     ></iframe>
                 )}
-                {post.mainImage && <img className="post__image" src={post.mainImage?.asset.url} alt="" />}
+                {post.mainImage && <img className="post__image" src={post.mainImage} alt="" />}
                 {post.client && <h1 className="post__client">{post.client}</h1>}
                 {post.subtext && (
                     <h2 className="post__subtext">
@@ -39,7 +39,7 @@ const SinglePost = ({ post, parentClass }) => {
                 )}
 
                 {post.title && <h2 className="post__title">{post.title}</h2>}
-                {post.body && <div className="post__body">{postBody}</div>}
+                {post.body && <div className="post__body">{post.body}</div>}
             </div>
         </div>
     );
