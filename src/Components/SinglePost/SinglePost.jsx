@@ -23,8 +23,8 @@ const SinglePost = ({ post, parentClass }) => {
                         allowFullScreen
                     ></iframe>
                 )}
-                {post.video && <video className= {`${mediaType} ${mediaType}${mediaDimensions}`} type="video/mp4" controls>
-                                    <source src={post.video}></source>
+                {post.video && <video className= {`${mediaType} ${mediaType}${mediaDimensions}`} type="video/mp4" controls allow="autoplay">
+                                    <source src={`${post.video}#t=0.1`} />
                                 </video>}
                 {post.mainImage && <img className={`${mediaType} ${mediaType}${mediaDimensions}`} src={post.mainImage} alt="" />}
                 {post.client && <h1 className="post__client">{post.client}</h1>}

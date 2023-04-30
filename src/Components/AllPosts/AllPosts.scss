@@ -3,7 +3,6 @@
 @media screen and (min-width: 320px) {
 .all-posts{
 
-    
 
     &__title{
         font-style: italic;
@@ -16,7 +15,7 @@
         margin-top: 4rem;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
         width: 100vw;
         min-height: 85vh;
