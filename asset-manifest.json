@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.a1062a30.css",
-    "main.js": "/static/js/main.47dfff91.js",
+    "main.css": "/static/css/main.1a56938c.css",
+    "main.js": "/static/js/main.1db4a56f.js",
     "static/js/787.453b9108.chunk.js": "/static/js/787.453b9108.chunk.js",
+    "static/media/FthmlssProfileVideo.mp4": "/static/media/FthmlssProfileVideo.448d99c5b20cfd6669b9.mp4",
     "static/media/Fthmlss-Sheet.jpg": "/static/media/Fthmlss-Sheet.f3bc7f2c7fea369549b4.jpg",
     "static/media/Stolzl-Light.eot": "/static/media/Stolzl-Light.9a916affac0fc7125349.eot",
     "static/media/Stolzl-Light.ttf": "/static/media/Stolzl-Light.eebb93c56eff3ba2295c.ttf",
@@ -11,12 +12,12 @@
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
     "static/media/grain.svg": "/static/media/grain.5a99b25d68d68deca02f.svg",
-    "main.a1062a30.css.map": "/static/css/main.a1062a30.css.map",
-    "main.47dfff91.js.map": "/static/js/main.47dfff91.js.map",
+    "main.1a56938c.css.map": "/static/css/main.1a56938c.css.map",
+    "main.1db4a56f.js.map": "/static/js/main.1db4a56f.js.map",
     "787.453b9108.chunk.js.map": "/static/js/787.453b9108.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1062a30.css",
-    "static/js/main.47dfff91.js"
+    "static/css/main.1a56938c.css",
+    "static/js/main.1db4a56f.js"
   ]
 }
