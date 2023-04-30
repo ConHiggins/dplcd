@@ -8,9 +8,10 @@
 .post{
         
         width: 90vw;
-        max-height: 100vh;
+        max-height: 50vh;
         padding: 1rem;
-        margin-top:15vh;
+        margin-top:1vh;
+        margin-bottom: 10vh;
         text-align: left;
         pointer-events: all;
         animation: dropdown 0.5s ease forwards;
@@ -24,7 +25,7 @@
             position: absolute;
             filter: blur(10px);
             width: 100vw;
-            height: 50vh;
+            height: 30vh;
             z-index: -99;
             background-size: cover;
         }
@@ -46,7 +47,7 @@
             }
             &-portrait{
                 aspect-ratio: 9/16;
-                height: 80vh;
+                height: 60vh;
                 width: 50%;
                 align-items: start;
                 justify-content: start;
@@ -89,7 +90,7 @@
 
 @media screen and (min-width: 768px) {
     .post{
-            width: 80vw;
+            width: 80vw;    
             margin: 0;
             margin-left: 0;
             padding-left: 0;
@@ -105,7 +106,7 @@
                 grid-row: 1/2;
                 width: 100%;
                 &-portrait{
-                    height: 40vh;
+                    height: 30vh;
                     width: 50%;
                 }
             }
