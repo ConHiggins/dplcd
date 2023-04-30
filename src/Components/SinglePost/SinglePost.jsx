@@ -1,20 +1,12 @@
+import { React, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./SinglePost.scss";
 
 const SinglePost = ({ post, parentClass }) => {
-    /*const postBody =
-        post.body &&
-        post.body[0].children.map((item) => {
-            ///URL's are stored in .markDefs
-            ///If a markDef._key exists that matches the item's key
-            const markDefMatchingIndex = post.body[0].markDefs.findIndex((x) => x._key);
-
-            return markDefMatchingIndex !== "undefined" && post.body[0].markDefs[markDefMatchingIndex]._key === item.marks[0] ? ( ///Match the URL to the text
-                <a href={post.body[0].markDefs[markDefMatchingIndex].href}>{Object.values(item.text)}</a>
-            ) : (
-                Object.values(item.text)
-            );
-        });*/
+    
+        const mediaType = post.mainImage ? "post__image" : "post__vid";
+        const mediaDimensions = post.isPortrait ? `-portrait` : `-landscape`;
+        
 
     return (
         <div>
@@ -23,14 +15,15 @@ const SinglePost = ({ post, parentClass }) => {
 
                 {post.video && (
                     <iframe
-                        className="post__vid"
+                        className= {`${mediaType} ${mediaType}${mediaDimensions}`}
+                        
                         src={post.video}
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
                     ></iframe>
                 )}
-                {post.mainImage && <img className="post__image" src={post.mainImage} alt="" />}
+                {post.mainImage && <img className={`${mediaType} ${mediaType}${mediaDimensions}`} src={post.mainImage} alt="" />}
                 {post.client && <h1 className="post__client">{post.client}</h1>}
                 {post.subtext && (
                     <h2 className="post__subtext">

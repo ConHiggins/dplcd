@@ -1,5 +1,16 @@
 import fthmlssSheets from "../Assets/Fthmlss-Sheet.jpg";
+import fthmlssPortVid from "../Assets/FthmlssProfileVideo.mp4";
+
 const projects = [
+    {
+        slug: "fthmlss-portrait-vid",
+        title: "Portrait Visual",
+        subtext: "",
+        client: "Fthmlss",
+        video: fthmlssPortVid,
+        body: (<p>Portrait visual created for <i>Fthmlss</i> as part of ongoing album launch</p>),
+        isPortrait: true
+    },
     {
         slug: "niagra",
         title: "Niagra",
@@ -7,6 +18,7 @@ const projects = [
         client: "Fthmlss",
         video: "https://www.youtube.com/embed/DBRWbYFIodQ",
         body: <p>dsplaced. creates performance video for Fthmlss' latest release "Niagra". Performance by Olivia Richards.</p>,
+        isPortrait: false
     },
     {
         slug: "fthmlss-profile-artwork",
@@ -23,6 +35,7 @@ const projects = [
                 album <i>Cycles</i>, out early June.
             </p>
         ),
+        isPortrait: true
     },
     {
         slug: "stillness",
@@ -42,6 +55,7 @@ const projects = [
                 , with an additional write-up there.
             </p>
         ),
+        isPortrait: false
     },
 
     {
@@ -58,6 +72,7 @@ const projects = [
                 </a>
             </p>
         ),
+        isPortrait: false
     },
 ];
 

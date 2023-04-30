@@ -11,7 +11,6 @@
         max-height: 100vh;
         padding: 1rem;
         margin-top:15vh;
-        padding-top: 10vh;
         text-align: left;
         pointer-events: all;
         animation: dropdown 0.5s ease forwards;
@@ -31,11 +30,27 @@
         }
 
         &__vid{
-            aspect-ratio: 16/9;
+            display: grid;
             max-width: 100%;
-            margin-bottom: 1rem;
-            margin-top: 1rem;
+            
             border: none;
+            
+            &-landscape{
+                aspect-ratio: 16/9;
+                margin-bottom: 1rem;
+                margin-top: 1rem;
+                height: 100%;
+                width: 90%;
+                align-items: center;
+                justify-content: center;
+            }
+            &-portrait{
+                aspect-ratio: 9/16;
+                height: 80vh;
+                width: 50%;
+                align-items: start;
+                justify-content: start;
+            }
             
         }
 
@@ -89,6 +104,10 @@
                 grid-column: 2/4;
                 grid-row: 1/2;
                 width: 100%;
+                &-portrait{
+                    height: 40vh;
+                    width: 50%;
+                }
             }
 
             &__link{
@@ -143,7 +162,14 @@
             font-size: 1.2rem;
 
             &__vid{
-                width: 70%;
+                &-landscape{
+                    width: 70%;
+                }
+                &-portrait{
+                    height: 60vh;
+                    width: 50%;
+                }
+                
                 grid-column: 2;
             }
 
