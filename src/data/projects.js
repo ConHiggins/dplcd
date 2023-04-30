@@ -16,7 +16,7 @@ const projects = [
         title: "Niagra",
         subtext: "Music Video",
         client: "Fthmlss",
-        video: "https://www.youtube.com/embed/DBRWbYFIodQ",
+        videoURL: "https://www.youtube.com/embed/DBRWbYFIodQ",
         body: <p>dsplaced. creates performance video for Fthmlss' latest release "Niagra". Performance by Olivia Richards.</p>,
         isPortrait: false
     },
@@ -42,7 +42,7 @@ const projects = [
         title: "Stillness",
         subtext: "Alan Johnson",
         client: "Sneaker Social Club",
-        video: "https://www.youtube.com/embed/Ek4FXtq88yE",
+        videoURL: "https://www.youtube.com/embed/Ek4FXtq88yE",
         body: (
             <p>
                 dsplaced. creates visual for the title track of the latest <i>Alan Johnson</i> EP, <i>Stillness</i>. Created for
@@ -63,7 +63,7 @@ const projects = [
         title: "Mix series 001",
         subtext: "dsplaced.",
         client: "Fthmlss",
-        video: "https://www.youtube.com/embed/7gjrt-0vkoc",
+        videoURL: "https://www.youtube.com/embed/7gjrt-0vkoc",
         body: (
             <p>
                 Fthmlss brings a selection of his own sounds to the first of our mix series.{" "}

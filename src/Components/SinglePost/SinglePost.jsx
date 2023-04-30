@@ -13,16 +13,17 @@ const SinglePost = ({ post, parentClass }) => {
             <div className={`post ${parentClass}`}>
                 <Link className="post__link" to="#" /*" + post.slug.current}*/ key={post.slug.current}></Link>
 
-                {post.video && (
+                {post.videoURL && (
                     <iframe
                         className= {`${mediaType} ${mediaType}${mediaDimensions}`}
                         
-                        src={post.video}
+                        src={post.videoURL}
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
                     ></iframe>
                 )}
+                {post.video && <video className= {`${mediaType} ${mediaType}${mediaDimensions}`} src={post.video} />}
                 {post.mainImage && <img className={`${mediaType} ${mediaType}${mediaDimensions}`} src={post.mainImage} alt="" />}
                 {post.client && <h1 className="post__client">{post.client}</h1>}
                 {post.subtext && (
