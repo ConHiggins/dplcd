@@ -1,5 +1,6 @@
+@media screen and (min-width: 328px) {
+
 .project-dropper {
-    margin-top: 2rem;
     margin-left: 3rem;
     width: 100vw;
     transition-property: color, background-color;
@@ -35,3 +36,14 @@
     margin-top: 0;
     height: 100%;
 } 
+
+}
+
+@media screen and (min-width: 768px) {
+    
+    .project-dropper{
+
+        margin-top: -2rem;
+        
+    }
+}

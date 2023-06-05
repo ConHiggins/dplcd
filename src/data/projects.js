@@ -1,7 +1,28 @@
 import fthmlssSheets from "../Assets/Fthmlss-Sheet.jpg";
 import fthmlssPortVid from "../Assets/FthmlssProfileVideo.mp4";
+import lockholdsVid from "../Assets/LOCKTRIP_DSPLACED_COMPRESSED.mp4";
+import seraphVid from "../Assets/seraph_compressed.mp4";
 
 const projects = [
+    {
+        slug: "lock-holds-europe",
+        title: "Video Services",
+        subtext: "",
+        client: "Lock Holds",
+        video: lockholdsVid,
+        body: (<p>Short video created for <i>Lock Holds</i> documenting their Europe trip</p>),
+        isPortrait: false
+    },
+
+    {
+        slug: "seraph",
+        title: "Musical Score, Visual and Photography",
+        subtext: "",
+        client: "Elsewhere",
+        video: seraphVid,
+        body: (<p>Collaborate score created with <i>Elsewhere</i> for <i>dsplaced</i> with visualiser and artist portrait</p>),
+        isPortrait: true
+    },
     {
         slug: "fthmlss-portrait-vid",
         title: "Portrait Visual",
