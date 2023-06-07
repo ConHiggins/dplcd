@@ -16,11 +16,11 @@ const projects = [
 
     {
         slug: "seraph",
-        title: "Musical Score, Visual and Photography",
+        title: "Musical Score & Visual",
         subtext: "",
         client: "Elsewhere",
         video: seraphVid,
-        body: (<p>Collaborate score created with <i>Elsewhere</i> for <i>dsplaced</i> with visualiser and artist portrait</p>),
+        body: (<p>Collaborate score and visual created with <i>Elsewhere</i></p>),
         isPortrait: true
     },
     {
