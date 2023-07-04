@@ -2,8 +2,18 @@ import fthmlssSheets from "../Assets/Fthmlss-Sheet.jpg";
 import fthmlssPortVid from "../Assets/FthmlssProfileVideo.mp4";
 import lockholdsVid from "../Assets/LOCKTRIP_DSPLACED_COMPRESSED.mp4";
 import seraphVid from "../Assets/seraph_compressed.mp4";
+import coticVid from "../Assets/Cotic_Flaremax Build_FINALV3.mp4";
 
 const projects = [
+    {
+        slug: "cotic-flaremax",
+        title: "Build Video",
+        subtext: "",
+        client: "Cotic Bikes",
+        video: coticVid,
+        body: (<p>Short Build video created for Cotic for their Flaremax</p>),
+        isPortrait: false
+    },
     {
         slug: "lock-holds-europe",
         title: "Video Services",
