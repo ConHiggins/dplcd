@@ -16,7 +16,7 @@ const NavBar = ({ invertBgStyle, setInvertBgStyle }) => {
     };
 
     useEffect(() => {
-        if (buttonContent.current !== location.pathname) {
+        if (location.pathname !== "/info" && buttonContent.current !== location.pathname) {
             handleContentChange();
         }
     }, [location]);
@@ -25,18 +25,26 @@ const NavBar = ({ invertBgStyle, setInvertBgStyle }) => {
         <>
             {buttonContent.changeTo === 0 && (
                 <div className="navbar">
+                    <Link to={"/info"} className="navbar__link">
+                        info
+                    </Link>
                     <Link to={buttonContent.to} className="navbar__link navbar__home" onClick={handleContentChange}>
                         {buttonContent.label}
                     </Link>
+
                 </div>
             )}
             {buttonContent.changeTo === 1 && (
                 <div className="navbar" style={invertBgStyle}>
+                    <Link to={"/info"} className="navbar__link">
+                        info
+                    </Link>
                     <Link to={buttonContent.to} className="navbar__link-snap navbar__home" onClick={handleContentChange}>
                         {buttonContent.label}
                     </Link>
                 </div>
             )}
+            
         </>
     );
 };

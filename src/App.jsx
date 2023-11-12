@@ -8,9 +8,13 @@ import Home from "./Components/Home/Home";
 import AllPosts from "./Components/AllPosts/AllPosts.jsx";
 import SinglePost from "./Components/SinglePost/SinglePost.jsx";
 import NavBar from "./Components/NavBar/NavBar";
-import Footer from "./Footer/Footer";
+import Footer from "./Components/Footer/Footer.jsx";
 
 import projects from "./data/projects";
+import Info from "./Components/Info/Info";
+import GridPosts from "./Components/GridPosts/GridPosts";
+
+// 'use-strict';
 
 function App() {
     //const [scPostsData, setScPosts] = useState(null);
@@ -70,8 +74,10 @@ function App() {
                 <NavBar key={new Date()} invertBgStyle={invertBgStyle} setInvertBgStyle={setInvertBgStyle} />
                 <Routes>
                     <Route element={<Home getRandomInt={getRandomInt} scPostsData={scPostsData} bgStyle={bgStyle} />} path="/" exact />
+                    <Route element={<GridPosts postsData={scPostsData} />} path="/gridprojects" exact />
                     <Route element={<AllPosts postsData={scPostsData} />} path="/projects" exact />
                     <Route element={<SinglePost />} path="/:slug" exact />
+                    <Route element={<Info />} path="/info" exact />
                 </Routes>
                 <Footer />
             </div>

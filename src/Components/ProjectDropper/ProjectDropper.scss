@@ -1,8 +1,10 @@
+@use "../_vars.scss" as *;
+
 @media screen and (min-width: 328px) {
 
 .project-dropper {
     margin-left: 3rem;
-    width: 100vw;
+    width: 100%;
     transition-property: color, background-color;
     transition-duration: 0.5s;
     transition-timing-function: ease;
@@ -14,7 +16,7 @@
         flex-direction: row;
         
         &:hover{
-            color: #ed0000;
+            color: $OffWhite;
             
         }
     }

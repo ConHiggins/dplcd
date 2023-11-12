@@ -1,0 +1,40 @@
+@use "../_vars.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Kanit:ital,wght@1,300&display=swap');
+
+
+.grid-item  {
+    color: $OffWhite;
+    max-width: 10rem;
+    max-height: auto;
+    grid-column-end: span 3;
+}
+
+.grid_{
+    &_image{
+
+        max-width: 30rem;
+
+        &-portrait {
+
+        }
+
+        &-landscape {
+            
+        }
+    }
+
+    &_vid {
+        max-width: 40rem;
+        border: none;
+        display: block;
+
+        &-portrait {
+            max-height: 30rem;
+            aspect-ratio: 9/16;
+        }
+
+        &-landscape {
+            aspect-ratio: 16/9;
+        }
+    }
+}

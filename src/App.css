@@ -13,11 +13,11 @@
 }
 
 a{
-  color: #ed0000;
+  color: $OffWhite;
   text-decoration: none;
 }
 a:visited{
-    color: #ed0000;
+    color: $OffWhite;
     text-decoration: none;
   }
 

@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Kanit:ital,wght@1,300&display=swap");
+.button {
+  font-family: "kanit";
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.4rem;
+  background: none;
+  border-radius: 0.2rem;
+  margin: 2rem;
+  z-index: 999;
+}
+.button__primary {
+  border: none;
+  border: 0.2rem solid $OffWhite;
+  color: $OffWhite;
+  background-color: white;
+  transition: color 0.6s ease;
+}
+.button__primary:hover {
+  color: white;
+}/*# sourceMappingURL=Button.css.map */

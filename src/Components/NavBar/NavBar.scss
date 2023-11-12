@@ -1,4 +1,4 @@
-
+@use "../_vars.scss" as *;
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Kanit:ital,wght@1,300&display=swap');
 
 @media screen and (min-width: 320px) {
@@ -11,7 +11,7 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    justify-content:end;
+    justify-content: space-between;
     width: 80vw;
     margin-top: 2rem;
     padding-left: 10vw;
@@ -24,26 +24,26 @@
     z-index: 999;
 
     &__link{
-        color: whitesmoke;
+        color: $OffWhite;
         text-decoration: none;
-        position: absolute;
-        right: -30vw;
-        animation: slideInLeft 0.2s ease forwards;
+        //position: absolute;
+        //right: -30vw;
+        //animation: slideInLeft 0.2s ease forwards;
         animation-delay: 1s;
         &-snap{
-            position: absolute;
-            left:200%;
+            // position: absolute;
+            // left:200%;
             &:visited {
-            color: whitesmoke;
+            color: $OffWhite;
         }
         }
         
         &:visited {
-            color: whitesmoke;
+            color: $OffWhite;
         }
         
         &:hover{
-            color: whitesmoke;
+            color: $OffWhite;
         }
     }
 }
@@ -54,7 +54,7 @@
 
     .navbar{
         &__link-snap{
-            left: 140%;
+            //left: 40%;
         }
     }
 }
@@ -63,7 +63,7 @@
 
     .navbar{
         &__link-snap{
-            left: 120%;
+            //left: 0%;
         }
     }
 }

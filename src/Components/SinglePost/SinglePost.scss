@@ -1,3 +1,5 @@
+@use "../_vars.scss" as *;
+
 
 @media screen and (min-width: 320px) {
 @keyframes rotate {
@@ -7,8 +9,8 @@
 }
 .post{
         
-        width: 90vw;
-        max-height: 80vh;
+        width: 90%;
+        max-height: 80%;
         padding: 1rem;
         margin-top:1vh;
         margin-bottom: 10vh;
@@ -24,7 +26,7 @@
             content: "";
             position: absolute;
             filter: blur(10px);
-            width: 100vw;
+            width: 100%;
             height: 30vh;
             z-index: -99;
             background-size: cover;
@@ -57,26 +59,26 @@
 
         &__link{
             text-decoration: none;
-            color: whitesmoke;
+            color: $OffWhite;
         }
 
         &__client {
-            color:whitesmoke;
+            color:$OffWhite;
             margin: 0;
             
         }
         &__title{
-            color: whitesmoke;
+            color: $OffWhite;
             margin: 0;
         }
 
         &__subtext{
-            color: whitesmoke;
+            color: $OffWhite;
             margin: 0;
         }
 
         &__body{
-            color: whitesmoke;
+            color: $OffWhite;
         }
         
         &__image{

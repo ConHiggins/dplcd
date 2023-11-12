@@ -1,3 +1,5 @@
+@use "../_vars.scss" as *;
+
 .loading{
     
     font-size: 4rem;
@@ -5,7 +7,7 @@
     line-height: 4rem;
     letter-spacing: 1rem;
     font-style: italic;
-     background: linear-gradient( transparent 0%, #ed0000 50%), url(../../Assets/grain.svg) ;
+     background: linear-gradient( transparent 0%, $OffWhite 50%), url(../../Assets/grain.svg) ;
     background-size: cover;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
