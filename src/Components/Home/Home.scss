@@ -40,9 +40,10 @@
     align-items: center;
     animation: fadeIn 2s;
     pointer-events: none;
+    text-align: left;
 
     &:hover{
-        text-align: left;
+        
     }
 
     @keyframes fadeIn {
@@ -162,18 +163,35 @@
         top: 100%;
     }
     
-}
-.shuffle-text {
-    font-size: 2rem;
-    text-align: center;
-    font-family: "kanit";
-    font-style: italic;
-    color: $OffWhite;
-    ///color: #6d0000;
-    &-char{
-        animation: none;
     }
-}
+    .shuffle-text {
+        font-size: 2rem;
+        text-align: center;
+        font-family: "kanit";
+        font-style: italic;
+        color: $OffWhite;
+        ///color: #6d0000;
+        &-char{
+            animation: none;
+        }
+    }
+
+    .info {
+
+        &__desc {
+            position: relative;
+            font-size: 1.25rem;
+            max-height: 10vh;
+            max-width: 70vw;
+            color: $OffWhite;
+
+            &_p {
+                position: absolute;
+                top:85vh;
+                left:-45vw;
+            }
+        }
+    }
 
 }
 

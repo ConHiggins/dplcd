@@ -70,6 +70,9 @@ const Home = ({ scPostsData, bgStyle}) => {
                     </div>
                 )}
             </div>
+            <div className="info__desc">
+                <p className="info__desc_p">Creative practice focused on delivering ideas.</p>
+            </div>
             {/* {scPostsData && (
                 <div className="post-container home__post-container">
                     <SinglePost parentClass={"post-snap"} post={scPostsData[0]} />
