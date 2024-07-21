@@ -1,84 +1,119 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button.jsx";
 import Loading from "../Loading/Loading.jsx";
+import Footer from "../Footer/Footer.jsx";
 import SinglePost from "../SinglePost/SinglePost.jsx";
+import FolioPost from "../folioPost/folioPost.jsx";
+import MyThree from "../THREE/MyThree.jsx";
 import "./Home.scss";
 
-
-
-const Home = ({ scPostsData, bgStyle}) => {
+const Home = ({ scPostsData, bgStyle }) => {
     const splashContentArray = [
         "dsplaced.",
         "dsplaced. is a multidisciplinary creative practice producing work that spans creative-direction, filmmaking, photography, music production, sound design, consulting and more.",
     ];
 
-    const [displayLoading, setDisplayLoading] = useState(false);
-    const [splashContentIndex, setSplashContentIndex] = useState(0);
-    const [splashContentClass, setSplashContentClass] = useState("home__splash-content inactive");
-    
-    const [width, setWidth] = useState(window.innerWidth);
+    const [displayLoading, setDisplayLoading] = useState(true);
+    // const [splashContentIndex, setSplashContentIndex] = useState(0);
+    // const [splashContentClass, setSplashContentClass] = useState("home__splash-content inactive");
+    const [folioIndex, setFolioIndex] = useState(0);
 
+    //const [width, setWidth] = useState(window.innerWidth);
 
-    function handleWindowSizeChange() {
-        setWidth(window.innerWidth);
-    }
-    useEffect(() => {
-        window.addEventListener('resize', handleWindowSizeChange);
-        return () => {
-            window.removeEventListener('resize', handleWindowSizeChange);
-        }
-    }, []);
+    const folioPosts = scPostsData
+        .map((p) => {
+            if (p.isFolio) return <FolioPost post={p} />;
+        })
+        .filter((p) => {
+            return p;
+        });
 
+    // function handleWindowSizeChange() {
+    //     setWidth(window.innerWidth);
+    // }
+    // useEffect(() => {
+    //     window.addEventListener("resize", handleWindowSizeChange);
+    //     return () => {
+    //         window.removeEventListener("resize", handleWindowSizeChange);
+    //     };
+    // }, []);
 
     useEffect(() => {
         const mainTimeout = setTimeout(() => {
             setDisplayLoading(false);
-        }, 2000);
+        }, 10000);
     });
 
-    useEffect(() => {
-        let contentTimeout;
-        return () => {
-            clearTimeout(contentTimeout);
-            contentTimeout = setTimeout(() => {
-                if (splashContentIndex !== 0) {
-                    handleUpdateContent();
-                }
-            }, 7000);
-        };
-    }, [splashContentIndex]);
+    // useEffect(() => {
+    //     let contentTimeout;
+    //     return () => {
+    //         clearTimeout(contentTimeout);
+    //         contentTimeout = setTimeout(() => {
+    //             if (splashContentIndex !== 0) {
+    //                 handleUpdateContent();
+    //             }
+    //         }, 7000);
+    //     };
+    // }, [splashContentIndex]);
 
-    const handleUpdateContent = () => {
-        splashContentClass.includes("inactive")
-            ? setSplashContentClass("home__splash-content active")
-            : setSplashContentClass("home__splash-content inactive");
-        splashContentIndex >= splashContentArray.length - 1 ? setSplashContentIndex(0) : setSplashContentIndex(splashContentIndex + 1);
+    // ------------- GSAP ------------------------
+
+    const handleFolioUpdate = () => {
+        setFolioIndex((folioIndex) => (folioIndex >= folioPosts.length - 1 ? 0 : folioIndex + 1));
     };
 
-    const handleUpdateBG = () => {
-    }
+    const container = useRef();
+    let postTween;
+
+    useGSAP(() => {
+        postTween = gsap.to(".folio-post", {
+            delay: 10,
+            duration: 10,
+            onComplete: () => handleFolioUpdate(),
+        });
+    });
+
+    // const handleUpdateContent = () => {
+    //     splashContentClass.includes("inactive")
+    //         ? setSplashContentClass("home__splash-content active")
+    //         : setSplashContentClass("home__splash-content inactive");
+    //     splashContentIndex >= splashContentArray.length - 1 ? setSplashContentIndex(0) : setSplashContentIndex(splashContentIndex + 1);
+    // };
+
+    // const handleUpdateBG = () => {};
 
     return (
-        <div className="home">
-            <div className="home__splash" >
-                {displayLoading ? (
-                    <Loading display={displayLoading} />
-                ) : (
-                    <div className={splashContentClass}>
-                        <p>{splashContentArray[splashContentIndex]}</p>
-                    </div>
-                )}
+        <>
+            <div className="home">
+                {displayLoading && <MyThree />}
+                {/* <div className="home__splash">
+                    {displayLoading ? (
+                        <Loading display={displayLoading} />
+                    ) : (
+                        <div className={splashContentClass}>
+
+                        </div>
+                    )}
+                </div> */}
+                <div className="info__desc"></div>
             </div>
-            <div className="info__desc">
-                <p className="info__desc_p">Creative practice focused on delivering ideas.</p>
-            </div>
-            {/* {scPostsData && (
-                <div className="post-container home__post-container">
-                    <SinglePost parentClass={"post-snap"} post={scPostsData[0]} />
+            {scPostsData && (
+                <div
+                    className="folio-post-container"
+                    ref={container}
+                    onClick={() => {
+                        handleFolioUpdate();
+                    }}
+                >
+                    {folioPosts[folioIndex]}
                 </div>
-            )} */}
-        </div>
+            )}
+
+            <Footer />
+        </>
     );
 };
 

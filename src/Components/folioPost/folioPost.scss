@@ -1,0 +1,63 @@
+@use "../_vars.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Kanit:ital,wght@1,300&display=swap');
+
+@media screen and (min-width: 320px) {
+
+    @keyframes fadeFolio {
+        0%{
+            opacity: 0;
+        }
+        75%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    .folio-post {
+        // position: absolute;
+        // top:0;
+        // bottom: 0;
+        // left: 0;
+        // right: 0;
+        
+        // margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .folio-post-container{
+
+        width:100vw;
+        height:100vh;
+
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        animation: 10s fadeFolio forwards;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .folio-post {
+        flex-direction: row;
+    }
+
+    .folio-post-container{
+        flex-direction: row;
+    }
+
+    .folio_stack{
+        max-width:50%;
+        max-height: 90%;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    
+}

@@ -1,33 +1,35 @@
+@use "../_vars.scss" as *;
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Kanit:ital,wght@1,300&display=swap');
-
 @media screen and (min-width: 320px) {
 .all-posts{
 
+    max-width:90vw;
 
     &__title{
         font-style: italic;
-        font-size: min(4rem, 10vw);
+        font-size: min(1.25rem, 2vw);
         letter-spacing: 0.5rem;
         scroll-snap-align: center;
-        margin: 2rem;
+        margin: 1rem;
     }
     &-container{
         margin-top: 8rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap:1rem;
         align-items: center;
-        width: 100vw;
-        min-height: 85vh;
-        color: white;
+        width: 90vw;
+        min-height: 50vh;
+        color: $OffWhite;
     }
 }
 
 .post-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    //justify-content: center;
+    //align-items: center;
 }
 
 

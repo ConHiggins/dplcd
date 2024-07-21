@@ -1,19 +1,70 @@
 @use "../_vars.scss" as *;
 
-.footer {
-    max-width: 100vw;
-    height: 4rem;
-    margin-left: 2rem;
-    
-    align-self: flex-end;
+@media screen and (min-width: 320px) {
+    .footer {
+        font-family: "Stolzl";
+        width: 100%;
+        height: 4rem;
+       
+        position: fixed;
+        bottom:2%;
+        text-align: bottom;
+        
 
-    &-content{
+        &-content{
 
-        width: 100vw;
-        height: 100%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
 
-        &__link {
-            padding-right: 2rem;
+            &__rights{
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                margin-right: 5vw;
+            }
+
+            &__link {
+                margin-left: 5vw;
+                color: $OffWhite;
+                text-decoration: none;
+                font-size: min(1.25rem,2vw);
+                font-style: italic;
+                font-weight: bold;
+                &:visited{
+                    color: $OffWhite;
+                }
+                
+            }
+        }
+
+        &_right{
+            position: relative;
+            text-align: center;
+            width: 10vw;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer{
+
+        
+        
+       // padding-left: 2rem;
+        &-content{
+            max-width: 100%;
+            &__link{
+                &:hover{
+                    background: $OffWhite;
+                    color:$Navy;
+                }
+            }
+            &__rights{
+            margin-right: 5vw;
+        }
         }
     }
 }

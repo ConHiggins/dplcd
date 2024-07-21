@@ -1,10 +1,138 @@
-import fthmlssSheets from "../Assets/Fthmlss-Sheet.jpg";
-import fthmlssPortVid from "../Assets/FthmlssProfileVideo.mp4";
-import lockholdsVid from "../Assets/LOCKTRIP_DSPLACED_COMPRESSED.mp4";
-import seraphVid from "../Assets/seraph_compressed.mp4";
-import coticVid from "../Assets/Cotic_Flaremax Build_FINALV3.mp4";
+import fthmlssSheets        from "../Assets/Fthmlss-Sheet.jpg";
+import fthmlssPortVid       from "../Assets/FthmlssProfileVideo.mp4";
+import lockholdsVid         from "../Assets/LOCKTRIP_DSPLACED_COMPRESSED.mp4";
+import seraphVid            from "../Assets/seraph_compressed.mp4";
+import coticVid             from "../Assets/Cotic_Flaremax Build_FINALV3.mp4";
+import columbiaHighlineAd   from "../Assets/columb_highline_ad.jpg";
+import columbiaHighline_1   from "../Assets/COLUMBIA_KENDAL_HIGHLINE_FINAL.mp4";
+import gloryDaysPort        from "../Assets/gloryDaysPort.jpg"
+import ajRear               from "../Assets/AJ_rear.jpg";
+import ajFront              from "../Assets/AJ_front.jpg";
+
+import hlZ0 from "../Assets/zine/ZINEFINALPHOTO.jpg";
+import hlz1 from "../Assets/zine/ZINEFINALPHOTO-2.jpg";
+import hlZ2 from "../Assets/zine/ZINEFINALPHOTO-3.jpg";
+import hlz3 from "../Assets/zine/ZINESCANS.jpg";
+import hlZ4 from "../Assets/zine/ZINESCANS10.jpg";
+import hlz5 from "../Assets/zine/zinescnas11.jpg";
+import hlZ6 from "../Assets/zine/ZINESCANS7.jpg";
+import hlz7 from "../Assets/zine/ZINESCANS8.jpg";
+
+
+import locksnv0 from"../Assets/Lock_Product_P7.jpg";
+import locksnv1 from"../Assets/Posters5FINAL2.jpg";
+import locksnv2 from"../Assets/Posters2final2.jpg";
+import locksnv3 from"../Assets/PostersFINAL2.jpg";
+import locksnv4 from"../Assets/Posters7FINAL2_.jpg";
+import locksnv5 from"../Assets/Lock_Product_Pink4.jpg";
+
+
+const hlzines = [
+    hlZ0,
+    hlz1,
+    hlZ2,
+    hlz3,
+    hlZ4,
+    hlz5,
+    hlZ6,
+    hlz7
+]
+
+const locksnvs = [
+    locksnv0,
+    locksnv1,
+    locksnv2,
+    locksnv3,
+    locksnv4,
+    locksnv5,
+]
+
+const aj1 = [
+    ajFront,
+    ajRear
+]
 
 const projects = [
+    {
+        slug: "glory-days-port",
+        title: "Photography and Design",
+        subtext: "",
+        client: "Alan Johnson",
+        mainImage: gloryDaysPort,
+        body: (<p>Creative direction and photography for <i>Alan Johnson</i> ahead of the release of <i>Glory Days</i></p>),
+        isPortrait: true,
+        isFolio:true
+    },
+    {
+        slug: "aj-yuku",
+        title: "YUKU",
+        subtext: "",
+        client: "Alan Johnson",
+        imageStack: aj1,
+        body: (<p>Creative direction and artwork for <i>Alan Johnson - Glory Days</i>. Released on <i>YUKU</i>.</p>),
+        isPortrait: true,
+        isFolio:true
+    },
+    {
+        slug: "highline-zine",
+        title: "Highline Zine",
+        subtext: "Photography and Design",
+        client: "High Lines with Columbia",
+        imageStack: hlzines,
+        body: (<p>A 24 page zine created as a follow on to a wider project on highlining</p>),
+        isPortrait: true,
+        isFolio:true
+    },
+    {
+        slug: "highline-ad",
+        title: "Highline",
+        subtext: "Photography and Design",
+        client: "Columbia",
+        mainImage: columbiaHighlineAd,
+        body: (<p>Digital poster created for Columbia as part of a wider highline project</p>),
+        isPortrait: true,
+        isFolio:true
+    },
+    {
+        slug: "columbia-highline-1",
+        title: "Highline",
+        subtext: "Video",
+        client: "Columbia",
+        video: columbiaHighline_1,
+        body: (<p>Video direction and production for <i>Columbia</i> as part of a wider highline project</p>),
+        isPortrait: false,
+        isFolio:false
+    },
+    {
+        slug: "columbia-at95",
+        title: "Hike Society // AT95",
+        subtext: "Film",
+        client: "Columbia",
+        videoURL: "https://player.vimeo.com/video/893332791?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        body: (<p>Short film created for <i>Columbia</i> as part of their <i>Hike Society</i> series, featuring <i>AT95</i></p>),
+        isPortrait: false,
+        isFolio:false
+    },
+    {
+        slug: "sk1-chunky",
+        title: "SK1 X CHUNKY",
+        subtext: "Video and Animation",
+        client: "SK1 Records",
+        videoURL: "https://player.vimeo.com/video/869699929?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        body: (<p>Video and animation for <i>SK1 Records</i> event</p>),
+        isPortrait: false,
+        isFolio:false
+    },
+    {
+        slug: "lock-supernova",
+        title: "Supernova Series",
+        subtext: "Photography and Design",
+        client: "Lock Holds",
+        imageStack: locksnvs,
+        body: (<p>Photography services for <i>Lock Holds</i> to showcase their <i>Supernova</i> Series</p>),
+        isPortrait: false,
+        isFolio:true
+    },
     {
         slug: "cotic-flaremax",
         title: "Build Video",
@@ -12,7 +140,8 @@ const projects = [
         client: "Cotic Bikes",
         video: coticVid,
         body: (<p>Short Build video created for Cotic for their Flaremax</p>),
-        isPortrait: false
+        isPortrait: false,
+        isFolio:false
     },
     {
         slug: "lock-holds-europe",
@@ -21,7 +150,8 @@ const projects = [
         client: "Lock Holds",
         video: lockholdsVid,
         body: (<p>Short video created for <i>Lock Holds</i> documenting their Europe trip</p>),
-        isPortrait: false
+        isPortrait: false,
+        isFolio:false
     },
 
     {
@@ -31,7 +161,8 @@ const projects = [
         client: "Elsewhere",
         video: seraphVid,
         body: (<p>Collaborate score and visual created with <i>Elsewhere</i></p>),
-        isPortrait: true
+        isPortrait: true,
+        isFolio:false
     },
     {
         slug: "fthmlss-portrait-vid",
@@ -40,7 +171,8 @@ const projects = [
         client: "Fthmlss",
         video: fthmlssPortVid,
         body: (<p>Portrait visual created for <i>Fthmlss</i> as part of ongoing album launch</p>),
-        isPortrait: true
+        isPortrait: true,
+        isFolio:false
     },
     {
         slug: "niagra",
@@ -49,7 +181,8 @@ const projects = [
         client: "Fthmlss",
         videoURL: "https://www.youtube.com/embed/DBRWbYFIodQ",
         body: <p>dsplaced. creates performance video for Fthmlss' latest release "Niagra". Performance by Olivia Richards.</p>,
-        isPortrait: false
+        isPortrait: false,
+        isFolio:false
     },
     {
         slug: "fthmlss-profile-artwork",
@@ -66,7 +199,8 @@ const projects = [
                 album <i>Cycles</i>, out early June.
             </p>
         ),
-        isPortrait: true
+        isPortrait: true,
+        isFolio:true
     },
     {
         slug: "stillness",
@@ -86,7 +220,8 @@ const projects = [
                 , with an additional write-up there.
             </p>
         ),
-        isPortrait: false
+        isPortrait: false,
+        isFolio:false
     },
 
     {
@@ -103,7 +238,8 @@ const projects = [
                 </a>
             </p>
         ),
-        isPortrait: false
+        isPortrait: false,
+        isFolio:false
     },
 ];
 

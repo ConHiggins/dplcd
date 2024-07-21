@@ -4,8 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 
 const NavBar = ({ invertBgStyle, setInvertBgStyle }) => {
     const pages = [
-        { label: "projects", current: "/", to: "/projects", changeTo: 1 },
-        { label: "home", current: "/projects", to: "/", changeTo: 0 },
+        { label: "PROJECTS", current: "/", to: "/projects", changeTo: 1 },
+        { label: "HOME", current: "/projects", to: "/", changeTo: 0 },
     ];
 
     const location = useLocation();
@@ -25,8 +25,8 @@ const NavBar = ({ invertBgStyle, setInvertBgStyle }) => {
         <>
             {buttonContent.changeTo === 0 && (
                 <div className="navbar">
-                    <Link to={"/info"} className="navbar__link">
-                        info
+                    <Link to={"/"} className="navbar__title">
+                        dsplaced.
                     </Link>
                     <Link to={buttonContent.to} className="navbar__link navbar__home" onClick={handleContentChange}>
                         {buttonContent.label}
@@ -36,10 +36,9 @@ const NavBar = ({ invertBgStyle, setInvertBgStyle }) => {
             )}
             {buttonContent.changeTo === 1 && (
                 <div className="navbar" style={invertBgStyle}>
-                    <Link to={"/info"} className="navbar__link">
-                        info
-                    </Link>
-                    <Link to={buttonContent.to} className="navbar__link-snap navbar__home" onClick={handleContentChange}>
+                    <Link to={"/"} className="navbar__title">dsplaced.</Link>
+
+                    <Link to={buttonContent.to} className="navbar__link navbar__home" onClick={handleContentChange}>
                         {buttonContent.label}
                     </Link>
                 </div>

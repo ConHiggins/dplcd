@@ -12,12 +12,33 @@
   justify-content: space-around;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 50%;
+  border: 19x solid #0c1014;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0c1014;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0c1014;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0c1014;
+}
+
 a{
-  color: $OffWhite;
+  color: #f5eeda;
   text-decoration: none;
 }
 a:visited{
-    color: $OffWhite;
+    color: #f5eeda;
     text-decoration: none;
   }
 

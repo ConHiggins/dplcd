@@ -9,13 +9,16 @@
     }
 
 .navbar {
+    font-family: "Stolzl";
+    font-style: italic;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 80vw;
+    width: 100%;
     margin-top: 2rem;
-    padding-left: 10vw;
-    font-size: min(1.5rem,4vw);
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-size: min(1.25rem,2vw);
     font-weight: bold;
     color: white;
     position: fixed;
@@ -24,10 +27,14 @@
     z-index: 999;
 
     &__link{
+        position: relative;
         color: $OffWhite;
         text-decoration: none;
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
         //position: absolute;
-        //right: -30vw;
+        right: 10vw;
         //animation: slideInLeft 0.2s ease forwards;
         animation-delay: 1s;
         &-snap{
@@ -46,6 +53,11 @@
             color: $OffWhite;
         }
     }
+
+    &__title{
+        font-family: "Kanit";
+        color:white;
+    }
 }
 
 }
@@ -53,6 +65,8 @@
 @media screen and (min-width: 768px) {
 
     .navbar{
+
+        width: 100%;
         &__link-snap{
             //left: 40%;
         }

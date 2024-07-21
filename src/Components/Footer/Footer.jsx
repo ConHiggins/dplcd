@@ -5,12 +5,15 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className="footer-content">
-                {/* <a className="footer-content__link" href="mailto:contact@dsplaced.co.uk">
-                    contact@dsplaced.co.uk
-                </a>
-                <a className="footer-content__link" href="https://www.instagram.com/dsplaced/">
-                    @dsplaced
-                </a> */}
+                <p className="footer-content__link">FOCUSED ON THE DEVELOPMENT <br /> AND DELIVERY OF IDEAS.</p>
+                <div className="footer-content__rights">
+                    <Link to={"/shop"} className="footer-content__link footer_right">
+                            <p className="footer-content__link ">SHOP</p>
+                    </Link>
+                    <Link to={"/info"} className="footer-content__link footer_right">
+                            <p className="footer-content__link ">INFO</p>
+                    </Link>
+                </div>
             </div>
         </div>
     );

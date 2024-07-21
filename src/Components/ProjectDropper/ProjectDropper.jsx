@@ -12,10 +12,10 @@ const ProjectDropper = ({ post }) => {
     };
 
     return (
-        <div className="project-dropper" onClick={toggleShowPost}>
+        <div className="project-dropper" >
              <div className="project-dropper__wrapper">
-                <h2 className="project-dropper__title">
-                    {post.client} // {post.subtext} - {post.title}
+                <h2 className="project-dropper__title" onClick={toggleShowPost}>
+                    {post.client.toUpperCase()} // {post.subtext.toUpperCase()} - {post.title.toUpperCase()}
                 </h2>
             </div> 
             {showPost && <SinglePost parentClass={parentClass} post={post} />}
