@@ -25,7 +25,7 @@ const Home = ({ scPostsData, bgStyle }) => {
 
     const folioPosts = scPostsData
         .map((p) => {
-            if (p.isFolio) return <FolioPost post={p} />;
+            if (p.isFolio) return <FolioPost post={p} playVid={displayLoading} />;
         })
         .filter((p) => {
             return p;
@@ -76,28 +76,10 @@ const Home = ({ scPostsData, bgStyle }) => {
         });
     });
 
-    // const handleUpdateContent = () => {
-    //     splashContentClass.includes("inactive")
-    //         ? setSplashContentClass("home__splash-content active")
-    //         : setSplashContentClass("home__splash-content inactive");
-    //     splashContentIndex >= splashContentArray.length - 1 ? setSplashContentIndex(0) : setSplashContentIndex(splashContentIndex + 1);
-    // };
-
-    // const handleUpdateBG = () => {};
-
     return (
         <>
             <div className="home">
                 {displayLoading && <MyThree />}
-                {/* <div className="home__splash">
-                    {displayLoading ? (
-                        <Loading display={displayLoading} />
-                    ) : (
-                        <div className={splashContentClass}>
-
-                        </div>
-                    )}
-                </div> */}
                 <div className="info__desc"></div>
             </div>
             {scPostsData && (

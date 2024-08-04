@@ -8,9 +8,13 @@ export default function AllPosts({ postsData }) {
         <div className="all-posts-container">
             {postsData && (
                 <div className="post-container">
-                    {postsData.map((post, index) => (
-                        <ProjectDropper post={post} />
-                    ))}
+                    {postsData
+                        .map((post, index) => {
+                            if (post.isProjectsPage) return <ProjectDropper post={post} />;
+                        })
+                        .filter((p) => {
+                            return p;
+                        })}
                 </div>
             )}
         </div>

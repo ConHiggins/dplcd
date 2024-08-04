@@ -1,6 +1,10 @@
 @use "../_vars.scss" as *;
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Kanit:ital,wght@1,300&display=swap');
 @media screen and (min-width: 320px) {
+
+    body{
+        overflow:auto;
+    }
 .all-posts{
 
     max-width:90vw;
