@@ -1,12 +1,12 @@
 import * as THREE from "three";
-import { MeshStandardMaterial, VideoTexture, sRGBEncoding } from "three";
+//import { MeshStandardMaterial, VideoTexture, sRGBEncoding } from "three";
 
 // import {EffectComposer} from '../../../node_modules/three/examples/jsm/postprocessing/EffectComposer';
 // import {RenderPass}     from '../../../node_modules/three/examples/jsm/postprocessing/RenderPass';
 // import {GlitchPass} from '../../../node_modules/three/examples/jsm/postprocessing/GlitchPass';
 // import {AfterimagePass} from '../../../node_modules/three/examples/jsm/postprocessing/AfterimagePass';
 
-import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
+//import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
 
 import { useEffect, useRef } from "react";
 import side1 from "../../Assets/cubesides/SIDE1.mp4";
@@ -210,13 +210,17 @@ function MyThree() {
             cube.rotation.y += 0.0125;
             cube.rotation.z += 0.00618;
 
-            camera.position.z *= 0.9935;
+            cube.position.x = Math.cos(cube.rotation.x);
+            cube.position.y = Math.sin(cube.rotation.y);
+            cube.position.z = Math.cos(cube.rotation.z);
 
-            if (material[0].opacity > 0.05) {
-                material.forEach((m) => {
-                    m.opacity *= 0.998;
-                });
-            }
+            //camera.position.z *= 0.9935;
+
+            // if (material[0].opacity > 0.05) {
+            //     material.forEach((m) => {
+            //         m.opacity *= 0.998;
+            //     });
+            // }
 
             // innerCubes.forEach((c,i) => {
             //   const total = innerCubes.length;
@@ -228,6 +232,10 @@ function MyThree() {
             orb.rotation.x += (cube.rotation.x - orb.rotation.x) * 0.001;
             orb.rotation.y += (cube.rotation.y - orb.rotation.y) * 0.001;
             orb.rotation.z += (cube.rotation.z - orb.rotation.z) * 0.001;
+
+            orb.position.x = cube.position.x  //Math.cos(orb.rotation.x);
+            orb.position.y = cube.position.y  //Math.cos(orb.rotation.y);
+            orb.position.z = cube.position.z // Math.cos(orb.rotation.z);
 
             toras.forEach((t, i) => {
                 let vert = [0, 0, 0];
@@ -276,7 +284,7 @@ function MyThree() {
         animate();
     }, []);
     return (
-        <div style={{ pointerEvents: "none" }}>
+        <div style={{ pointerEvents: "none", position:"fixed", top: 0, right:0, zIndex:-98 }}>
             <div ref={refContainer}></div>
             <video
                 ref={textureVid1}

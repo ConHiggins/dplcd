@@ -5,7 +5,7 @@ import seraphVid from "../Assets/seraph_compressed.mp4";
 import coticVid from "../Assets/Cotic_Flaremax Build_FINALV3.mp4";
 import columbiaHighlineAd from "../Assets/columb_highline_ad.jpg";
 import columbiaHighline_1 from "../Assets/COLUMBIA_KENDAL_HIGHLINE_FINAL.mp4";
-import gloryDaysPort from "../Assets/gloryDaysPort.jpg";
+import gloryDaysPort from "../Assets/HOMEPAGE - REPLACE PREVIOUS GD.jpg";
 import ajRear from "../Assets/AJ_rear.jpg";
 import ajFront from "../Assets/AJ_front.jpg";
 
@@ -17,6 +17,10 @@ import hlZ4 from "../Assets/zine/ZINESCANS10.jpg";
 import hlz5 from "../Assets/zine/zinescnas11.jpg";
 import hlZ6 from "../Assets/zine/ZINESCANS7.jpg";
 import hlz7 from "../Assets/zine/ZINESCANS8.jpg";
+import hlz8 from "../Assets/4.jpg";
+import hlz9 from "../Assets/ZINEFINALPHOTO-3.jpg";
+import hlz10 from "../Assets/ZINESCANS7.jpg";
+import hlz11 from "../Assets/6.jpg";
 
 import locksnv0 from "../Assets/Lock_Product_P7.jpg";
 import locksnv1 from "../Assets/Posters5FINAL2.jpg";
@@ -36,20 +40,41 @@ import fract_7 from "../Assets/STUDIO-8.jpg";
 
 import fractFolio from "../Assets/FRACTELCLIP_1.mp4";
 
+import myproteinFolio from "../Assets/HOMEPAGE+ PROJECT.jpg";
+import myproteinProj1 from "../Assets/PROJECT.jpg";
+import myproteinProj2 from "../Assets/use.jpg";
+import myproteinProj3 from "../Assets/use2.jpg";
+
+import ajFolio from "../Assets/HOMEPAGE.mp4";
+import ajFolio2 from "../Assets/7.jpg";
+import ajFolio3 from "../Assets/10.mp4";
+import fthmlssFolio from "../Assets/fthmlssFolio.mp4";
+import legFolio from "../Assets/legspost.mp4";
+
+import tableFolio1 from "../Assets/NEW.jpg";
+import tableFolio2 from "../Assets/NEWCOLOUR-3.jpg";
+
+import terraFolio1 from "../Assets/2.jpg";
+import terraFolio2 from "../Assets/5.jpg";
+
+
+const myproteinPics = [myproteinFolio, myproteinProj1, myproteinProj2, myproteinProj3];
+
 const hlzines = [hlZ0, hlz1, hlZ2, hlz3, hlZ4, hlz5, hlZ6, hlz7];
 
 const locksnvs = [locksnv0, locksnv1, locksnv2, locksnv3, locksnv4, locksnv5];
 
-const aj1 = [ajFront, ajRear];
+const aj1 = [gloryDaysPort, ajRear];
 
 const fracts = [fract_1, fract_4];
 
-const fracts2 = [fract_2, fract_3, fract_5, fract_6, fract_7];
+const fracts2 = [fract_5, fract_6, fract_7];
 
 const projects = [
+
     {
         slug: "fractelXdsplaced",
-        title: "Fractel x dsplaced",
+        title: "Terrasyn",
         client: "Fractel x dsplaced",
         subtext: "",
         body: (
@@ -60,6 +85,7 @@ const projects = [
             </p>
         ),
         imageStack: fracts2,
+        videoURL: "https://player.vimeo.com/video/992684006?h=0fb85b4f0d",
         isFolio: false,
         isProjectsPage: true,
     },
@@ -70,46 +96,112 @@ const projects = [
         client: "",
         video: fractFolio,
         isFolio: true,
+        linkCol: "dark",
+        isProjectsPage: false,
+    },
+    
+    {
+        slug: "myprotein_folio",
+        title: "",
+        subtext: "",
+        client: "",
+        mainImage: myproteinFolio,
+        isFolio: true,
+        linkCol: "dark",
         isProjectsPage: false,
     },
     {
-        slug: "fractel",
-        title: "",
-        subtext: "FRACTEL x dsplaced",
-        client: "FRACTEL",
-        imageStack: fracts,
-        isFolio: true,
+        slug: "myprotein",
+        title: "MANCHESTER RUN CLUB WITH RUNNA",
+        subtext: "",
+        client: "MYPROTEIN",
+        body: (
+            <p>
+                {" "}
+                Photography for the <i>MyProtein x Runna</i> run club
+                .
+            </p>
+        ),
+        imageStack: myproteinPics,
+        isFolio: false,
         isProjectsPage: true,
+    },
+    {
+        slug: "aj_folio",
+        title: "",
+        subtext: "",
+        client: "",
+        video: ajFolio,
+        isFolio: true,
+        linkCol: "dark",
+        isProjectsPage: false,
     },
     {
         slug: "glory-days-port",
         title: "Photography and Design",
         subtext: "",
         client: "Alan Johnson",
-        mainImage: gloryDaysPort,
+        imageStack: aj1,
         body: (
             <p>
                 Creative direction and photography for <i>Alan Johnson</i> ahead of the release of <i>Glory Days</i>
             </p>
         ),
         isPortrait: true,
-        isFolio: true,
+        isFolio: false,
+        linkCol: "light",
         isProjectsPage: true,
     },
+    
+    {
+        slug:"bop",
+        title: "DNB ACADEMY",
+        videoURL: "https://player.vimeo.com/video/1005093562?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        body: (<p>Video production to launch a new course by <i>BOP</i> for <i>DnB Academy</i></p>),
+        subtext:"",
+        client:"BOP",
+        isProjectsPage: true,
+        isFolio: false,
+    },
+    {
+        slug: "fthmlss_folio",
+        title: "",
+        subtext: "",
+        client: "",
+        video: fthmlssFolio,
+        isFolio: true,
+        linkCol: "dark",
+        isProjectsPage: false,
+    },
+    
     {
         slug: "aj-yuku",
         title: "YUKU",
         subtext: "",
         client: "Alan Johnson",
-        imageStack: aj1,
-        body: (
-            <p>
-                Creative direction and artwork for <i>Alan Johnson - Glory Days</i>. Released on <i>YUKU</i>.
-            </p>
-        ),
+        mainImage: gloryDaysPort,
+         body: "",//(
+        //     <p>
+        //         Creative direction and artwork for <i>Alan Johnson - Glory Days</i>. Released on <i>YUKU</i>.
+        //     </p>
+        // ),
         isPortrait: true,
         isFolio: true,
-        isProjectsPage: true,
+        linkCol: "dark",
+        isProjectsPage: false,
+    },
+    
+    {
+        slug: "highline-zine",
+        title: "Highline Zine",
+        subtext: "Photography and Design",
+        client: "High Lines with Columbia",
+        mainImage: hlzines[0],
+        body: <p>A 24 page zine created as a follow on to a wider project on highlining</p>,
+        isPortrait: true,
+        isFolio: true,
+        linkCol: "light",
+        isProjectsPage: false,
     },
     {
         slug: "highline-zine",
@@ -119,7 +211,8 @@ const projects = [
         imageStack: hlzines,
         body: <p>A 24 page zine created as a follow on to a wider project on highlining</p>,
         isPortrait: true,
-        isFolio: true,
+        isFolio: false,
+        linkCol: "light",
         isProjectsPage: true,
     },
     {
@@ -131,6 +224,7 @@ const projects = [
         body: <p>Digital poster created for Columbia as part of a wider highline project</p>,
         isPortrait: true,
         isFolio: true,
+        linkCol: "light",
         isProjectsPage: true,
     },
     {
@@ -320,6 +414,76 @@ const projects = [
         isPortrait: false,
         isFolio: false,
         isProjectsPage: true,
+    },
+    {
+        slug: "terra_folio2",
+        title: "",
+        subtext: "",
+        client: "",
+        mainImage: terraFolio2,
+        isFolio: true,
+        linkCol: "dark",
+        isProjectsPage: false,
+    },
+    {
+        slug: "terra_folio1",
+        title: "",
+        subtext: "",
+        client: "",
+        mainImage: terraFolio1,
+        isFolio: true,
+        linkCol: "dark",
+        isProjectsPage: false,
+    },
+    {
+        slug: "table_folio2",
+        title: "",
+        subtext: "",
+        client: "",
+        mainImage: tableFolio2,
+        isFolio: true,
+        linkCol: "dark",
+        isProjectsPage: false,
+    },
+    {
+        slug: "table_folio1",
+        title: "",
+        subtext: "",
+        client: "",
+        mainImage: tableFolio1,
+        isFolio: true,
+        linkCol: "dark",
+        isProjectsPage: false,
+    },
+    {
+        slug: "leg_folio",
+        title: "",
+        subtext: "",
+        client: "",
+        video: legFolio,
+        isFolio: true,
+        linkCol: "dark",
+        isProjectsPage: false,
+    },
+    {
+        slug: "aj_folio3",
+        title: "",
+        subtext: "",
+        client: "",
+        video: ajFolio3,
+        isFolio: true,
+        linkCol: "dark",
+        isProjectsPage: false,
+    },
+    {
+        slug: "aj_folio2",
+        title: "",
+        subtext: "",
+        client: "",
+        mainImage: ajFolio2,
+        isFolio: true,
+        linkCol: "dark",
+        isProjectsPage: false,
     },
 ];
 

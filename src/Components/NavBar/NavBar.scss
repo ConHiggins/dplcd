@@ -9,6 +9,8 @@
     }
 
 .navbar {
+    color: $Navy;
+    background: none;
     font-family: "Stolzl";
     font-style: italic;
     display: flex;
@@ -20,7 +22,6 @@
     padding-right: 5vw;
     font-size: min(1.25rem,2vw);
     font-weight: bold;
-    color: white;
     position: fixed;
     top: 0;
     animation-delay: 2s;
@@ -28,7 +29,7 @@
 
     &__link{
         position: relative;
-        color: white;
+
         text-decoration: none;
         font-style: italic;
         font-weight: bold;
@@ -41,22 +42,21 @@
             // position: absolute;
             // left:200%;
             &:visited {
-            color: $OffWhite;
+            color: $Navy;
         }
         }
         
         &:visited {
-            color: white;
+    
         }
         
         &:hover{
-            color: $OffWhite;
+            color: $Navy;
         }
     }
 
     &__title{
         font-family: "Kanit";
-        color:white;
     }
 }
 

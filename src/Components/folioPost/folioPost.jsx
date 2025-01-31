@@ -36,7 +36,7 @@ const FolioPost = ({ post, playVid }) => {
             {post.video && (
                 <video
                     ref={videoRef}
-                    className={`folio_img`}
+                    className={`folio_vid`}
                     type="video/mp4"
                     autoPlay={true}
                     id="video"

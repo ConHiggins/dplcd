@@ -5,7 +5,8 @@
     body{
         overflow:auto;
     }
-.all-posts{
+    
+.all-posts{   
 
     max-width:90vw;
 
@@ -24,8 +25,14 @@
         gap:1rem;
         align-items: center;
         width: 90vw;
+        min-height: 100vh;
         min-height: 50vh;
         color: $OffWhite;
+        background: $Navy;
+
+        &__parent{
+            min-height: 100vh;
+        }
     }
 }
 

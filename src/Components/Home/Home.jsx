@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, createContext, useContext } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Link } from "react-router-dom";
@@ -10,18 +10,19 @@ import FolioPost from "../folioPost/folioPost.jsx";
 import MyThree from "../THREE/MyThree.jsx";
 import "./Home.scss";
 
-const Home = ({ scPostsData, bgStyle }) => {
+const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
     const splashContentArray = [
         "dsplaced.",
         "dsplaced. is a multidisciplinary creative practice producing work that spans creative-direction, filmmaking, photography, music production, sound design, consulting and more.",
     ];
 
-    const [displayLoading, setDisplayLoading] = useState(true);
+    const [displayLoading, setDisplayLoading] = useState(false);
     // const [splashContentIndex, setSplashContentIndex] = useState(0);
     // const [splashContentClass, setSplashContentClass] = useState("home__splash-content inactive");
     const [folioIndex, setFolioIndex] = useState(0);
 
     //const [width, setWidth] = useState(window.innerWidth);
+    const linkCol = null; // useContext(linkColContext);
 
     const folioPosts = scPostsData
         .map((p) => {
@@ -47,18 +48,6 @@ const Home = ({ scPostsData, bgStyle }) => {
         }, 10000);
     });
 
-    // useEffect(() => {
-    //     let contentTimeout;
-    //     return () => {
-    //         clearTimeout(contentTimeout);
-    //         contentTimeout = setTimeout(() => {
-    //             if (splashContentIndex !== 0) {
-    //                 handleUpdateContent();
-    //             }
-    //         }, 7000);
-    //     };
-    // }, [splashContentIndex]);
-
     // ------------- GSAP ------------------------
 
     const handleFolioUpdate = () => {
@@ -79,7 +68,7 @@ const Home = ({ scPostsData, bgStyle }) => {
     return (
         <>
             <div className="home">
-                {displayLoading && <MyThree />}
+                {/* {displayLoading && <MyThree />} */}
                 <div className="info__desc"></div>
             </div>
             {scPostsData && (
@@ -88,13 +77,14 @@ const Home = ({ scPostsData, bgStyle }) => {
                     ref={container}
                     onClick={() => {
                         handleFolioUpdate();
+                        handleSetLinkColour(folioPosts[folioIndex].props.post.linkCol, linkCol);
                     }}
                 >
                     {folioPosts[folioIndex]}
                 </div>
             )}
 
-            <Footer />
+            <Footer linkCol={linkCol} />
         </>
     );
 };
