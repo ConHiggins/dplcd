@@ -76,7 +76,8 @@
 @media screen and (min-width: 1024px) {
 
     .navbar{
-        &__link-snap{
+        &__link{
+            font-size: min(1rem,1.2vw);
             //left: 0%;
         }
     }

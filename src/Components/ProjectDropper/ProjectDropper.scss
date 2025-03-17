@@ -52,6 +52,9 @@
     .project-dropper{
 
         //margin-top: -2rem;
+        &__title{
+            font-size: min(1rem,1.2vw);
+        }
         
     }
 }

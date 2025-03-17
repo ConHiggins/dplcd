@@ -9,7 +9,6 @@ const Footer = () => {
         <div className="footer">
             <div className="footer-content">
                 <p style={lStyle} className="global_link footer-content__link">
-                    FOCUSED ON THE DEVELOPMENT <br /> AND DELIVERY OF IDEAS.
                 </p>
                 <div className="footer-content__rights">
                     <Link to={"/shop"} style={lStyle} className="global_link footer-content__link footer_right">
