@@ -21,8 +21,6 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 // 'use-strict';
-const foo = "bar";
-const hello = "world";
 
 function App() {
   // TODO: Add SDKs for Firebase products that you want to use
