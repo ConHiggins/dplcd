@@ -8,7 +8,12 @@
 .video-section {
   width: 100vw;
   height: 100vh;
-  background-color: blue;
+}
+
+.folio-vid {
+  min-width: 100%;
+  min-height: 100vh;
+  object-fit: cover;
 }
 
 .image-section {

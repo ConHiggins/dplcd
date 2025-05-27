@@ -43,14 +43,14 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
   //const [width, setWidth] = useState(window.innerWidth);
   const linkCol = null; // useContext(linkColContext);
 
-  const folioPosts = scPostsData
-    .map((p) => {
-      if (p.isFolio) return <FolioPost post={p} playVid={displayLoading} />;
-    })
-    .filter((p) => {
-      return p;
-    });
+  const folioPosts = scPostsData;
 
+  console.log(scPostsData);
+  const fractelVideo = scPostsData.filter((p) => {
+    return p.slug === "fractel_folio";
+  });
+
+  console.log(fractelVideo);
   // function handleWindowSizeChange() {
   //     setWidth(window.innerWidth);
   // }
@@ -144,7 +144,9 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
       <div id="smooth-content" ref={content}>
         <>
           <div className="home">
-            <div id="video-1" className="video-section"></div>
+            <div className="video-section">
+              <FolioPost type="video" post={fractelVideo[0]} playVid={true} />
+            </div>
             <div className="image-section">
               <div className="image-buffer"></div>
               <div className="image-container">
