@@ -5,20 +5,27 @@
   background: $LightOffWhite;
 }
 
-.dummy-video {
+.video-section {
   width: 100vw;
-  height: 150vh;
+  height: 100vh;
   background-color: blue;
 }
 
-.dummy-image-container {
+.image-section {
   width: 100wh;
-  height: 300vh;
+
+  // padding-top: 16px;
+}
+
+.image-container {
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-top: 22vh;
-  // padding-top: 16px;
+  position: sticky;
+}
+
+.image-buffer {
+  height: 22vh;
 }
 
 .scroll-trigger {

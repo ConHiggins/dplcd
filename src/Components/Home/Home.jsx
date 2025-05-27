@@ -99,46 +99,62 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
     gsap.from("#dummy1", {
       y: 200,
       scrollTrigger: {
-        trigger: ".dummy-image-container",
+        trigger: ".image-section",
         start: "top bottom",
-        end: "+=950",
+        end: "+=800",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
     gsap.from("#dummy2", {
       y: 380,
       scrollTrigger: {
-        trigger: ".dummy-image-container",
+        trigger: ".image-section",
         start: "top bottom",
-        end: "+=950",
+        end: "+=800",
         scrub: true,
-        markers: true,
+        markers: false,
       },
     });
     gsap.from("#dummy3", {
       y: 560,
       scrollTrigger: {
-        trigger: ".dummy-image-container",
+        trigger: ".image-section",
         start: "top bottom",
-        end: "+=950",
+        end: "+=800",
         scrub: true,
+        markers: false,
+      },
+    });
+
+    gsap.from(".section-container", {
+      scrollTrigger: {
+        trigger: ".image-section",
+        start: "top top",
+        end: "+=800",
+        scrub: true,
+        pin: true,
         markers: true,
       },
     });
   });
+
   return (
     <div id="smooth-wrapper" ref={wrapper}>
       <div id="smooth-content" ref={content}>
         <>
           <div className="home">
-            <div className="dummy-video"></div>
-            <div className="dummy-image-container">
-              <div className="dummy-image" id="dummy1"></div>
-              <div className="dummy-image" id="dummy2"></div>
-              <div className="dummy-image" id="dummy3"></div>
+            <div id="video-1" className="video-section"></div>
+            <div className="image-section">
+              <div className="image-buffer"></div>
+              <div className="image-container">
+                <div className="dummy-image" id="dummy1"></div>
+                <div className="dummy-image" id="dummy2"></div>
+                <div className="dummy-image" id="dummy3"></div>
+              </div>
+              <div className="image-buffer"></div>
             </div>
-            <div className="dummy-video"></div>
+            <div id="video-2" className="video-section"></div>
           </div>
         </>
       </div>
