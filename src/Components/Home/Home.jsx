@@ -23,6 +23,8 @@ import Loading from "../Loading/Loading.jsx";
 import Footer from "../Footer/Footer.jsx";
 import SinglePost from "../SinglePost/SinglePost.jsx";
 import FolioPost from "../folioPost/folioPost.jsx";
+import HomeVideo from "./HomeVideo.jsx";
+import HomeImage from "./HomeImage.jsx";
 
 //css
 import "./Home.scss";
@@ -50,7 +52,14 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
     return p.slug === "fractel_folio";
   });
 
-  console.log(fractelVideo);
+  const fractelImages = scPostsData.filter((p) => {
+    return p.slug === "fractelXdsplaced";
+  });
+
+  const myProteinImages = scPostsData.filter((p) => {
+    return p.slug === "myprotein";
+  });
+
   // function handleWindowSizeChange() {
   //     setWidth(window.innerWidth);
   // }
@@ -96,30 +105,30 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
   );
 
   useGSAP(() => {
-    gsap.from("#dummy1", {
+    gsap.from("#fractel-1", {
       y: 200,
       scrollTrigger: {
-        trigger: ".image-section",
+        trigger: "#fractel-image-section",
         start: "top bottom",
         end: "+=800",
         scrub: true,
         markers: false,
       },
     });
-    gsap.from("#dummy2", {
+    gsap.from("#fractel-2", {
       y: 380,
       scrollTrigger: {
-        trigger: ".image-section",
+        trigger: "#fractel-image-section",
         start: "top bottom",
         end: "+=800",
         scrub: true,
         markers: false,
       },
     });
-    gsap.from("#dummy3", {
+    gsap.from("#fractel-3", {
       y: 560,
       scrollTrigger: {
-        trigger: ".image-section",
+        trigger: "#fractel-image-section",
         start: "top bottom",
         end: "+=800",
         scrub: true,
@@ -127,9 +136,9 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
       },
     });
 
-    gsap.from(".section-container", {
+    gsap.from("#fractel-images", {
       scrollTrigger: {
-        trigger: ".image-section",
+        trigger: "#fractel-image-section",
         start: "top top",
         end: "+=800",
         scrub: true,
@@ -144,20 +153,41 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
       <div id="smooth-content" ref={content}>
         <>
           <div className="home">
-            <div className="video-section">
-              <FolioPost type="video" post={fractelVideo[0]} playVid={true} />
+            <div className="video-section" id="fractel-video">
+              <HomeVideo type="video" post={fractelVideo[0]} playVid={true} />
             </div>
-            <div className="image-section">
+            <div className="image-section" id="fractel-image-section">
               <div className="image-buffer"></div>
-              <div className="image-container">
-                <div className="dummy-image" id="dummy1"></div>
-                <div className="dummy-image" id="dummy2"></div>
-                <div className="dummy-image" id="dummy3"></div>
+              <div className="image-container" id="fractel-images">
+                <div id="fractel-1">
+                  <HomeImage image={fractelImages[0].imageStack[0]} />
+                </div>
+                <div id="fractel-2">
+                  <HomeImage image={fractelImages[0].imageStack[1]} />
+                </div>
+                <div id="fractel-3">
+                  <HomeImage image={fractelImages[0].imageStack[2]} />
+                </div>
               </div>
               <div className="image-buffer"></div>
             </div>
-            <div id="video-2" className="video-section"></div>
+            <div className="image-section" id="my-protein-image-section">
+              <div className="image-buffer"></div>
+              <div className="image-container" id="my-protein-images">
+                <div id="my-protein-1">
+                  <HomeImage image={myProteinImages[0].imageStack[0]} />
+                </div>
+                <div id="my-protein-2">
+                  <HomeImage image={myProteinImages[0].imageStack[1]} />
+                </div>
+                <div id="my-protein-3">
+                  <HomeImage image={myProteinImages[0].imageStack[2]} />
+                </div>
+              </div>
+              <div className="image-buffer"></div>
+            </div>
           </div>
+          <div></div>
         </>
       </div>
     </div>

@@ -10,10 +10,27 @@
   height: 100vh;
 }
 
-.folio-vid {
+.folio-post {
+  // position: absolute;
+  // top:0;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+
+  // margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.folio-video {
   min-width: 100%;
   min-height: 100vh;
   object-fit: cover;
+}
+
+.folio-img {
+  height: 55vh;
+  width: 22vw;
 }
 
 .image-section {
@@ -25,7 +42,7 @@
 .image-container {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 32px;
   position: sticky;
 }
 
