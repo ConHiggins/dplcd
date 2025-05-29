@@ -5,11 +5,6 @@
   background: $LightOffWhite;
 }
 
-.video-section {
-  width: 100vw;
-  height: 100vh;
-}
-
 .folio-post {
   // position: absolute;
   // top:0;
@@ -22,11 +17,11 @@
   flex-direction: column;
 }
 
-.folio-video {
-  min-width: 100%;
-  min-height: 100vh;
-  object-fit: cover;
-}
+// .folio-video {
+//   min-width: 100%;
+//   min-height: 100vh;
+//   object-fit: cover;
+// }
 
 .folio-img {
   height: 55vh;
@@ -50,27 +45,18 @@
   height: 22vh;
 }
 
-.scroll-trigger {
-  color: red;
-  height: 64px;
+#fractel-video {
+  width: 100vw;
+  height: 100vh;
 }
 
-.dummy-image {
-  height: 55vh;
-  width: 22vw;
+#stillness-video-container {
+  display: flex;
+  justify-content: center;
+  height: auto;
+  background-color: black;
 }
 
-#dummy1 {
-  background: red;
-}
-
-#dummy2 {
-  background: green;
-}
-
-#dummy3 {
-  background: blue;
-}
 // @media screen and (min-width: 320px) {
 
 //     body{

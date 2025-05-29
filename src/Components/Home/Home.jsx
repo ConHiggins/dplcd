@@ -60,6 +60,10 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
     return p.slug === "myprotein";
   });
 
+  const ajStillness = scPostsData.filter((p) => {
+    return p.slug === "aj_folio";
+  });
+
   // function handleWindowSizeChange() {
   //     setWidth(window.innerWidth);
   // }
@@ -105,32 +109,33 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
   );
 
   useGSAP(() => {
+    //fractal-anims
     gsap.from("#fractel-1", {
-      y: 200,
+      y: 450,
       scrollTrigger: {
         trigger: "#fractel-image-section",
         start: "top bottom",
-        end: "+=800",
+        end: "+=1080",
         scrub: true,
         markers: false,
       },
     });
     gsap.from("#fractel-2", {
-      y: 380,
+      y: 750,
       scrollTrigger: {
         trigger: "#fractel-image-section",
         start: "top bottom",
-        end: "+=800",
+        end: "+=1080",
         scrub: true,
         markers: false,
       },
     });
     gsap.from("#fractel-3", {
-      y: 560,
+      y: 1050,
       scrollTrigger: {
         trigger: "#fractel-image-section",
         start: "top bottom",
-        end: "+=800",
+        end: "+=1080",
         scrub: true,
         markers: false,
       },
@@ -140,10 +145,62 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
       scrollTrigger: {
         trigger: "#fractel-image-section",
         start: "top top",
-        end: "+=800",
+        end: "+=600",
         scrub: true,
         pin: true,
-        markers: true,
+      },
+    });
+
+    //my-protein-anims
+    gsap.from("#my-protein-1", {
+      y: 1050,
+      scrollTrigger: {
+        trigger: "#my-protein-image-section",
+        start: "top bottom",
+        end: "+=1080",
+        scrub: true,
+      },
+    });
+
+    gsap.from("#my-protein-2", {
+      y: 750,
+      scrollTrigger: {
+        trigger: "#my-protein-image-section",
+        start: "top bottom",
+        end: "+=1080",
+        scrub: true,
+      },
+    });
+
+    gsap.from("#my-protein-3", {
+      y: 450,
+      scrollTrigger: {
+        trigger: "#my-protein-image-section",
+        start: "top bottom",
+        end: "+=1080",
+        scrub: true,
+      },
+    });
+
+    gsap.from("#my-protein-images", {
+      scrollTrigger: {
+        trigger: "#my-protein-image-section",
+        start: "top top",
+        end: "+=600",
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    //stillness-anims
+
+    gsap.from("#stillness-video-container", {
+      scrollTrigger: {
+        trigger: "#stillness-video-container",
+        start: "top top",
+        end: "+=600",
+        scrub: true,
+        pin: true,
       },
     });
   });
@@ -151,44 +208,60 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
   return (
     <div id="smooth-wrapper" ref={wrapper}>
       <div id="smooth-content" ref={content}>
-        <>
-          <div className="home">
-            <div className="video-section" id="fractel-video">
+        <div className="home">
+          <div id="fractel-video">
+            <div id="fractel-video-container">
               <HomeVideo type="video" post={fractelVideo[0]} playVid={true} />
             </div>
-            <div className="image-section" id="fractel-image-section">
-              <div className="image-buffer"></div>
-              <div className="image-container" id="fractel-images">
-                <div id="fractel-1">
-                  <HomeImage image={fractelImages[0].imageStack[0]} />
-                </div>
-                <div id="fractel-2">
-                  <HomeImage image={fractelImages[0].imageStack[1]} />
-                </div>
-                <div id="fractel-3">
-                  <HomeImage image={fractelImages[0].imageStack[2]} />
-                </div>
+          </div>
+          <div className="image-section" id="fractel-image-section">
+            <div className="image-buffer"></div>
+            <div className="image-container" id="fractel-images">
+              <div id="fractel-1">
+                <HomeImage image={fractelImages[0].imageStack[0]} />
               </div>
-              <div className="image-buffer"></div>
+              <div id="fractel-2">
+                <HomeImage image={fractelImages[0].imageStack[1]} />
+              </div>
+              <div id="fractel-3">
+                <HomeImage image={fractelImages[0].imageStack[2]} />
+              </div>
             </div>
-            <div className="image-section" id="my-protein-image-section">
-              <div className="image-buffer"></div>
-              <div className="image-container" id="my-protein-images">
-                <div id="my-protein-1">
-                  <HomeImage image={myProteinImages[0].imageStack[0]} />
-                </div>
-                <div id="my-protein-2">
-                  <HomeImage image={myProteinImages[0].imageStack[1]} />
-                </div>
-                <div id="my-protein-3">
-                  <HomeImage image={myProteinImages[0].imageStack[2]} />
-                </div>
+            <div className="image-buffer"></div>
+          </div>
+          <div
+            className="image-section"
+            id="my-protein-image-section"
+            style={{ background: "white" }}
+          >
+            <div className="image-buffer"></div>
+            <div className="image-container" id="my-protein-images">
+              <div id="my-protein-1">
+                <HomeImage image={myProteinImages[0].imageStack[0]} />
               </div>
-              <div className="image-buffer"></div>
+              <div id="my-protein-2">
+                <HomeImage image={myProteinImages[0].imageStack[1]} />
+              </div>
+              <div id="my-protein-3">
+                <HomeImage image={myProteinImages[0].imageStack[2]} />
+              </div>
+            </div>
+            <div className="image-buffer"></div>
+          </div>
+          <div id="stillness-video-container">
+            <div id="stillness-video">
+              <HomeVideo
+                videoStyle={{ height: "100vh" }}
+                post={ajStillness[0]}
+                playVid={true}
+              />
             </div>
           </div>
-          <div></div>
-        </>
+          <div
+            className="test"
+            style={{ background: "red", height: "400vh" }}
+          ></div>
+        </div>
       </div>
     </div>
     // <>

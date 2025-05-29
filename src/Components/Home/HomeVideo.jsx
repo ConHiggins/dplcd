@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./Home.scss";
 
-const HomeVideo = ({ post, playVid }) => {
+const HomeVideo = ({ post, playVid, videoStyle }) => {
   const mediaType = post.mainImage ? "post__image" : "post__vid";
   const mediaDimensions = post.isPortrait ? `-portrait` : `-landscape`;
 
@@ -26,6 +26,7 @@ const HomeVideo = ({ post, playVid }) => {
     <div className="folio-post">
       {post.video && (
         <video
+          style={videoStyle}
           ref={videoRef}
           className={`folio-video`}
           type="video/mp4"
