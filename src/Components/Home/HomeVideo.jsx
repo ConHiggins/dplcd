@@ -41,6 +41,15 @@ const HomeVideo = ({ post, playVid, videoStyle }) => {
           <source src={`${post.video}`} />
         </video>
       )}
+      {post.videoURL && (
+        <iframe
+          className={`folio-vid`}
+          src={post.videoURL}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+      )}
     </div>
   );
 };

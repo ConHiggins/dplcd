@@ -1,12 +1,12 @@
 import "./Home.scss";
 
-const HomeImage = ({ image, forwardId }) => {
+const HomeImage = ({ image, imageClass }) => {
   //   const mediaType = post.mainImage ? "post__image" : "post__vid";
   //   const mediaDimensions = post.isPortrait ? `-portrait` : `-landscape`;
 
   return (
     <div className="folio-post">
-      {image && <img className="folio-img" src={image} alt="" />}
+      {image && <img className={imageClass} src={image} alt="" />}
     </div>
   );
 };

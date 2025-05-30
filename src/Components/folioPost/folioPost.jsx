@@ -41,7 +41,7 @@ const FolioPost = ({ post, type, playVid }) => {
           />
         </>
       )}
-      {/* {post.videoURL && (
+      {post.videoURL && (
         <iframe
           className={`folio-vid`}
           src={post.videoURL}
@@ -49,7 +49,7 @@ const FolioPost = ({ post, type, playVid }) => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
-      )} */}
+      )}
       {post.video && type === "video" && (
         <video
           ref={videoRef}
