@@ -382,13 +382,13 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
             <div className="image-container" id="my-protein-images">
               <div id="my-protein-1">
                 <HomeImage
-                  image={myProteinImages[0].imageStack[0]}
+                  image={myProteinImages[0].imageStack[1]}
                   imageClass="four-by-five-image"
                 />
               </div>
               <div id="my-protein-2">
                 <HomeImage
-                  image={myProteinImages[0].imageStack[1]}
+                  image={myProteinImages[0].imageStack[0]}
                   imageClass="four-by-five-image"
                 />
               </div>
@@ -481,6 +481,7 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
           </div>
         </div>
       </div>
+      {/* <Footer linkCol={linkCol} /> */}
     </div>
     // <>
     //   <div className="home">

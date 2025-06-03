@@ -69,6 +69,12 @@
 #fractel-video {
   width: 100vw;
   height: 100vh;
+
+  video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
 }
 
 #stillness-video-container {
@@ -81,13 +87,26 @@
 #alan-johnson-video {
   width: 100vw;
   height: 100vh;
+
+  video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
 }
 
 #fthmlss-video {
   width: 100vw;
   height: 100vh;
+
+  video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
 }
 
+//!Mobile
 // @media screen and (min-width: 320px) {
 
 //     body{
@@ -305,6 +324,7 @@
 
 // }
 
+//! Tablet / Mid screen
 // @media screen and (min-width: 768px) {
 
 //     .shuffle-text {
@@ -323,6 +343,7 @@
 
 // }
 
+//! Desktop
 // @media screen and (min-width: 1024px) {
 
 //     .home{
