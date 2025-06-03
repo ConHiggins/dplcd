@@ -40,9 +40,11 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
   const [displayLoading, setDisplayLoading] = useState(false);
   // const [splashContentIndex, setSplashContentIndex] = useState(0);
   // const [splashContentClass, setSplashContentClass] = useState("home__splash-content inactive");
-  const [folioIndex, setFolioIndex] = useState(0);
+  // const [folioIndex, setFolioIndex] = useState(0);
 
-  //const [width, setWidth] = useState(window.innerWidth);
+  // const [width, setWidth] = useState(window.innerWidth);
+  // const [view, setView] = useState();
+
   const linkCol = null; // useContext(linkColContext);
 
   const folioPosts = scPostsData;
@@ -66,17 +68,17 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
     return p.slug === "aj_folio";
   });
 
-  const ajFolio1 = scPostsData.filter((p) => {
-    return p.slug === "aj_folio";
-  });
+  // const ajFolio1 = scPostsData.filter((p) => {
+  //   return p.slug === "aj_folio";
+  // });
 
   const ajFolio2 = scPostsData.filter((p) => {
     return p.slug === "aj_folio2";
   });
 
-  const ajFolio3 = scPostsData.filter((p) => {
-    return p.slug === "aj_folio3";
-  });
+  // const ajFolio3 = scPostsData.filter((p) => {
+  //   return p.slug === "aj_folio3";
+  // });
 
   const gloryDays = scPostsData.filter((p) => {
     return p.slug === "glory-days-port";
@@ -94,21 +96,38 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
     return p.slug === "fthmlss_folio";
   });
 
-  // function handleWindowSizeChange() {
-  //     setWidth(window.innerWidth);
-  // }
+  // const handleWindowSizeChange = () => {
+  //   setWidth(window.innerWidth);
+  //   console.log(window.innerWidth);
+  // };
+
   // useEffect(() => {
-  //     window.addEventListener("resize", handleWindowSizeChange);
-  //     return () => {
-  //         window.removeEventListener("resize", handleWindowSizeChange);
-  //     };
+  //   window.addEventListener("resize", handleWindowSizeChange);
+  //   return () => {
+  //     window.removeEventListener("resize", handleWindowSizeChange);
+  //   };
   // }, []);
 
-  //   useEffect(() => {
-  //     const mainTimeout = setTimeout(() => {
-  //       setDisplayLoading(false);
-  //     }, 10000);
-  //   });
+  // useEffect(() => {
+  //   if (width >=  && width < 1024) {
+  //     setView("mobile");
+  //   }
+
+  //   if (width >= 1024) {
+  //     setView("desktop");
+  //   }
+  // }, [width]);
+
+  // useEffect(() => {
+  //   console.log(view);
+  // }, [view]);
+
+  //!BUG - seems to break context affecting GSAP anims
+  // useEffect(() => {
+  //   const mainTimeout = setTimeout(() => {
+  //     setDisplayLoading(false);
+  //   }, 10000);
+  // });
 
   // ------------- GSAP ------------------------
 
@@ -139,211 +158,217 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
   );
 
   useGSAP(() => {
+    let mm = gsap.matchMedia();
     //fractal-anims
-    gsap.from("#fractel-1", {
-      y: 450,
-      scrollTrigger: {
-        trigger: "#fractel-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-        markers: false,
-      },
-    });
-    gsap.from("#fractel-2", {
-      y: 750,
-      scrollTrigger: {
-        trigger: "#fractel-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-        markers: false,
-      },
-    });
-    gsap.from("#fractel-3", {
-      y: 1050,
-      scrollTrigger: {
-        trigger: "#fractel-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-        markers: false,
-      },
-    });
 
-    gsap.from("#fractel-images", {
-      scrollTrigger: {
-        trigger: "#fractel-image-section",
-        start: "top top",
-        end: "+=600",
-        scrub: true,
-        pin: true,
-      },
-    });
+    mm.add("(min-width: 768px)", () => {
+      gsap.from("#fractel-1", {
+        y: 450,
+        scrollTrigger: {
+          trigger: "#fractel-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+          markers: false,
+        },
+      });
 
-    //my-protein-anims
-    gsap.from("#my-protein-1", {
-      y: 1050,
-      scrollTrigger: {
-        trigger: "#my-protein-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-      },
-    });
+      gsap.from("#fractel-2", {
+        y: 750,
+        scrollTrigger: {
+          trigger: "#fractel-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+          markers: false,
+        },
+      });
 
-    gsap.from("#my-protein-2", {
-      y: 750,
-      scrollTrigger: {
-        trigger: "#my-protein-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-      },
-    });
+      gsap.from("#fractel-3", {
+        y: 1050,
+        scrollTrigger: {
+          trigger: "#fractel-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+          markers: false,
+        },
+      });
 
-    gsap.from("#my-protein-3", {
-      y: 450,
-      scrollTrigger: {
-        trigger: "#my-protein-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-      },
-    });
+      gsap.from("#fractel-images", {
+        scrollTrigger: {
+          trigger: "#fractel-image-section",
+          start: "top top",
+          end: "+=600",
+          scrub: true,
+          pin: true,
+        },
+      });
 
-    gsap.from("#my-protein-images", {
-      scrollTrigger: {
-        trigger: "#my-protein-image-section",
-        start: "top top",
-        end: "+=600",
-        scrub: true,
-        pin: true,
-      },
-    });
+      //my-protein-anims
+      gsap.from("#my-protein-1", {
+        y: 1050,
+        scrollTrigger: {
+          trigger: "#my-protein-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+        },
+      });
 
-    //stillness-anims
-    gsap.from("#stillness-video-container", {
-      scrollTrigger: {
-        trigger: "#stillness-video-container",
-        start: "top top",
-        end: "+=600",
-        scrub: true,
-        pin: true,
-      },
-    });
+      gsap.from("#my-protein-2", {
+        y: 750,
+        scrollTrigger: {
+          trigger: "#my-protein-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+        },
+      });
 
-    //alan-johnson-anims
-    gsap.from("#alan-johnson-1", {
-      y: 450,
-      scrollTrigger: {
-        trigger: "#alan-johnson-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-      },
-    });
+      gsap.from("#my-protein-3", {
+        y: 450,
+        scrollTrigger: {
+          trigger: "#my-protein-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+        },
+      });
 
-    gsap.from("#alan-johnson-2", {
-      y: 750,
-      scrollTrigger: {
-        trigger: "#alan-johnson-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-      },
-    });
+      gsap.from("#my-protein-images", {
+        scrollTrigger: {
+          trigger: "#my-protein-image-section",
+          start: "top top",
+          end: "+=600",
+          scrub: true,
+          pin: true,
+        },
+      });
 
-    gsap.from("#alan-johnson-3", {
-      y: 1050,
-      scrollTrigger: {
-        trigger: "#alan-johnson-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-      },
-    });
+      //stillness-anims
+      gsap.from("#stillness-video-container", {
+        scrollTrigger: {
+          trigger: "#stillness-video-container",
+          start: "top top",
+          end: "+=600",
+          scrub: true,
+          pin: true,
+        },
+      });
 
-    gsap.from("#alan-johnson-images", {
-      scrollTrigger: {
-        trigger: "#alan-johnson-image-section",
-        start: "top top",
-        end: "+=600",
-        scrub: true,
-        pin: true,
-      },
-    });
+      //alan-johnson-anims
+      gsap.from("#alan-johnson-1", {
+        y: 450,
+        scrollTrigger: {
+          trigger: "#alan-johnson-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+        },
+      });
 
-    //highline-zine-anims
-    gsap.from("#highline-zine-1", {
-      y: 1050,
-      scrollTrigger: {
-        trigger: "#highline-zine-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-      },
-    });
+      gsap.from("#alan-johnson-2", {
+        y: 750,
+        scrollTrigger: {
+          trigger: "#alan-johnson-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+        },
+      });
 
-    gsap.from("#highline-zine-2", {
-      y: 750,
-      scrollTrigger: {
-        trigger: "#highline-zine-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-      },
-    });
+      gsap.from("#alan-johnson-3", {
+        y: 1050,
+        scrollTrigger: {
+          trigger: "#alan-johnson-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+        },
+      });
 
-    gsap.from("#highline-zine-3", {
-      y: 450,
-      scrollTrigger: {
-        trigger: "#highline-zine-image-section",
-        start: "top bottom",
-        end: "+=1080",
-        scrub: true,
-      },
-    });
+      gsap.from("#alan-johnson-images", {
+        scrollTrigger: {
+          trigger: "#alan-johnson-image-section",
+          start: "top top",
+          end: "+=600",
+          scrub: true,
+          pin: true,
+        },
+      });
 
-    gsap.from("#highline-zine-images", {
-      scrollTrigger: {
-        trigger: "#highline-zine-image-section",
-        start: "top top",
-        end: "+=600",
-        scrub: true,
-        pin: true,
-      },
-    });
+      //highline-zine-anims
+      gsap.from("#highline-zine-1", {
+        y: 1050,
+        scrollTrigger: {
+          trigger: "#highline-zine-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+        },
+      });
 
-    //placeholder anims
-    gsap.from("#bop-placeholder", {
-      scrollTrigger: {
-        trigger: "#bop-placeholder",
-        start: "top top",
-        end: "+=600",
-        scrub: true,
-        pin: true,
-      },
-    });
+      gsap.from("#highline-zine-2", {
+        y: 750,
+        scrollTrigger: {
+          trigger: "#highline-zine-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+        },
+      });
 
-    gsap.from("#aj-placeholder", {
-      scrollTrigger: {
-        trigger: "#aj-placeholder",
-        start: "top top",
-        end: "+=600",
-        scrub: true,
-        pin: true,
-      },
-    });
+      gsap.from("#highline-zine-3", {
+        y: 450,
+        scrollTrigger: {
+          trigger: "#highline-zine-image-section",
+          start: "top bottom",
+          end: "+=1080",
+          scrub: true,
+        },
+      });
 
-    gsap.from("#highline-placeholder", {
-      scrollTrigger: {
-        trigger: "#highline-placeholder",
-        start: "top top",
-        end: "+=600",
-        scrub: true,
-        pin: true,
-      },
+      gsap.from("#highline-zine-images", {
+        scrollTrigger: {
+          trigger: "#highline-zine-image-section",
+          start: "top top",
+          end: "+=600",
+          scrub: true,
+          pin: true,
+        },
+      });
+
+      //placeholder anims
+      gsap.from("#bop-placeholder", {
+        scrollTrigger: {
+          trigger: "#bop-placeholder",
+          start: "top top",
+          end: "+=600",
+          scrub: true,
+          pin: true,
+        },
+      });
+
+      gsap.from("#aj-placeholder", {
+        scrollTrigger: {
+          trigger: "#aj-placeholder",
+          start: "top top",
+          end: "+=600",
+          scrub: true,
+          pin: true,
+        },
+      });
+
+      gsap.from("#highline-placeholder", {
+        scrollTrigger: {
+          trigger: "#highline-placeholder",
+          start: "top top",
+          end: "+=600",
+          scrub: true,
+          pin: true,
+        },
+      });
     });
   });
 

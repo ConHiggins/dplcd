@@ -107,6 +107,81 @@
 }
 
 //!Mobile
+
+@media screen and (max-width: 768px) {
+  .image-section {
+    height: auto;
+  }
+  .image-container {
+    display: flex;
+    padding: 16px;
+  }
+
+  .four-by-five-image {
+    height: 100%;
+    width: 100%;
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .one-by-one-image {
+    height: 100%;
+    width: 100%;
+    img {
+      object-fit: cover;
+    }
+  }
+
+  #fractel-1 {
+    display: none;
+  }
+
+  #fractel-3 {
+    display: none;
+  }
+
+  #fractel-images {
+    background-color: $LighterOffWhite;
+  }
+
+  #my-protein-1 {
+    display: none;
+  }
+
+  #my-protein-3 {
+    display: none;
+  }
+
+  #my-protein-images {
+    background-color: $LightOffWhite;
+  }
+
+  #alan-johnson-1 {
+    display: none;
+  }
+
+  #alan-johnson-2 {
+    display: none;
+  }
+
+  #alan-johnson-images {
+    padding-bottom: 16px;
+    background-color: white;
+  }
+
+  #highline-zine-1 {
+    display: none;
+  }
+
+  #highline-zine-3 {
+    display: none;
+  }
+
+  #highline-zine-images {
+    padding-bottom: 16px;
+  }
+}
 // @media screen and (min-width: 320px) {
 
 //     body{
