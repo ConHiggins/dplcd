@@ -68,17 +68,9 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
     return p.slug === "aj_folio";
   });
 
-  // const ajFolio1 = scPostsData.filter((p) => {
-  //   return p.slug === "aj_folio";
-  // });
-
   const ajFolio2 = scPostsData.filter((p) => {
     return p.slug === "aj_folio2";
   });
-
-  // const ajFolio3 = scPostsData.filter((p) => {
-  //   return p.slug === "aj_folio3";
-  // });
 
   const gloryDays = scPostsData.filter((p) => {
     return p.slug === "glory-days-port";
@@ -451,15 +443,6 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
               </div>
             </div>
           </div>
-          <div className="placeholder-section" id="aj-placeholder">
-            <h1>ALAN JOHNSON VIDEO</h1>
-          </div>
-          {/*//! broken video*/}
-          {/* <div id="alan-johnson-video">
-            <div id="alan-johnson-video-container">
-              <HomeVideo type="video" post={ajFolio1[0].video} playVid={true} />
-            </div>
-          </div> */}
           <div className="image-section" id="highline-zine-image-section">
             <div className="image-container" id="highline-zine-images">
               <div id="highline-zine-1">
