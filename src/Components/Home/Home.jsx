@@ -89,7 +89,11 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
   });
 
   const bopVideo = scPostsData.filter((p) => {
-    return p.slug === "bop";
+    return p.slug === "bop_video";
+  });
+
+  const highlineDsplacedVideo = scPostsData.filter((p) => {
+    return p.slug === "highline_dsplaced_video";
   });
 
   const fthmlssVideo = scPostsData.filter((p) => {
@@ -339,10 +343,10 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
         },
       });
 
-      //placeholder anims
-      gsap.from("#bop-placeholder", {
+      //highline video anims
+      gsap.from("#highline-dsplaced-video-container", {
         scrollTrigger: {
-          trigger: "#bop-placeholder",
+          trigger: "#highline-dsplaced-video-container",
           start: "top top",
           end: "+=600",
           scrub: true,
@@ -350,19 +354,10 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
         },
       });
 
-      gsap.from("#aj-placeholder", {
+      //bop anims
+      gsap.from("#bop-video-container", {
         scrollTrigger: {
-          trigger: "#aj-placeholder",
-          start: "top top",
-          end: "+=600",
-          scrub: true,
-          pin: true,
-        },
-      });
-
-      gsap.from("#highline-placeholder", {
-        scrollTrigger: {
-          trigger: "#highline-placeholder",
+          trigger: "#bop-video-container",
           start: "top top",
           end: "+=600",
           scrub: true,
@@ -487,18 +482,20 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
               </div>
             </div>
           </div>
-          <div className="placeholder-section" id="bop-placeholder">
-            <h1>BOP VIDEO</h1>
-          </div>
-          <div className="placeholder-section" id="highline-placeholder">
-            <h1>COLUMBIA HIGHLINE VIDEO</h1>
-          </div>
-          {/* //! need video file for BOP as opposed to URL */}
-          {/* <div id="bop-video">
+          <div id="bop-video">
             <div id="bop-video-container">
               <HomeVideo type="video" post={bopVideo[0]} playVid={true} />
             </div>
-          </div> */}
+          </div>
+          <div id="highline-dsplaced-video">
+            <div id="highline-dsplaced-video-container">
+              <HomeVideo
+                type="video"
+                post={highlineDsplacedVideo[0]}
+                playVid={true}
+              />
+            </div>
+          </div>
           <div id="fthmlss-video">
             <div id="fthmlss-video-container">
               <HomeVideo type="video" post={fthmlssVideo[0]} playVid={true} />
