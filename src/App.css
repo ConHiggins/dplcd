@@ -12,7 +12,7 @@
   background: #0c1014;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 0px;
   border-radius: 50%;
   border: 19x solid #0c1014;
@@ -29,9 +29,9 @@
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+/*::-webkit-scrollbar-thumb:hover {
   background: #0c1014;
-}
+} */
 
 a {
   text-decoration: none;
