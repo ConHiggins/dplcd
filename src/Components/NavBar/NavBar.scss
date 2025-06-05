@@ -65,6 +65,7 @@
     padding: 0.5rem 0 1rem 0;
     animation-delay: 2s;
     z-index: 999;
+    border-bottom: 0;
 
     a {
       mix-blend-mode: difference;
@@ -104,22 +105,36 @@
     }
   }
 
+  .navbar-projects {
+    mix-blend-mode: normal;
+    border-bottom: solid 1px #131216;
+    background-color: $LightOffWhite;
+    z-index: 100;
+    a {
+      mix-blend-mode: normal;
+      color: $Navy;
+    }
+  }
+
   .navbar-right {
     display: flex;
     gap: 1rem;
     margin-right: 1rem;
     font-size: 0.8rem;
-    padding-top: 7px;
+    padding-top: 4px;
   }
 
   .navbar-left {
     margin-left: 1rem;
+    span {
+      line-height: -40px;
+    }
   }
 }
 
 @media screen and (min-width: 768px) {
   .navbar {
-    padding: 1rem 0 1rem 0;
+    padding: 0.5rem 0 0.5rem 0;
 
     width: 100%;
     &__link-snap {

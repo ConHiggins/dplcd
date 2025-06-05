@@ -66,7 +66,7 @@ const Home = ({ scPostsData }) => {
       wrapper.current = ScrollSmoother.create({
         wrapper: wrapper.current,
         content: content.current,
-        smooth: 3,
+        smooth: 1,
         effects: true,
       });
     },

@@ -1,5 +1,5 @@
 import "./NavBar.scss";
-import React, { useEffect, useState, useContext } from "react";
+import React, { useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const NavBar = ({ context }) => {
@@ -10,32 +10,19 @@ const NavBar = ({ context }) => {
   ];
 
   const location = useLocation();
+  const navBar = useRef();
 
-  console.log(location);
-
-  // const pages = [
-  //     { label: "PROJECTS", current: "/", to: "/projects", changeTo: 1 },
-  //     { label: "HOME", current: "/projects", to: "/", changeTo: 0 },
-  // ];
-
-  // const location = useLocation();
-  // const [buttonContent, setButtonContent] = useState(pages[0]);
-  // const [col, setCol] = useState({color: "#0c1014"});
-
-  // const handleContentChange = () => {
-  //     setCol(buttonContent.changeTo == 1 ? {color: "#ffffff"} : {color: "#0c1014"});
-  //     setButtonContent(pages[buttonContent.changeTo]);
-  // };
-
-  // useEffect(() => {
-  //     if ( buttonContent.current !== location.pathname) {
-  //         handleContentChange();
-  //     }
-  // }, [location]);
+  useEffect(() => {
+    if (location.pathname === "/projects" && navBar) {
+      navBar.current.className = "navbar navbar-projects";
+    } else {
+      navBar.current.className = "navbar";
+    }
+  }, [location]);
 
   return (
     <>
-      <div className="navbar">
+      <div ref={navBar} className="navbar">
         <div className="navbar-left">
           <Link to={"/"} className="global_link navbar__title">
             <span>dsplaced.</span>
