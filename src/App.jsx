@@ -4,6 +4,7 @@ import "./App.css";
 import React, { useEffect, useState, createContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
+import Projects from "./Components/Projects/Projects.jsx";
 import AllPosts from "./Components/AllPosts/AllPosts.jsx";
 import SinglePost from "./Components/SinglePost/SinglePost.jsx";
 import NavBar from "./Components/NavBar/NavBar";
@@ -104,12 +105,7 @@ function App() {
             exact
           />
           <Route
-            element={<GridPosts postsData={scPostsData} />}
-            path="/gridprojects"
-            exact
-          />
-          <Route
-            element={<AllPosts postsData={scPostsData} />}
+            element={<Projects postsData={scPostsData} />}
             path="/projects"
             exact
           />
