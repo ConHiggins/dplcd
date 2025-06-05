@@ -1,12 +1,5 @@
 //react
-import React, {
-  useEffect,
-  useState,
-  useRef,
-  createContext,
-  useContext,
-} from "react";
-import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 //gsap
 import { gsap } from "gsap";
@@ -14,15 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-//three
-import MyThree from "../THREE/MyThree.jsx";
-
 //components
-import Button from "../Button/Button.jsx";
-import Loading from "../Loading/Loading.jsx";
-import Footer from "../Footer/Footer.jsx";
-import SinglePost from "../SinglePost/SinglePost.jsx";
-import FolioPost from "../folioPost/folioPost.jsx";
 import HomeVideo from "./HomeVideo.jsx";
 import HomeImage from "./HomeImage.jsx";
 
@@ -31,26 +16,7 @@ import "./Home.scss";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
-const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
-  const splashContentArray = [
-    "dsplaced.",
-    "dsplaced. is a multidisciplinary creative practice producing work that spans creative-direction, filmmaking, photography, music production, sound design, consulting and more.",
-  ];
-
-  const [displayLoading, setDisplayLoading] = useState(false);
-  // const [splashContentIndex, setSplashContentIndex] = useState(0);
-  // const [splashContentClass, setSplashContentClass] = useState("home__splash-content inactive");
-  // const [folioIndex, setFolioIndex] = useState(0);
-
-  // const [width, setWidth] = useState(window.innerWidth);
-  // const [view, setView] = useState();
-
-  const linkCol = null;
-
-  const folioPosts = scPostsData;
-
-  console.log(folioPosts);
-
+const Home = ({ scPostsData }) => {
   //! REFACTOR THIS - not nice and probably unperformant
   const fractelVideo = scPostsData.filter((p) => {
     return p.slug === "fractel_folio";
@@ -92,47 +58,6 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
     return p.slug === "fthmlss_folio";
   });
 
-  // const handleWindowSizeChange = () => {
-  //   setWidth(window.innerWidth);
-  //   console.log(window.innerWidth);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", handleWindowSizeChange);
-  //   return () => {
-  //     window.removeEventListener("resize", handleWindowSizeChange);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   if (width >=  && width < 1024) {
-  //     setView("mobile");
-  //   }
-
-  //   if (width >= 1024) {
-  //     setView("desktop");
-  //   }
-  // }, [width]);
-
-  // useEffect(() => {
-  //   console.log(view);
-  // }, [view]);
-
-  //!BUG - seems to break context affecting GSAP anims
-  // useEffect(() => {
-  //   const mainTimeout = setTimeout(() => {
-  //     setDisplayLoading(false);
-  //   }, 10000);
-  // });
-
-  // ------------- GSAP ------------------------
-
-  const handleFolioUpdate = () => {
-    // setFolioIndex((folioIndex) =>
-    //   folioIndex >= folioPosts.length - 1 ? 0 : folioIndex + 1
-    // );
-  };
-
   const wrapper = useRef();
   const content = useRef();
 
@@ -150,8 +75,8 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
 
   useGSAP(() => {
     let mm = gsap.matchMedia();
-    //fractal-anims
 
+    //fractal-anims
     const pinVideo = "+=1200";
 
     mm.add("(min-width: 768px)", () => {
@@ -498,31 +423,7 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
           </div>
         </div>
       </div>
-      {/* <Footer linkCol={linkCol} /> */}
     </div>
-    // <>
-    //   <div className="home">
-    //     {/* {displayLoading && <MyThree />} */}
-    //     <div className="info__desc"></div>
-    //   </div>
-    //   {scPostsData && (
-    //     <div
-    //       className="folio-post-container"
-    //       ref={container}
-    //       onClick={() => {
-    //         handleFolioUpdate();
-    //         handleSetLinkColour(
-    //           folioPosts[folioIndex].props.post.linkCol,
-    //           linkCol
-    //         );
-    //       }}
-    //     >
-    //       {folioPosts[folioIndex]}
-    //     </div>
-    //   )}
-
-    //   <Footer linkCol={linkCol} />
-    // </>
   );
 };
 
