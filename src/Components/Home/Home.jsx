@@ -45,7 +45,7 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
   // const [width, setWidth] = useState(window.innerWidth);
   // const [view, setView] = useState();
 
-  const linkCol = null; // useContext(linkColContext);
+  const linkCol = null;
 
   const folioPosts = scPostsData;
 
@@ -136,18 +136,13 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
   const wrapper = useRef();
   const content = useRef();
 
-  //   const scrollTo = () => {
-  //     smoother.current.scrollTo(".box-c", true, "center center");
-  //   };
-
   useGSAP(
     () => {
-      // create the smooth scroller FIRST!
       wrapper.current = ScrollSmoother.create({
         wrapper: wrapper.current,
         content: content.current,
-        smooth: 2, // seconds it takes to "catch up" to native scroll position
-        effects: true, // look for data-speed and data-lag attributes on elements and animate accordingly
+        smooth: 3,
+        effects: true,
       });
     },
     { scope: wrapper }
@@ -156,6 +151,8 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
   useGSAP(() => {
     let mm = gsap.matchMedia();
     //fractal-anims
+
+    const pinVideo = "+=1200";
 
     mm.add("(min-width: 768px)", () => {
       gsap.from("#fractel-1", {
@@ -247,7 +244,7 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
         scrollTrigger: {
           trigger: "#stillness-video-container",
           start: "top top",
-          end: "+=600",
+          end: pinVideo,
           scrub: true,
           pin: true,
         },
@@ -335,25 +332,39 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
         },
       });
 
-      //highline video anims
-      gsap.from("#highline-dsplaced-video-container", {
+      //bop anims
+      gsap.from("#bop-video", {
         scrollTrigger: {
-          trigger: "#highline-dsplaced-video-container",
+          trigger: "#bop-video",
           start: "top top",
-          end: "+=600",
+          end: pinVideo,
           scrub: true,
           pin: true,
+          markers: false,
         },
       });
 
-      //bop anims
-      gsap.from("#bop-video-container", {
+      //highline video anims
+      gsap.from("#highline-dsplaced-video", {
         scrollTrigger: {
-          trigger: "#bop-video-container",
+          trigger: "#highline-dsplaced-video",
           start: "top top",
-          end: "+=600",
+          end: pinVideo,
           scrub: true,
           pin: true,
+          markers: false,
+        },
+      });
+
+      //fthmless anims
+      gsap.from("#fthmlss-video", {
+        scrollTrigger: {
+          trigger: "#fthmlss-video",
+          start: "top top",
+          end: pinVideo,
+          scrub: true,
+          pin: true,
+          markers: false,
         },
       });
     });
@@ -470,6 +481,7 @@ const Home = ({ handleSetLinkColour, scPostsData, bgStyle }) => {
               <HomeVideo type="video" post={bopVideo[0]} playVid={true} />
             </div>
           </div>
+          <div></div>
           <div id="highline-dsplaced-video">
             <div id="highline-dsplaced-video-container">
               <HomeVideo

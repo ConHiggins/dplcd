@@ -66,9 +66,10 @@
   background: $LighterOffWhite;
 }
 
-#fractel-video {
-  width: 100vw;
-  height: 100vh;
+//! simplify and consolidate video stuff into class
+.home {
+  // width: 100vw;
+  // height: 100vh;
 
   video {
     width: 100vw;
@@ -84,27 +85,40 @@
   background-color: black;
 }
 
-#alan-johnson-video {
-  width: 100vw;
-  height: 100vh;
+// #bop-video {
+//   width: 100vw;
+//   height: 100vh;
 
-  video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-  }
-}
+//   video {
+//     width: 100vw;
+//     height: 100vh;
+//     object-fit: cover;
+//     z-index: 100;
+//   }
+// }
 
-#fthmlss-video {
-  width: 100vw;
-  height: 100vh;
+// #highline-dsplaced-video {
+//   width: 100vw;
+//   height: 100vh;
 
-  video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-  }
-}
+//   video {
+//     width: 100vw;
+//     height: 100vh;
+//     object-fit: cover;
+//   }
+// }
+
+// #fthmlss-video {
+//   width: 100vw;
+//   height: 100vh;
+
+//   video {
+//     width: 100vw;
+//     height: 100vh;
+//     object-fit: cover;
+//     z-index: 90;
+//   }
+// }
 
 //!Mobile
 
@@ -166,7 +180,7 @@
   }
 
   #alan-johnson-images {
-    padding-bottom: 16px;
+    // padding-bottom: 16px;
     background-color: white;
   }
 

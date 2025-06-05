@@ -4,9 +4,9 @@ import { Link, useLocation } from "react-router-dom";
 
 const NavBar = ({ context }) => {
   const pages = [
-    { label: "SHOP", to: "/shop" },
-    { label: "INFO", to: "/info" },
-    { label: "PROJECTS", to: "/projects" },
+    { label: "Shop", to: "/shop" },
+    { label: "Info", to: "/info" },
+    { label: "Projects", to: "/projects" },
   ];
 
   const location = useLocation();
@@ -36,16 +36,20 @@ const NavBar = ({ context }) => {
   return (
     <>
       <div className="navbar">
-        <Link to={"/"} className="global_link navbar__title">
-          <span>dsplaced.</span>
-        </Link>
-        {pages.map((page) => {
-          return (
-            <Link to={page.to} className="global_link navbar__link">
-              {page.label}
-            </Link>
-          );
-        })}
+        <div className="navbar-left">
+          <Link to={"/"} className="global_link navbar__title">
+            <span>dsplaced.</span>
+          </Link>
+        </div>
+        <div className="navbar-right">
+          {pages.map((page) => {
+            return (
+              <Link to={page.to} className="global_link navbar__link">
+                <span>{page.label}</span>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </>
   );
