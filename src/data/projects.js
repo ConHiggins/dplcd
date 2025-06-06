@@ -82,6 +82,26 @@ const projects = [
   {
     slug: "fractelXdsplaced",
     title: "Terrasyn",
+    client: "Fractel X Dsplaced",
+    body: "Terrasyn Concept development, creative direction, design and production for a limited edition cap design with Fractel",
+    badges: ["CREATIVE DIRECTION", "CONCEPT", "DESIGN"],
+    imageStack: [...fracts, ...fracts2],
+    video: fractFolio,
+  },
+  {
+    slug: "myprotein",
+    title: "Manchester Run Club with Runna",
+    client: "My Protein",
+    body: "Photography for the MyProtein x Runna run club",
+    badges: ["PHOTOGRAPHY"],
+    imageStack: myproteinPics,
+  },
+];
+
+const projectsArchive = [
+  {
+    slug: "fractelXdsplaced",
+    title: "Terrasyn",
     client: "Fractel x dsplaced",
     subtext: "",
     body: (
@@ -547,6 +567,10 @@ const projects = [
     // isFolio: true,
     // linkCol: "dark",
     // isProjectsPage: false,
+  },
+  {
+    slug: "test-123",
+    title: "",
   },
 ];
 

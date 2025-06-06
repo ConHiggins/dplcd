@@ -105,7 +105,7 @@ function App() {
             exact
           />
           <Route
-            element={<Projects postsData={scPostsData} />}
+            element={<Projects scPostsData={scPostsData} />}
             path="/projects"
             exact
           />

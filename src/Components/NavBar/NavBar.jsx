@@ -29,9 +29,13 @@ const NavBar = ({ context }) => {
           </Link>
         </div>
         <div className="navbar-right">
-          {pages.map((page) => {
+          {pages.map((page, index) => {
             return (
-              <Link to={page.to} className="global_link navbar__link">
+              <Link
+                to={page.to}
+                className="global_link navbar__link"
+                key={page.label + "_" + index}
+              >
                 <span>{page.label}</span>
               </Link>
             );
