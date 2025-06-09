@@ -20,38 +20,9 @@ const Projects = ({ scPostsData }) => {
     return p.slug === "fractelXdsplaced";
   });
 
-  console.log(fractelImages);
+  const projects = scPostsData;
+  console.log(projects);
 
-  const projects = [
-    {
-      name: "FRACTEL X DSPLACED",
-      year: 2024,
-      description:
-        "Terrasyn Concept development, creative direction, design and production for a limited edition cap design with Fractel.",
-      badges: ["CREATIVE DIRECTION", "CONCEPT", "DESIGN"],
-      images: fractelImages.imageStack,
-    },
-    {
-      name: "MY PROTEIN",
-      year: 2025,
-      description: "Photography for the MyProtein x Runna run club.",
-      badges: ["PHOTOGRAPHY"],
-    },
-    {
-      name: "ALAN JOHNSON - GLORY DAYS",
-      year: 2023,
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam doloremque laborum repellat cumque harum laboriosam, eveniet, iusto distinctio laudantium fugiat nemo facilis neque iure saepe repudiandae ullam possimus adipisci? Soluta!",
-      badges: ["CREATIVE DIRECTION", "CONCEPT", "DESIGN"],
-    },
-    {
-      name: "HIGHLINE-ZINE",
-      year: 2024,
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam doloremque laborum repellat cumque harum laboriosam, eveniet, iusto distinctio laudantium fugiat nemo facilis neque iure saepe repudiandae ullam possimus adipisci? Soluta!",
-      badges: ["CREATIVE DIRECTION", "CONCEPT", "DESIGN"],
-    },
-  ];
   //! REFACTOR THIS - not nice and probably unperformant
   // import asset boilerplate
   //   const fractelVideo = scPostsData.filter((p) => {

@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import "./Home.scss";
 
 const HomeVideo = ({ post, playVid, videoStyle }) => {
-  const mediaType = post.mainImage ? "post__image" : "post__vid";
-  const mediaDimensions = post.isPortrait ? `-portrait` : `-landscape`;
+  //const mediaType = post.mainImage ? "post__image" : "post__vid";
+  //const mediaDimensions = post.isPortrait ? `-portrait` : `-landscape`;
 
   const stacks = post.imageStack
     ? [

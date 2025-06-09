@@ -17,37 +17,30 @@ import "./Home.scss";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 const Home = ({ scPostsData }) => {
+  console.log(scPostsData);
   //! REFACTOR THIS - not nice and probably unperformant
-  const fractelVideo = scPostsData.filter((p) => {
-    return p.slug === "fractel_folio";
+  const fractelXDsplaced = scPostsData.find((p) => {
+    return p.slug === "fractel-x-dsplaced";
   });
 
-  const fractelImages = scPostsData.filter((p) => {
-    return p.slug === "fractelXdsplaced";
-  });
-
-  const myProteinImages = scPostsData.filter((p) => {
+  const myProtein = scPostsData.find((p) => {
     return p.slug === "myprotein";
   });
 
-  const ajStillness = scPostsData.filter((p) => {
-    return p.slug === "aj_folio";
+  const ajStillness = scPostsData.find((p) => {
+    return p.slug === "alan-johnson-stillness";
   });
 
-  const ajFolio2 = scPostsData.filter((p) => {
-    return p.slug === "aj_folio2";
+  const ajProfile = scPostsData.find((p) => {
+    return p.slug === "alan-johnson-profile";
   });
 
-  const gloryDays = scPostsData.filter((p) => {
-    return p.slug === "glory-days-port";
-  });
-
-  const highlineZine = scPostsData.filter((p) => {
+  const highlineZine = scPostsData.find((p) => {
     return p.slug === "highline-zine";
   });
 
-  const bopVideo = scPostsData.filter((p) => {
-    return p.slug === "bop_video";
+  const bop = scPostsData.find((p) => {
+    return p.slug === "bop";
   });
 
   const highlineDsplacedVideo = scPostsData.filter((p) => {
@@ -301,26 +294,26 @@ const Home = ({ scPostsData }) => {
         <div className="home">
           <div id="fractel-video">
             <div id="fractel-video-container">
-              <HomeVideo type="video" post={fractelVideo[0]} playVid={true} />
+              <HomeVideo type="video" post={fractelXDsplaced} playVid={true} />
             </div>
           </div>
           <div className="image-section" id="fractel-image-section">
             <div className="image-container" id="fractel-images">
               <div id="fractel-1">
                 <HomeImage
-                  image={fractelImages[0].imageStack[0]}
+                  image={fractelXDsplaced.imageStack[0]}
                   imageClass="four-by-five-image"
                 />
               </div>
               <div id="fractel-2">
                 <HomeImage
-                  image={fractelImages[0].imageStack[1]}
+                  image={fractelXDsplaced.imageStack[1]}
                   imageClass="four-by-five-image"
                 />
               </div>
               <div id="fractel-3">
                 <HomeImage
-                  image={fractelImages[0].imageStack[2]}
+                  image={fractelXDsplaced.imageStack[2]}
                   imageClass="four-by-five-image"
                 />
               </div>
@@ -330,19 +323,19 @@ const Home = ({ scPostsData }) => {
             <div className="image-container" id="my-protein-images">
               <div id="my-protein-1">
                 <HomeImage
-                  image={myProteinImages[0].imageStack[1]}
+                  image={myProtein.imageStack[1]}
                   imageClass="four-by-five-image"
                 />
               </div>
               <div id="my-protein-2">
                 <HomeImage
-                  image={myProteinImages[0].imageStack[0]}
+                  image={myProtein.imageStack[0]}
                   imageClass="four-by-five-image"
                 />
               </div>
               <div id="my-protein-3">
                 <HomeImage
-                  image={myProteinImages[0].imageStack[2]}
+                  image={myProtein.imageStack[2]}
                   imageClass="four-by-five-image"
                 />
               </div>
@@ -352,7 +345,7 @@ const Home = ({ scPostsData }) => {
             <div id="stillness-video">
               <HomeVideo
                 videoStyle={{ height: "100vh" }}
-                post={ajStillness[0]}
+                post={ajStillness}
                 playVid={true}
               />
             </div>
@@ -361,19 +354,19 @@ const Home = ({ scPostsData }) => {
             <div className="image-container" id="alan-johnson-images">
               <div id="alan-johnson-1">
                 <HomeImage
-                  image={gloryDays[0].imageStack[0]}
+                  image={ajProfile.imageStack[0]}
                   imageClass="one-by-one-image"
                 />
               </div>
               <div id="alan-johnson-2">
                 <HomeImage
-                  image={ajFolio2[0].mainImage}
+                  image={ajProfile.imageStack[1]}
                   imageClass="one-by-one-image"
                 />
               </div>
               <div id="alan-johnson-3">
                 <HomeImage
-                  image={gloryDays[0].imageStack[1]}
+                  image={ajProfile.imageStack[2]}
                   imageClass="one-by-one-image"
                 />
               </div>
@@ -383,19 +376,19 @@ const Home = ({ scPostsData }) => {
             <div className="image-container" id="highline-zine-images">
               <div id="highline-zine-1">
                 <HomeImage
-                  image={highlineZine[1].imageStack[4]}
+                  image={highlineZine.imageStack[4]}
                   imageClass="four-by-five-image"
                 />
               </div>
               <div id="highline-zine-2">
                 <HomeImage
-                  image={highlineZine[0].mainImage}
+                  image={highlineZine.imageStack[0]}
                   imageClass="four-by-five-image"
                 />
               </div>
               <div id="highline-zine-3">
                 <HomeImage
-                  image={highlineZine[1].imageStack[7]}
+                  image={highlineZine.imageStack[7]}
                   imageClass="four-by-five-image"
                 />
               </div>
@@ -403,7 +396,7 @@ const Home = ({ scPostsData }) => {
           </div>
           <div id="bop-video">
             <div id="bop-video-container">
-              <HomeVideo type="video" post={bopVideo[0]} playVid={true} />
+              <HomeVideo type="video" post={bop} playVid={true} />
             </div>
           </div>
           <div></div>

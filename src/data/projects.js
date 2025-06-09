@@ -72,7 +72,7 @@ const hlzines = [hlZ0, hlz1, hlZ2, hlz3, hlZ4, hlz5, hlZ6, hlz7];
 
 const locksnvs = [locksnv0, locksnv1, locksnv2, locksnv3, locksnv4, locksnv5];
 
-const aj1 = [gloryDaysPort, ajRear];
+const aj1 = [ajFront, gloryDaysPort, ajRear];
 
 const fracts = [fract_1, fract_4];
 
@@ -80,25 +80,101 @@ const fracts2 = [fract_5, fract_6, fract_7];
 
 const projects = [
   {
-    slug: "fractelXdsplaced",
+    slug: "fractel-x-dsplaced",
     title: "Terrasyn",
     client: "Fractel X Dsplaced",
-    body: "Terrasyn Concept development, creative direction, design and production for a limited edition cap design with Fractel",
+    year: 3000,
+    description:
+      "Terrasyn Concept development, creative direction, design and production for a limited edition cap design with Fractel",
     badges: ["CREATIVE DIRECTION", "CONCEPT", "DESIGN"],
     imageStack: [...fracts, ...fracts2],
     video: fractFolio,
+    home: true,
+    projects: true,
   },
   {
     slug: "myprotein",
     title: "Manchester Run Club with Runna",
     client: "My Protein",
-    body: "Photography for the MyProtein x Runna run club",
+    year: 3000,
+    description: "Photography for the MyProtein x Runna run club",
     badges: ["PHOTOGRAPHY"],
     imageStack: myproteinPics,
+    home: true,
+    projects: true,
+  },
+  {
+    slug: "alan-johnson-stillness",
+    title: "Stillness Music Video",
+    client: "Alan Johnson",
+    year: 3000,
+    description: "PLACEHOLDER",
+    badges: ["CREATIVE DIRECTION", "VIDEOGRAPHY"],
+    video: ajFolio,
+    home: true,
+    projects: true,
+  },
+  {
+    slug: "alan-johnson-profile",
+    title: "Alan Johnson Profile",
+    client: "Alan Johnson",
+    year: 3000,
+    description:
+      "Creative direction and photography for <i>Alan Johnson</i> ahead of the release of Glory Days",
+    badges: ["CREATIVE DIRECTION", "PHOTOGRAPHY "],
+    imageStack: aj1,
+    home: true,
+    projects: true,
+  },
+  {
+    slug: "highline-zine",
+    title: "Highline Zine",
+    client: "Highline",
+    year: 3000,
+    description:
+      "A 24 page zine created as a follow on to a wider project on highlining",
+    badges: [],
+    imageStack: hlzines,
+    home: true,
+    projects: true,
+  },
+  {
+    slug: "bop",
+    title: "DJ ACADEMY",
+    client: "BOP",
+    year: 3000,
+    description:
+      "Video production to launch a new course by BOP for DnB Academy",
+    badges: ["VIDEOGRAPHY"],
+    video: bopVideo,
+    home: true,
+    projects: true,
+  },
+  {
+    slug: "highline_dsplaced_video",
+    title: "",
+    client: "",
+    year: 3000,
+    description: "PLACEHOLDER",
+    badges: ["VIDEO PRODUCTION"],
+    video: highlineDsplacedVideo,
+    home: true,
+    projects: true,
+  },
+  {
+    slug: "fthmlss_folio",
+    title: "",
+    client: "",
+    year: 3000,
+    description: "",
+    badges: ["VIDEO PRODUCTION"],
+    video: fthmlssFolio,
+    home: true,
+    projects: true,
   },
 ];
 
-const projectsArchive = [
+const projectsOld = [
   {
     slug: "fractelXdsplaced",
     title: "Terrasyn",
@@ -554,16 +630,6 @@ const projectsArchive = [
     subtext: "",
     client: "",
     video: bopVideo,
-    // isFolio: true,
-    // linkCol: "dark",
-    // isProjectsPage: false,
-  },
-  {
-    slug: "highline_dsplaced_video",
-    title: "",
-    subtext: "",
-    client: "",
-    video: highlineDsplacedVideo,
     // isFolio: true,
     // linkCol: "dark",
     // isProjectsPage: false,

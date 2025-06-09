@@ -5,21 +5,36 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 export const ProjectPanel = ({ project, gridLayout }) => {
-  console.log(project.images);
+  console.log(project);
+
+  let imageStack = project.imageStack;
+
   return (
     <div className="project-panel">
       <div className="project-panel-header">
-        <span>{project.name}</span>
-        <span>{project.year}</span>
+        <span className="project-panel-title">{project.title}</span>
+        <span className="project-panel-year">{project.year}</span>
       </div>
       <div className="project-panel-image-section">
-        {gridLayout === "grid-1" && (
-          <div className="image-grid-1">
-            <div className="image-grid-square" id="image-grid-1-square-1"></div>
-            <div className="image-grid-square" id="image-grid-1-square-2"></div>
-            <div className="image-grid-square" id="image-grid-1-square-3"></div>
-            <div className="image-grid-square" id="image-grid-1-square-4"></div>
-          </div>
+        {Array.isArray(imageStack) && (
+          <>
+            {gridLayout === "grid-1" && (
+              <div className="image-grid-1">
+                <div className="image-grid-square" id="image-grid-1-square-1">
+                  <img src={project.imageStack[0]} alt="" />
+                </div>
+                <div className="image-grid-square" id="image-grid-1-square-2">
+                  <img src={project.imageStack[1]} alt="" />
+                </div>
+                <div className="image-grid-square" id="image-grid-1-square-3">
+                  <img src={project.imageStack[2]} alt="" />
+                </div>
+                <div className="image-grid-square" id="image-grid-1-square-4">
+                  <img src={project.imageStack[3]} alt="" />
+                </div>
+              </div>
+            )}
+          </>
         )}
         <div className="project-panel-details-section">
           <div className="project-panel-description">

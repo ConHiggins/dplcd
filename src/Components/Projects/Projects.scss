@@ -21,9 +21,13 @@
   padding: 0 2rem 0 2rem;
 }
 
+.project-panel-title {
+  text-transform: uppercase;
+}
+
 .project-panel-image-section {
   height: 494px;
-  background-color: antiquewhite;
+  //background-color: antiquewhite;
   margin: 0 2rem 0 2rem;
 }
 
@@ -69,7 +73,13 @@
 //image grid generic
 .image-grid-square {
   height: 100%;
-  background-color: #343434;
+  //background-color: #343434;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 //image-grid-1
@@ -83,7 +93,7 @@
 }
 
 #image-grid-1-square-1 {
-  background-color: blue;
+  //background-color: blue;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
@@ -91,7 +101,7 @@
 }
 
 #image-grid-1-square-2 {
-  background-color: red;
+  //background-color: red;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -99,7 +109,7 @@
 }
 
 #image-grid-1-square-3 {
-  background-color: green;
+  //background-color: green;
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 1;
@@ -107,7 +117,7 @@
 }
 
 #image-grid-1-square-4 {
-  background-color: greenyellow;
+  //background-color: greenyellow;
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 2;
