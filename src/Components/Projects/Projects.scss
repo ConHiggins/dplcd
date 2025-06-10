@@ -3,12 +3,13 @@
 .projects {
   margin-top: 41px;
   background-color: $LightOffWhite;
+  font-family: Roboto;
 }
 
 .project-panel {
   height: 640px;
   // border-top: 1px solid #131216;
-  border-bottom: 1px solid #131216;
+  border-bottom: 1px solid #b2b2b2;
 }
 
 .project-panel-header {
@@ -16,19 +17,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Stolzl";
   // font-weight: 800;
   padding: 0 2rem 0 2rem;
 }
 
 .project-panel-title {
-  font-weight: 900;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
 .project-panel-client {
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
+}
+
+.project-panel-year {
+  font-weight: 400;
 }
 
 .project-panel-image-section {
@@ -50,8 +54,7 @@
 }
 
 .project-panel-description {
-  font-family: "Stolzl";
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.8rem;
   p {
     margin: 0;
@@ -61,6 +64,7 @@
 .project-panel-badges {
   margin-left: auto;
   display: flex;
+  font-weight: 300;
 }
 
 .project-panel-badge {
@@ -87,6 +91,7 @@
   height: 100%;
   //background-color: #343434;
   overflow: hidden;
+  cursor: pointer;
   img {
     object-fit: cover;
     height: 100%;
@@ -171,40 +176,37 @@
   // height: 100vh;
 }
 
-.modal-body {
+.modal {
   height: auto;
-  background-color: white;
+  width: auto;
+  background-color: $LightOffWhite;
   opacity: 100%;
-  margin-top: auto;
-  margin-bottom: auto;
+  outline: none !important;
+  max-width: 80%;
 }
-// .gallery-modal-container {
-//   // display: flex;
-//   // justify-content: center;
-//   // align-items: center;
-//   position: fixed;
-//   width: 100vw;
-//   height: 100vh;
-// }
 
-// .gallery-modal-bg {
-//   width: 100vw;
-//   height: 100vh;
-//   position: fixed;
-//   background-color: black;
-//   opacity: 15%;
-//   width: 100vw;
-//   height: 100vh;
-// }
+.modal-header {
+  width: auto;
+  display: flex;
+  align-items: center;
+  background: none;
+  padding: 4px 4px;
+}
 
-// .gallery-modal {
-//   border-radius: 4px;
-//   height: 200px;
-//   width: auto;
-//   background-color: red;
-//   position: fixed;
-//   left: 50%;
-//   transform: translate(-50%, 0);
-//   top: 50%;
-//   transform: translate(0, -50%);
-// }
+.modal-body {
+  display: flex;
+}
+
+.modal-footer {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  padding: 4px 4px;
+}
+
+.modal-image {
+  height: 80vh;
+  object-fit: cover;
+}

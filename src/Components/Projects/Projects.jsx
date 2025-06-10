@@ -21,6 +21,7 @@ export const Projects = ({ scPostsData }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalProject, setModalProject] = useState(undefined);
   const [modalMode, setModalMode] = useState(undefined);
+  const [modalImage, setModalImage] = useState(undefined);
 
   //! REFACTOR THIS - not nice and probably unperformant
   // import asset boilerplate
@@ -28,7 +29,6 @@ export const Projects = ({ scPostsData }) => {
   //     return p.slug === "fractel_folio";
   //   });
 
-  console.log(modalOpen);
   const wrapper = useRef();
   const content = useRef();
 
@@ -85,6 +85,8 @@ export const Projects = ({ scPostsData }) => {
             setModalProject={(project) => setModalProject(project)}
             modalMode={modalMode}
             setModalMode={(mode) => setModalMode(mode)}
+            modalImage={modalImage}
+            setModalImage={(image) => setModalImage(image)}
           />
           {/* <button onClick={() => setIsOpen(true)}>DIALOG</button> */}
           {projects.map((project, index) => {
@@ -93,6 +95,7 @@ export const Projects = ({ scPostsData }) => {
                 setModalOpen={(bool) => setModalOpen(bool)}
                 setModalProject={(project) => setModalProject(project)}
                 setModalMode={(mode) => setModalMode(mode)}
+                setModalImage={(image) => setModalImage(image)}
                 project={project}
                 gridLayout={"grid-1"}
                 key={project.name + "_" + index}

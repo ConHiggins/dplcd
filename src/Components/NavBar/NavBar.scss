@@ -51,8 +51,7 @@
 
   .navbar {
     mix-blend-mode: difference;
-    font-family: "Stolzl";
-    font-style: italic;
+    //font-style: italic;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -74,10 +73,10 @@
 
     &__link {
       position: relative;
-
+      font-family: Roboto;
       text-decoration: none;
-      font-style: italic;
-      font-weight: bold;
+      text-transform: uppercase;
+      font-weight: 400;
       text-align: center;
       //position: absolute;
       // right: 10vw;
@@ -102,12 +101,13 @@
 
     &__title {
       font-family: "Kanit";
+      font-style: italic;
     }
   }
 
   .navbar-projects {
     mix-blend-mode: normal;
-    border-bottom: solid 1px #131216;
+    border-bottom: solid 1px #b2b2b2;
     background-color: $LightOffWhite;
     z-index: 100;
     a {

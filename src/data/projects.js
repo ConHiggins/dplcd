@@ -74,7 +74,7 @@ const locksnvs = [locksnv0, locksnv1, locksnv2, locksnv3, locksnv4, locksnv5];
 
 const aj1 = [ajFront, gloryDaysPort, ajRear];
 
-const fracts = [fract_6, fract_4, fract_5, fract_7, fract_1];
+const fracts = [fract_6, fract_4, fract_5, fract_7];
 // const fracts = [fract_1, fract_4];
 
 // const fracts2 = [fract_5, fract_6, fract_7];
@@ -159,8 +159,8 @@ const projects = [
   },
   {
     slug: "highline_dsplaced_video",
-    title: "",
-    client: "",
+    title: "Highline Dsplaced Video",
+    client: "Highline X Dsplaced",
     year: 2030,
     description: "PLACEHOLDER",
     badges: ["VIDEO PRODUCTION"],
@@ -171,10 +171,11 @@ const projects = [
   },
   {
     slug: "fthmlss_folio",
-    title: "",
-    client: "",
+    title: "Niagra Music Video",
+    client: "Fthmlss",
     year: 2030,
-    description: "",
+    description:
+      'dsplaced. creates performance video for Fthmlss\' latest release "Niagra". Performance by Olivia Richards.',
     badges: ["VIDEO PRODUCTION"],
     gridLayout: "grid-1",
     video: fthmlssFolio,

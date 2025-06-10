@@ -9,16 +9,18 @@ export const ProjectPanel = ({
   setModalOpen,
   setModalProject,
   setModalMode,
+  setModalImage,
 }) => {
   let imageStack = project.imageStack;
 
-  const videoRef = useRef();
-
-  const handleClick = (mode) => {
+  const handleClick = (mode, image) => {
     setModalOpen(true);
     setModalProject(project);
     setModalMode(mode);
+    setModalImage(image);
   };
+
+  console.log("project.title", project);
 
   return (
     <div className="project-panel">
@@ -32,91 +34,109 @@ export const ProjectPanel = ({
         <span className="project-panel-year">{project.year}</span>
       </div>
       <div className="project-panel-image-section">
-        {Array.isArray(imageStack) && (
-          <>
-            {project.gridLayout === "grid-1" && (
-              <div className="image-grid-1">
-                <div className="image-grid-square" id="image-grid-1-square-1">
-                  {project.video ? (
-                    <video
-                      onClick={() => handleClick("video")}
-                      className={"project-video"}
-                      type="video/mp4"
-                      autoPlay={true}
-                      id="video"
-                      crossOrigin="true"
-                      playsInline
-                      muted
-                      webkit-playsinline="true"
-                      loop
+        {/* PROJECT GRID 1*/}
+        {project.gridLayout === "grid-1" && (
+          <div className="image-grid-1">
+            <div className="image-grid-square" id="image-grid-1-square-1">
+              {project.video && (
+                <video
+                  onClick={() => handleClick("video")}
+                  className={"project-video"}
+                  type="video/mp4"
+                  autoPlay={true}
+                  id="video"
+                  crossOrigin="true"
+                  playsInline
+                  muted
+                  webkit-playsinline="true"
+                  loop
+                >
+                  <source src={`${project.video}`} />
+                </video>
+              )}
+            </div>
+            {Array.isArray(project.imageStack) &&
+              project.imageStack.length > 0 && (
+                <>
+                  {!project.video && (
+                    <div
+                      className="image-grid-square"
+                      id="image-grid-1-square-1"
+                      onClick={() => handleClick("image", 0)}
                     >
-                      <source src={`${project.video}`} />
-                    </video>
-                  ) : (
-                    <img
-                      onClick={() => handleClick("images")}
-                      src={project.imageStack[0]}
-                      alt=""
-                    />
+                      <img src={project.imageStack[0]} alt="" />
+                    </div>
                   )}
-                </div>
+                  <div
+                    className="image-grid-square"
+                    id="image-grid-1-square-2"
+                    onClick={() => handleClick("image", 1)}
+                  >
+                    <img src={project.imageStack[1]} alt="" />
+                  </div>
+                  <div
+                    className="image-grid-square"
+                    id="image-grid-1-square-3"
+                    onClick={() => handleClick("image", 2)}
+                  >
+                    <img src={project.imageStack[2]} alt="" />
+                  </div>
+                  <div
+                    className="image-grid-square"
+                    id="image-grid-1-square-4"
+                    onClick={() => handleClick("image", 3)}
+                  >
+                    <img src={project.imageStack[3]} alt="" />
+                  </div>
+                </>
+              )}
+          </div>
+        )}
+        {/* PROJECT GRID 2*/}
+        {project.gridLayout === "grid-2" && (
+          <div className="image-grid-2">
+            <div className="image-grid-square" id="image-grid-2-square-1">
+              {project.video ? (
+                <video
+                  onClick={() => handleClick("video")}
+                  // style={videoStyle}
+                  // ref={videoRef}
+                  className={"project-video"}
+                  type="video/mp4"
+                  autoPlay={true}
+                  id="video"
+                  crossOrigin="true"
+                  playsInline
+                  muted
+                  webkit-playsinline="true"
+                  loop
+                >
+                  <source src={`${project.video}`} />
+                </video>
+              ) : (
+                <img
+                  onClick={() => handleClick("image", 0)}
+                  src={project.imageStack[0]}
+                  alt=""
+                />
+              )}
+            </div>
 
-                <div
-                  className="image-grid-square"
-                  id="image-grid-1-square-2"
-                  onClick={() => handleClick("images")}
-                >
-                  <img src={project.imageStack[1]} alt="" />
-                </div>
-                <div
-                  className="image-grid-square"
-                  id="image-grid-1-square-3"
-                  onClick={() => handleClick("images")}
-                >
-                  <img src={project.imageStack[2]} alt="" />
-                </div>
-                <div
-                  className="image-grid-square"
-                  id="image-grid-1-square-4"
-                  onClick={() => handleClick("images")}
-                >
-                  <img src={project.imageStack[3]} alt="" />
-                </div>
-              </div>
-            )}
-            {project.gridLayout === "grid-2" && (
-              <div className="image-grid-2">
-                <div className="image-grid-square" id="image-grid-2-square-1">
-                  {project.video ? (
-                    <video
-                      // style={videoStyle}
-                      // ref={videoRef}
-                      className={"project-video"}
-                      type="video/mp4"
-                      autoPlay={true}
-                      id="video"
-                      crossOrigin="true"
-                      playsInline
-                      muted
-                      webkit-playsinline="true"
-                      loop
-                    >
-                      <source src={`${project.video}`} />
-                    </video>
-                  ) : (
-                    <img src={project.imageStack[0]} alt="" />
-                  )}
-                </div>
-
-                <div className="image-grid-square" id="image-grid-2-square-2">
-                  <img src={project.imageStack[1]} alt="" />
-                </div>
-                <div className="image-grid-square" id="image-grid-2-square-3">
-                  <img src={project.imageStack[2]} alt="" />
-                </div>
-              </div>
-            )}
-          </>
+            <div className="image-grid-square" id="image-grid-2-square-2">
+              <img
+                onClick={() => handleClick("image", 1)}
+                src={project.imageStack[1]}
+                alt=""
+              />
+            </div>
+            <div className="image-grid-square" id="image-grid-2-square-3">
+              <img
+                onClick={() => handleClick("image", 2)}
+                src={project.imageStack[2]}
+                alt=""
+              />
+            </div>
+          </div>
         )}
         <div className="project-panel-details-section">
           <div className="project-panel-description">
