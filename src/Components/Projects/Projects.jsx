@@ -16,10 +16,6 @@ import "./Projects.scss";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 const Projects = ({ scPostsData }) => {
-  const fractelImages = scPostsData.find((p) => {
-    return p.slug === "fractelXdsplaced";
-  });
-
   const projects = scPostsData;
   console.log(projects);
 

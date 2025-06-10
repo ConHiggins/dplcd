@@ -74,20 +74,22 @@ const locksnvs = [locksnv0, locksnv1, locksnv2, locksnv3, locksnv4, locksnv5];
 
 const aj1 = [ajFront, gloryDaysPort, ajRear];
 
-const fracts = [fract_1, fract_4];
+const fracts = [fract_6, fract_4, fract_5, fract_7, fract_1];
+// const fracts = [fract_1, fract_4];
 
-const fracts2 = [fract_5, fract_6, fract_7];
+// const fracts2 = [fract_5, fract_6, fract_7];
 
 const projects = [
   {
     slug: "fractel-x-dsplaced",
     title: "Terrasyn",
     client: "Fractel X Dsplaced",
-    year: 3000,
+    year: 2030,
     description:
       "Terrasyn Concept development, creative direction, design and production for a limited edition cap design with Fractel",
     badges: ["CREATIVE DIRECTION", "CONCEPT", "DESIGN"],
-    imageStack: [...fracts, ...fracts2],
+    gridLayout: "grid-1",
+    imageStack: fracts,
     video: fractFolio,
     home: true,
     projects: true,
@@ -96,9 +98,10 @@ const projects = [
     slug: "myprotein",
     title: "Manchester Run Club with Runna",
     client: "My Protein",
-    year: 3000,
+    year: 2030,
     description: "Photography for the MyProtein x Runna run club",
     badges: ["PHOTOGRAPHY"],
+    gridLayout: "grid-1",
     imageStack: myproteinPics,
     home: true,
     projects: true,
@@ -107,9 +110,10 @@ const projects = [
     slug: "alan-johnson-stillness",
     title: "Stillness Music Video",
     client: "Alan Johnson",
-    year: 3000,
+    year: 2030,
     description: "PLACEHOLDER",
     badges: ["CREATIVE DIRECTION", "VIDEOGRAPHY"],
+    gridLayout: "grid-1",
     video: ajFolio,
     home: true,
     projects: true,
@@ -118,10 +122,11 @@ const projects = [
     slug: "alan-johnson-profile",
     title: "Alan Johnson Profile",
     client: "Alan Johnson",
-    year: 3000,
+    year: 2030,
     description:
       "Creative direction and photography for <i>Alan Johnson</i> ahead of the release of Glory Days",
     badges: ["CREATIVE DIRECTION", "PHOTOGRAPHY "],
+    gridLayout: "grid-2",
     imageStack: aj1,
     home: true,
     projects: true,
@@ -130,10 +135,11 @@ const projects = [
     slug: "highline-zine",
     title: "Highline Zine",
     client: "Highline",
-    year: 3000,
+    year: 2030,
     description:
       "A 24 page zine created as a follow on to a wider project on highlining",
     badges: [],
+    gridLayout: "grid-1",
     imageStack: hlzines,
     home: true,
     projects: true,
@@ -142,10 +148,11 @@ const projects = [
     slug: "bop",
     title: "DJ ACADEMY",
     client: "BOP",
-    year: 3000,
+    year: 2030,
     description:
       "Video production to launch a new course by BOP for DnB Academy",
     badges: ["VIDEOGRAPHY"],
+    gridLayout: "grid-1",
     video: bopVideo,
     home: true,
     projects: true,
@@ -154,9 +161,10 @@ const projects = [
     slug: "highline_dsplaced_video",
     title: "",
     client: "",
-    year: 3000,
+    year: 2030,
     description: "PLACEHOLDER",
     badges: ["VIDEO PRODUCTION"],
+    gridLayout: "grid-1",
     video: highlineDsplacedVideo,
     home: true,
     projects: true,
@@ -165,9 +173,10 @@ const projects = [
     slug: "fthmlss_folio",
     title: "",
     client: "",
-    year: 3000,
+    year: 2030,
     description: "",
     badges: ["VIDEO PRODUCTION"],
+    gridLayout: "grid-1",
     video: fthmlssFolio,
     home: true,
     projects: true,
@@ -187,7 +196,7 @@ const projectsOld = [
         for a limited edition cap design with <i>Fractel</i>.
       </p>
     ),
-    imageStack: fracts2,
+    imageStack: fracts,
     videoURL: "https://player.vimeo.com/video/992684006?h=0fb85b4f0d",
     isFolio: false,
     isProjectsPage: true,
