@@ -4,10 +4,21 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
-export const ProjectPanel = ({ project, video }) => {
+export const ProjectPanel = ({
+  project,
+  setModalOpen,
+  setModalProject,
+  setModalMode,
+}) => {
   let imageStack = project.imageStack;
 
   const videoRef = useRef();
+
+  const handleClick = (mode) => {
+    setModalOpen(true);
+    setModalProject(project);
+    setModalMode(mode);
+  };
 
   return (
     <div className="project-panel">
@@ -28,14 +39,10 @@ export const ProjectPanel = ({ project, video }) => {
                 <div className="image-grid-square" id="image-grid-1-square-1">
                   {project.video ? (
                     <video
-                      // ref={videoRef}
-                      // onMouseEnter={videoRef.current.play()}
-                      // onMouseLeave={videoRef.current.pause()}
-                      // style={videoStyle}
-                      // ref={videoRef}
+                      onClick={() => handleClick("video")}
                       className={"project-video"}
                       type="video/mp4"
-                      autoPlay={false}
+                      autoPlay={true}
                       id="video"
                       crossOrigin="true"
                       playsInline
@@ -46,17 +53,33 @@ export const ProjectPanel = ({ project, video }) => {
                       <source src={`${project.video}`} />
                     </video>
                   ) : (
-                    <img src={project.imageStack[0]} alt="" />
+                    <img
+                      onClick={() => handleClick("images")}
+                      src={project.imageStack[0]}
+                      alt=""
+                    />
                   )}
                 </div>
 
-                <div className="image-grid-square" id="image-grid-1-square-2">
+                <div
+                  className="image-grid-square"
+                  id="image-grid-1-square-2"
+                  onClick={() => handleClick("images")}
+                >
                   <img src={project.imageStack[1]} alt="" />
                 </div>
-                <div className="image-grid-square" id="image-grid-1-square-3">
+                <div
+                  className="image-grid-square"
+                  id="image-grid-1-square-3"
+                  onClick={() => handleClick("images")}
+                >
                   <img src={project.imageStack[2]} alt="" />
                 </div>
-                <div className="image-grid-square" id="image-grid-1-square-4">
+                <div
+                  className="image-grid-square"
+                  id="image-grid-1-square-4"
+                  onClick={() => handleClick("images")}
+                >
                   <img src={project.imageStack[3]} alt="" />
                 </div>
               </div>
