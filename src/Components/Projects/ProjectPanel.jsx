@@ -20,8 +20,6 @@ export const ProjectPanel = ({
     setModalImage(image);
   };
 
-  console.log("project.title", project);
-
   return (
     <div className="project-panel">
       <div className="project-panel-header">

@@ -20,11 +20,11 @@ const Home = ({ scPostsData }) => {
   console.log(scPostsData);
   //! REFACTOR THIS - not nice and probably unperformant
   const fractelXDsplaced = scPostsData.find((p) => {
-    return p.slug === "fractel-x-dsplaced";
+    return p.slug === "terrasyn";
   });
 
   const myProtein = scPostsData.find((p) => {
-    return p.slug === "myprotein";
+    return p.slug === "manchester-run-club";
   });
 
   const ajStillness = scPostsData.find((p) => {
@@ -40,15 +40,15 @@ const Home = ({ scPostsData }) => {
   });
 
   const bop = scPostsData.find((p) => {
-    return p.slug === "bop";
+    return p.slug === "dj-academy";
   });
 
   const highlineDsplacedVideo = scPostsData.filter((p) => {
-    return p.slug === "highline_dsplaced_video";
+    return p.slug === "hike-society-AT95";
   });
 
   const fthmlssVideo = scPostsData.filter((p) => {
-    return p.slug === "fthmlss_folio";
+    return p.slug === "niagra";
   });
 
   const wrapper = useRef();

@@ -47,6 +47,7 @@ export const ProjectModal = ({
         <Fade in={modalOpen}>
           <div className="modal">
             <div className="modal-header">
+              {/* <p>{modalImage}</p> */}
               <IconButton
                 onClick={handleClose}
                 className="modal-close"

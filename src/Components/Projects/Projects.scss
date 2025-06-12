@@ -4,6 +4,7 @@
   margin-top: 41px;
   background-color: $LightOffWhite;
   font-family: Roboto;
+  font-weight: 400;
 }
 
 .project-panel {
@@ -17,7 +18,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // font-weight: 800;
   padding: 0 2rem 0 2rem;
 }
 
@@ -27,11 +27,7 @@
 }
 
 .project-panel-client {
-  font-weight: 400;
   text-transform: uppercase;
-}
-
-.project-panel-year {
   font-weight: 400;
 }
 
@@ -54,7 +50,6 @@
 }
 
 .project-panel-description {
-  font-weight: 400;
   font-size: 0.8rem;
   p {
     margin: 0;
@@ -64,7 +59,7 @@
 .project-panel-badges {
   margin-left: auto;
   display: flex;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .project-panel-badge {
