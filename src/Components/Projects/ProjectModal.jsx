@@ -43,57 +43,97 @@ export const ProjectModal = ({
     modalOpen &&
     modalProject &&
     modalMode && (
-      <Modal open={modalOpen} onClose={handleClose} className="modal-container">
-        <Fade in={modalOpen}>
-          <div className="modal">
-            <div className="modal-header">
-              {/* <p>{modalImage}</p> */}
-              <IconButton
-                onClick={handleClose}
-                className="modal-close"
-                aria-label="close"
-                size="small"
-                sx={{ marginLeft: "auto" }}
-              >
-                <CloseIcon />
-              </IconButton>
-            </div>
-            <div className="modal-body">
-              {modalProject.imageStack &&
-                modalMode === "image" &&
-                typeof modalImage === "number" &&
-                modalImage >= 0 && (
-                  <>
+      <>
+        {modalProject.imageStack &&
+          modalMode === "image" &&
+          typeof modalImage === "number" &&
+          modalImage >= 0 && (
+            <Modal
+              open={modalOpen}
+              onClose={handleClose}
+              className="image-modal-container"
+            >
+              <Fade in={modalOpen}>
+                <div className="image-modal">
+                  <div className="image-modal-header">
+                    <IconButton
+                      onClick={handleClose}
+                      aria-label="close"
+                      size="small"
+                      sx={{ marginLeft: "auto" }}
+                    >
+                      <CloseIcon />
+                    </IconButton>
+                  </div>
+                  <div className="image-modal-body">
                     <img
-                      className="modal-image"
+                      className="image-modal-image"
                       src={modalProject.imageStack[modalImage]}
                     ></img>
-                  </>
-                )}
-            </div>
-            <div className="modal-footer">
-              <IconButton
-                onClick={handleLeft}
-                className="modal-close"
-                aria-label="close"
-                size="small"
-                sx={{ marginRight: "8px" }}
-              >
-                <ArrowLeftIcon />
-              </IconButton>
-              <IconButton
-                onClick={handleRight}
-                className="modal-close"
-                aria-label="close"
-                size="small"
-                sx={{ marginLeft: "8px" }}
-              >
-                <ArrowRightIcon />
-              </IconButton>
-            </div>
-          </div>
-        </Fade>
-      </Modal>
+                  </div>
+                  <div className="image-modal-footer">
+                    <IconButton
+                      onClick={handleLeft}
+                      aria-label="close"
+                      size="small"
+                      sx={{ marginRight: "8px" }}
+                    >
+                      <ArrowLeftIcon />
+                    </IconButton>
+                    <IconButton
+                      onClick={handleRight}
+                      aria-label="close"
+                      size="small"
+                      sx={{ marginLeft: "8px" }}
+                    >
+                      <ArrowRightIcon />
+                    </IconButton>
+                  </div>
+                </div>
+              </Fade>
+            </Modal>
+          )}
+        {modalMode === "video" && modalProject.video && (
+          <Modal
+            open={modalOpen}
+            onClose={handleClose}
+            className="video-modal-container"
+          >
+            <Fade in={modalOpen}>
+              <div className="video-modal">
+                <div className="video-modal-header">
+                  <IconButton
+                    onClick={handleClose}
+                    aria-label="close"
+                    size="small"
+                    sx={{ marginLeft: "auto" }}
+                  >
+                    <CloseIcon />
+                  </IconButton>
+                </div>
+                <div className="video-modal-body">
+                  <video
+                    // style={videoStyle}
+                    // ref={videoRef}
+                    className="video-modal-video"
+                    type="video/mp4"
+                    autoPlay={true}
+                    id="video"
+                    crossOrigin="true"
+                    playsInline
+                    muted
+                    webkit-playsinline="true"
+                    loop
+                  >
+                    <source src={modalProject.video} />
+                  </video>
+                </div>
+                <div className="video-modal-footer"></div>
+              </div>
+            </Fade>
+          </Modal>
+        )}
+      </>
     )
   );
 };
