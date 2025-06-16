@@ -165,8 +165,8 @@ const fthmlssPortStills = [
 
 const stillnessStills = [
   stillnessStill4,
-  stillnessStill1,
   stillnessStill3,
+  stillnessStill1,
   stillnessStill2,
 ];
 
@@ -208,7 +208,7 @@ const projects = [
     description:
       "Terrasyn Concept development, creative direction, design and production for a limited edition cap design with Fractel",
     badges: ["CREATIVE DIRECTION", "CONCEPT", "DESIGN"],
-    gridLayout: "grid-1",
+    gridLayout: 0,
     imageStack: fracts,
     video: fractFolio,
     home: true,
@@ -221,7 +221,7 @@ const projects = [
     year: 2030,
     description: "Photography for the MyProtein x Runna run club",
     badges: ["PHOTOGRAPHY"],
-    gridLayout: "grid-1",
+    gridLayout: 3,
     imageStack: myproteinPics,
     home: true,
     projects: true,
@@ -234,7 +234,7 @@ const projects = [
     description:
       "Creative direction and photography for Alan Johnson ahead of the release of Glory Days",
     badges: ["CREATIVE DIRECTION", "PHOTOGRAPHY "],
-    gridLayout: "grid-2",
+    gridLayout: 1,
     imageStack: aj1,
     home: true,
     projects: true,
@@ -247,7 +247,7 @@ const projects = [
     description:
       "Video production to launch a new course by BOP for DnB Academy",
     badges: ["VIDEOGRAPHY"],
-    gridLayout: "grid-1",
+    gridLayout: 4,
     video: bopVideo,
     imageStack: bopStills,
     home: true,
@@ -261,7 +261,7 @@ const projects = [
     description:
       "A 24 page zine created as a follow on to a wider project on highlining",
     badges: [],
-    gridLayout: "grid-1",
+    gridLayout: 2,
     imageStack: hlzines,
     home: true,
     projects: true,
@@ -274,7 +274,7 @@ const projects = [
     description:
       "Short film created for Columbia as part of their Hike Society series, featuring AT95",
     badges: ["VIDEO PRODUCTION"],
-    gridLayout: "grid-1",
+    gridLayout: 5,
     video: highlineDsplacedVideo,
     imageStack: highlineStills,
     home: true,
@@ -288,7 +288,7 @@ const projects = [
     description:
       "Photography services for Lock Holds to showcase their Supernova Series",
     badges: [],
-    gridLayout: "grid-1",
+    gridLayout: 3,
     imageStack: locksnvs,
     home: false,
     projects: true,
@@ -301,7 +301,7 @@ const projects = [
     description:
       "Photography services for Lock Holds to showcase their Supernova Series",
     badges: [],
-    gridLayout: "grid-1",
+    gridLayout: 2,
     video: coticVid,
     imageStack: coticStills,
     home: false,
@@ -315,7 +315,7 @@ const projects = [
     description:
       "Short video created for Lock Holds documenting their Europe trip",
     badges: [],
-    gridLayout: "grid-1",
+    gridLayout: 0,
     video: lockholdsVid,
     imageStack: lockStills,
     home: false,
@@ -329,7 +329,7 @@ const projects = [
     description:
       "Portrait visual created for Fthmlss as part of ongoing album launch",
     badges: [],
-    gridLayout: "grid-1",
+    gridLayout: 2,
     video: fthmlssPortVid,
     imageStack: fthmlssPortStills,
     home: false,
@@ -343,7 +343,7 @@ const projects = [
     description:
       'dsplaced. creates performance video for Fthmlss\' latest release "Niagra". Performance by Olivia Richards.',
     badges: ["VIDEO PRODUCTION"],
-    gridLayout: "grid-1",
+    gridLayout: 1,
     video: fthmlssFolio,
     imageStack: niagraStills,
     home: true,
@@ -357,7 +357,7 @@ const projects = [
     description:
       "dsplaced. creates visual for the title track of the latest Alan Johnson EP, Stillness. Created forSneaker Social Club, the video explores expression, both physical and mental. Looking at emotion, mood and mind, the video looks to complement the track's calm to frantic evolution. The video can be seen on the FACT website, with an additional write-up there.",
     badges: ["CREATIVE DIRECTION", "VIDEOGRAPHY"],
-    gridLayout: "grid-1",
+    gridLayout: 4,
     video: ajFolio,
     imageStack: stillnessStills,
     home: true,

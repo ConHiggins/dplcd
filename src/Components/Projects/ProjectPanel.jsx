@@ -1,8 +1,11 @@
-import { useRef } from "react";
+// import { useRef } from "react";
 
 //gsap
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+// import { gsap } from "gsap";
+// import { useGSAP } from "@gsap/react";
+
+import { getGridStyle } from "../utils/projectLayoutHelpers";
+import { getSquareStyle } from "../utils/projectLayoutHelpers";
 
 export const ProjectPanel = ({
   project,
@@ -11,7 +14,7 @@ export const ProjectPanel = ({
   setModalMode,
   setModalImage,
 }) => {
-  let imageStack = project.imageStack;
+  const onScreenDebug = false;
 
   const handleClick = (mode, image) => {
     setModalOpen(true);
@@ -28,127 +31,85 @@ export const ProjectPanel = ({
           <span className="project-panel-client">
             {" // " + project.client}
           </span>
+          {onScreenDebug && (
+            <span style={{ color: "red" }}>
+              DEBUG LAYOUT GRID = {project.gridLayout}
+            </span>
+          )}
         </span>
         <span className="project-panel-year">{project.year}</span>
       </div>
       <div className="project-panel-image-section">
-        {/* PROJECT GRID 1*/}
-        {project.gridLayout === "grid-1" && (
-          <div className="image-grid-1">
-            <div className="image-grid-square" id="image-grid-1-square-1">
-              {project.video && (
-                <video
-                  onClick={() => handleClick("video")}
-                  className={"project-video"}
-                  type="video/mp4"
-                  autoPlay={true}
-                  id="video"
-                  crossOrigin="true"
-                  playsInline
-                  muted
-                  webkit-playsinline="true"
-                  loop
-                >
-                  <source src={`${project.video}`} />
-                </video>
-              )}
-            </div>
-            {Array.isArray(project.imageStack) &&
-              project.imageStack.length > 0 && (
-                <>
-                  {!project.video && (
-                    <div
-                      className="image-grid-square"
-                      id="image-grid-1-square-1"
-                      onClick={() => handleClick("image", 0)}
-                    >
-                      <img src={project.imageStack[0]} alt="" />
-                    </div>
-                  )}
-                  <div
-                    className="image-grid-square"
-                    id="image-grid-1-square-2"
-                    onClick={() => handleClick("image", 1)}
-                  >
-                    <img src={project.imageStack[1]} alt="" />
-                  </div>
-                  <div
-                    className="image-grid-square"
-                    id="image-grid-1-square-3"
-                    onClick={() => handleClick("image", 2)}
-                  >
-                    <img src={project.imageStack[2]} alt="" />
-                  </div>
-                  <div
-                    className="image-grid-square"
-                    id="image-grid-1-square-4"
-                    onClick={() => handleClick("image", 3)}
-                  >
-                    <img src={project.imageStack[3]} alt="" />
-                  </div>
-                </>
-              )}
+        <div className="project-panel-image-grid" style={getGridStyle(project)}>
+          <div className="image-grid-square" style={getSquareStyle(project, 0)}>
+            {project.video && (
+              <video
+                onClick={() => handleClick("video")}
+                className={"project-video"}
+                type="video/mp4"
+                autoPlay={true}
+                id="video"
+                crossOrigin="true"
+                playsInline
+                muted
+                webkit-playsinline="true"
+                loop
+              >
+                <source src={`${project.video}`} />
+              </video>
+            )}
+            {!project.video && (
+              <div
+                className="image-grid-square"
+                style={getSquareStyle(project, 0)}
+                onClick={() => handleClick("image", 0)}
+              >
+                <img src={project.imageStack[0]} alt="" />
+              </div>
+            )}
           </div>
-        )}
-        {/* PROJECT GRID 2*/}
-        {project.gridLayout === "grid-2" && (
-          <div className="image-grid-2">
-            <div className="image-grid-square" id="image-grid-2-square-1">
-              {project.video ? (
-                <video
-                  onClick={() => handleClick("video")}
-                  // style={videoStyle}
-                  // ref={videoRef}
-                  className={"project-video"}
-                  type="video/mp4"
-                  autoPlay={true}
-                  id="video"
-                  crossOrigin="true"
-                  playsInline
-                  muted
-                  webkit-playsinline="true"
-                  loop
-                >
-                  <source src={`${project.video}`} />
-                </video>
-              ) : (
-                <img
-                  onClick={() => handleClick("image", 0)}
-                  src={project.imageStack[0]}
-                  alt=""
-                />
-              )}
-            </div>
-
-            <div className="image-grid-square" id="image-grid-2-square-2">
-              <img
-                onClick={() => handleClick("image", 1)}
-                src={project.imageStack[1]}
-                alt=""
-              />
-            </div>
-            <div className="image-grid-square" id="image-grid-2-square-3">
-              <img
-                onClick={() => handleClick("image", 2)}
-                src={project.imageStack[2]}
-                alt=""
-              />
-            </div>
+          <div
+            className="image-grid-square"
+            style={getSquareStyle(project, 1)}
+            onClick={() => handleClick("image", 1)}
+          >
+            <img src={project.imageStack[1]} alt="" />
           </div>
-        )}
-        <div className="project-panel-details-section">
-          <div className="project-panel-description">
-            <p>{project.description}</p>
+          <div
+            className="image-grid-square"
+            style={getSquareStyle(project, 2)}
+            onClick={() => handleClick("image", 2)}
+          >
+            <img src={project.imageStack[2]} alt="" />
           </div>
-          <div className="project-panel-badges">
-            {project.badges.map((badge, index) => {
-              return (
-                <div className="project-panel-badge" key={badge + "_" + index}>
-                  <span>{badge}</span>
-                </div>
-              );
-            })}
+          <div
+            className="image-grid-square"
+            style={getSquareStyle(project, 3)}
+            onClick={() => handleClick("image", 3)}
+          >
+            <img src={project.imageStack[3]} alt="" />
           </div>
+          <div
+            className="image-grid-square"
+            style={getSquareStyle(project, 4)}
+            onClick={() => handleClick("image", 4)}
+          >
+            <img src={project.imageStack[4]} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="project-panel-details-section">
+        <div className="project-panel-description">
+          <p>{project.description}</p>
+        </div>
+        <div className="project-panel-badges">
+          {project.badges.map((badge, index) => {
+            return (
+              <div className="project-panel-badge" key={badge + "_" + index}>
+                <span>{badge}</span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
