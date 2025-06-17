@@ -1,4 +1,24 @@
-export const getGridStyle = (project) => {
+export const getGridStyle = (project, view) => {
+  let gap;
+  if (view === "desktop-large") {
+    gap = "1.5rem";
+  }
+
+  if (view !== "desktop-large") {
+    gap = "1rem";
+  }
+
+  if (view === "mobile") {
+    return {
+      display: "grid",
+      height: "100%",
+      gridTemplateColumns: "1fr",
+      gridTemplateRows: "1fr",
+      columnGap: "1rem",
+      rowGap: "1rem",
+    };
+  }
+
   if (
     project.gridLayout === 0 ||
     project.gridLayout === 2 ||
@@ -10,8 +30,8 @@ export const getGridStyle = (project) => {
       height: "100%",
       gridTemplateColumns: "55% 1fr 1fr",
       gridTemplateRows: "1fr 1fr",
-      columnGap: "1rem",
-      rowGap: "1rem",
+      columnGap: gap,
+      rowGap: gap,
     };
   }
 
@@ -21,7 +41,7 @@ export const getGridStyle = (project) => {
       height: "100%",
       gridTemplateColumns: "1fr 1fr 1fr",
       gridTemplateRows: "1fr",
-      columnGap: "1rem",
+      columnGap: gap,
     };
   }
 
@@ -31,8 +51,8 @@ export const getGridStyle = (project) => {
       height: "100%",
       gridTemplateColumns: "55% 1fr 1fr",
       gridTemplateRows: "1fr 1fr",
-      columnGap: "1rem",
-      rowGap: "1rem",
+      columnGap: gap,
+      rowGap: gap,
     };
   }
 
@@ -42,8 +62,8 @@ export const getGridStyle = (project) => {
       height: "100%",
       gridTemplateColumns: "1fr 1fr 1fr 1fr",
       gridTemplateRows: "1fr",
-      columnGap: "1rem",
-      rowGap: "1rem",
+      columnGap: gap,
+      rowGap: gap,
     };
   }
 };

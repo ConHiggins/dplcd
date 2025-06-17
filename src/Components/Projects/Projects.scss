@@ -136,6 +136,7 @@
 
 .image-modal-image {
   height: 80vh;
+  max-width: 80vw;
   object-fit: cover;
 }
 
@@ -174,16 +175,44 @@
   background-color: black;
 }
 
-// .video-modal-footer {
-//   width: auto;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   background: none;
-//   padding: 4px 4px;
-// }
-
 .video-modal-video {
   height: 80vh;
+  max-width: 80vw;
   object-fit: cover;
+}
+
+//breakpoints
+
+@media only screen and (max-width: 768px) {
+  .project-panel-details-section {
+    display: block;
+    margin-right: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1768px) {
+  .project-panel-header {
+    height: 80px;
+    font-size: 1.5rem;
+  }
+
+  .project-panel-image-section {
+    height: 654px;
+    //background-color: antiquewhite;
+    margin: 0 2rem 0 2rem;
+  }
+
+  .project-panel {
+    height: 800px;
+  }
+
+  .project-panel-details-section {
+    p {
+      font-size: 1.1rem;
+    }
+
+    span {
+      font-size: 1.1rem;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-// import { useRef } from "react";
+import { useState, useEffect } from "react";
 
 //gsap
 // import { gsap } from "gsap";
@@ -14,7 +14,34 @@ export const ProjectPanel = ({
   setModalMode,
   setModalImage,
 }) => {
-  const onScreenDebug = false;
+  const [width, setWidth] = useState(window.innerWidth);
+  const [view, setView] = useState();
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (width > 0 && width <= 768) {
+      setView("mobile");
+    }
+
+    if (width > 768 && width <= 1024) {
+      setView("tablet");
+    }
+
+    if (width > 1024 && width <= 1768) {
+      setView("desktop");
+    }
+
+    if (width > 1768) {
+      setView("desktop-large");
+    }
+  }, [width]);
+
+  console.log(view);
 
   const handleClick = (mode, image) => {
     setModalOpen(true);
@@ -31,16 +58,19 @@ export const ProjectPanel = ({
           <span className="project-panel-client">
             {" // " + project.client}
           </span>
-          {onScreenDebug && (
+          {/* 
             <span style={{ color: "red" }}>
               DEBUG LAYOUT GRID = {project.gridLayout}
             </span>
-          )}
+           */}
         </span>
         <span className="project-panel-year">{project.year}</span>
       </div>
       <div className="project-panel-image-section">
-        <div className="project-panel-image-grid" style={getGridStyle(project)}>
+        <div
+          className="project-panel-image-grid"
+          style={getGridStyle(project, view)}
+        >
           <div className="image-grid-square" style={getSquareStyle(project, 0)}>
             {project.video && (
               <video
@@ -68,49 +98,55 @@ export const ProjectPanel = ({
               </div>
             )}
           </div>
-          <div
-            className="image-grid-square"
-            style={getSquareStyle(project, 1)}
-            onClick={() => handleClick("image", 1)}
-          >
-            <img src={project.imageStack[1]} alt="" />
-          </div>
-          <div
-            className="image-grid-square"
-            style={getSquareStyle(project, 2)}
-            onClick={() => handleClick("image", 2)}
-          >
-            <img src={project.imageStack[2]} alt="" />
-          </div>
-          <div
-            className="image-grid-square"
-            style={getSquareStyle(project, 3)}
-            onClick={() => handleClick("image", 3)}
-          >
-            <img src={project.imageStack[3]} alt="" />
-          </div>
-          <div
-            className="image-grid-square"
-            style={getSquareStyle(project, 4)}
-            onClick={() => handleClick("image", 4)}
-          >
-            <img src={project.imageStack[4]} alt="" />
-          </div>
+          {view !== "mobile" && (
+            <>
+              <div
+                className="image-grid-square"
+                style={getSquareStyle(project, 1)}
+                onClick={() => handleClick("image", 1)}
+              >
+                <img src={project.imageStack[1]} alt="" />
+              </div>
+              <div
+                className="image-grid-square"
+                style={getSquareStyle(project, 2)}
+                onClick={() => handleClick("image", 2)}
+              >
+                <img src={project.imageStack[2]} alt="" />
+              </div>
+              <div
+                className="image-grid-square"
+                style={getSquareStyle(project, 3)}
+                onClick={() => handleClick("image", 3)}
+              >
+                <img src={project.imageStack[3]} alt="" />
+              </div>
+              <div
+                className="image-grid-square"
+                style={getSquareStyle(project, 4)}
+                onClick={() => handleClick("image", 4)}
+              >
+                <img src={project.imageStack[4]} alt="" />
+              </div>
+            </>
+          )}
         </div>
       </div>
       <div className="project-panel-details-section">
         <div className="project-panel-description">
           <p>{project.description}</p>
         </div>
-        <div className="project-panel-badges">
-          {project.badges.map((badge, index) => {
-            return (
-              <div className="project-panel-badge" key={badge + "_" + index}>
-                <span>{badge}</span>
-              </div>
-            );
-          })}
-        </div>
+        {view !== "mobile" && (
+          <div className="project-panel-badges">
+            {project.badges.map((badge, index) => {
+              return (
+                <div className="project-panel-badge" key={badge + "_" + index}>
+                  <span>{badge}</span>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
