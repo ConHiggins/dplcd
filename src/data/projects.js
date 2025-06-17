@@ -27,9 +27,9 @@ import coticStill4 from "../Assets/cotic-still-004.jpg";
 import coticStill5 from "../Assets/cotic-still-005.jpg";
 import coticStill6 from "../Assets/cotic-still-006.jpg";
 
-import gloryDaysPort from "../Assets/HOMEPAGE - REPLACE PREVIOUS GD.jpg";
-import ajRear from "../Assets/AJ_rear.jpg";
-import ajFront from "../Assets/AJ_front.jpg";
+import ajSleeve from "../Assets/aj-sleeve.jpg";
+import ajRear from "../Assets/aj-rear.jpg";
+import ajFront from "../Assets/aj-front.jpg";
 
 import hlZ0 from "../Assets/zine/ZINEFINALPHOTO.jpg";
 import hlz1 from "../Assets/zine/ZINEFINALPHOTO-2.jpg";
@@ -40,12 +40,12 @@ import hlz5 from "../Assets/zine/zinescnas11.jpg";
 import hlZ6 from "../Assets/zine/ZINESCANS7.jpg";
 import hlz7 from "../Assets/zine/ZINESCANS8.jpg";
 
-import locksnv0 from "../Assets/Lock_Product_P7.jpg";
-import locksnv1 from "../Assets/Posters5FINAL2.jpg";
-import locksnv2 from "../Assets/Posters2final2.jpg";
-import locksnv3 from "../Assets/PostersFINAL2.jpg";
-import locksnv4 from "../Assets/Posters7FINAL2_.jpg";
-import locksnv5 from "../Assets/Lock_Product_Pink4.jpg";
+import locksnv0 from "../Assets/lock-product-1.jpg";
+import locksnv1 from "../Assets/lock-product-2.jpg";
+import locksnv2 from "../Assets/lock-product-3.jpg";
+import locksnv3 from "../Assets/lock-product-4.jpg";
+import locksnv4 from "../Assets/lock-product-5.jpg";
+import locksnv5 from "../Assets/lock-product-6.jpg";
 
 // import fract_1 from "../Assets/FRACTEL_SLIDE1.jpg";
 import fract_4 from "../Assets/FRACTEL_SLIDE4.jpg";
@@ -70,8 +70,8 @@ import stillnessStill2 from "../Assets/stillness-still-002.jpg";
 import stillnessStill3 from "../Assets/stillness-still-003.jpg";
 import stillnessStill4 from "../Assets/stillness-still-004.jpg";
 
-import ajFolio2 from "../Assets/7.jpg";
-import ajFolio3 from "../Assets/10.mp4";
+// import ajFolio2 from "../Assets/7.jpg";
+// import ajFolio3 from "../Assets/10.mp4";
 
 import fthmlssFolio from "../Assets/fthmlssFolio.mp4";
 import niagraStill1 from "../Assets/niagra-still-001.jpg";
@@ -184,7 +184,7 @@ const hlzines = [hlZ0, hlz1, hlZ2, hlz3, hlZ4, hlz5, hlZ6, hlz7];
 
 const locksnvs = [locksnv0, locksnv1, locksnv2, locksnv3, locksnv4, locksnv5];
 
-const aj1 = [ajFront, gloryDaysPort, ajRear];
+const aj1 = [ajFront, ajSleeve, ajRear];
 
 const fracts = [fract_6, fract_4, fract_5, fract_7];
 // const fracts = [fract_1, fract_4];

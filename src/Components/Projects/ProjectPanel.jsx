@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-//gsap
-// import { gsap } from "gsap";
-// import { useGSAP } from "@gsap/react";
+import LazyLoad from "react-lazyload";
 
 import { getGridStyle } from "../utils/projectLayoutHelpers";
 import { getSquareStyle } from "../utils/projectLayoutHelpers";
+import { ImageSectionPlaceholder } from "./ImageSectionPlaceholder";
 
 export const ProjectPanel = ({
   project,
@@ -16,6 +15,21 @@ export const ProjectPanel = ({
 }) => {
   const [width, setWidth] = useState(window.innerWidth);
   const [view, setView] = useState();
+
+  const video = useRef(null);
+
+  if (project.slug === "highline-zine") {
+    console.log("HELLO");
+  }
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        console.log(entry);
+      }
+    });
+    video.current && observer.observe(video.current);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -41,8 +55,6 @@ export const ProjectPanel = ({
     }
   }, [width]);
 
-  console.log(view);
-
   const handleClick = (mode, image) => {
     setModalOpen(true);
     setModalProject(project);
@@ -66,72 +78,82 @@ export const ProjectPanel = ({
         </span>
         <span className="project-panel-year">{project.year}</span>
       </div>
-      <div className="project-panel-image-section">
-        <div
-          className="project-panel-image-grid"
-          style={getGridStyle(project, view)}
-        >
-          <div className="image-grid-square" style={getSquareStyle(project, 0)}>
-            {project.video && (
-              <video
-                onClick={() => handleClick("video")}
-                className={"project-video"}
-                type="video/mp4"
-                autoPlay={true}
-                id="video"
-                crossOrigin="true"
-                playsInline
-                muted
-                webkit-playsinline="true"
-                loop
-              >
-                <source src={`${project.video}`} />
-              </video>
-            )}
-            {!project.video && (
-              <div
-                className="image-grid-square"
-                style={getSquareStyle(project, 0)}
-                onClick={() => handleClick("image", 0)}
-              >
-                <img src={project.imageStack[0]} alt="" />
-              </div>
+      <LazyLoad
+        offset={800}
+        placeholder={<ImageSectionPlaceholder view={view} project={project} />}
+      >
+        <div className="project-panel-image-section">
+          <div
+            className="project-panel-image-grid"
+            style={getGridStyle(project, view)}
+          >
+            <div
+              className="image-grid-square"
+              style={getSquareStyle(project, 0)}
+            >
+              {project.video && (
+                <video
+                  ref={video}
+                  onClick={() => handleClick("video")}
+                  // preload="true"
+                  className={"project-video"}
+                  type="video/mp4"
+                  autoPlay={true}
+                  id="video"
+                  crossOrigin="true"
+                  playsInline
+                  muted
+                  webkit-playsinline="true"
+                  loop
+                >
+                  <source src={`${project.video}`} />
+                </video>
+              )}
+              {!project.video && (
+                <div
+                  className="image-grid-square"
+                  style={getSquareStyle(project, 0)}
+                  onClick={() => handleClick("image", 0)}
+                >
+                  <img src={project.imageStack[0]} alt="" />
+                </div>
+              )}
+            </div>
+            {view !== "mobile" && (
+              <>
+                <div
+                  className="image-grid-square"
+                  style={getSquareStyle(project, 1)}
+                  onClick={() => handleClick("image", 1)}
+                >
+                  <img src={project.imageStack[1]} alt="" />
+                </div>
+                <div
+                  className="image-grid-square"
+                  style={getSquareStyle(project, 2)}
+                  onClick={() => handleClick("image", 2)}
+                >
+                  <img src={project.imageStack[2]} alt="" />
+                </div>
+                <div
+                  className="image-grid-square"
+                  style={getSquareStyle(project, 3)}
+                  onClick={() => handleClick("image", 3)}
+                >
+                  <img src={project.imageStack[3]} alt="" />
+                </div>
+                <div
+                  className="image-grid-square"
+                  style={getSquareStyle(project, 4)}
+                  onClick={() => handleClick("image", 4)}
+                >
+                  <img src={project.imageStack[4]} alt="" />
+                </div>
+              </>
             )}
           </div>
-          {view !== "mobile" && (
-            <>
-              <div
-                className="image-grid-square"
-                style={getSquareStyle(project, 1)}
-                onClick={() => handleClick("image", 1)}
-              >
-                <img src={project.imageStack[1]} alt="" />
-              </div>
-              <div
-                className="image-grid-square"
-                style={getSquareStyle(project, 2)}
-                onClick={() => handleClick("image", 2)}
-              >
-                <img src={project.imageStack[2]} alt="" />
-              </div>
-              <div
-                className="image-grid-square"
-                style={getSquareStyle(project, 3)}
-                onClick={() => handleClick("image", 3)}
-              >
-                <img src={project.imageStack[3]} alt="" />
-              </div>
-              <div
-                className="image-grid-square"
-                style={getSquareStyle(project, 4)}
-                onClick={() => handleClick("image", 4)}
-              >
-                <img src={project.imageStack[4]} alt="" />
-              </div>
-            </>
-          )}
         </div>
-      </div>
+      </LazyLoad>
       <div className="project-panel-details-section">
         <div className="project-panel-description">
           <p>{project.description}</p>

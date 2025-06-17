@@ -38,10 +38,9 @@ export const Projects = ({ scPostsData }) => {
         wrapper: wrapper.current,
         content: content.current,
         smooth: 1,
-        effects: true,
       });
-    },
-    { scope: wrapper }
+    }
+    // { scope: wrapper }
   );
 
   useGSAP(() => {
@@ -72,39 +71,41 @@ export const Projects = ({ scPostsData }) => {
   });
 
   return (
-    <div id="smooth-wrapper" ref={wrapper}>
-      <div id="smooth-content" ref={content}>
-        <div className="projects">
-          {/* <button type="button" onClick={() => setOpen(true)}>
+    <>
+      <div id="smooth-wrapper" ref={wrapper}>
+        <div id="smooth-content" ref={content}>
+          <div className="projects">
+            {/* <button type="button" onClick={() => setOpen(true)}>
             Open Modal
           </button> */}
-          <ProjectModal
-            modalOpen={modalOpen}
-            setModalOpen={(bool) => setModalOpen(bool)}
-            modalProject={modalProject}
-            setModalProject={(project) => setModalProject(project)}
-            modalMode={modalMode}
-            setModalMode={(mode) => setModalMode(mode)}
-            modalImage={modalImage}
-            setModalImage={(image) => setModalImage(image)}
-          />
-          {/* <button onClick={() => setIsOpen(true)}>DIALOG</button> */}
-          {projects.map((project, index) => {
-            return (
-              <ProjectPanel
-                setModalOpen={(bool) => setModalOpen(bool)}
-                setModalProject={(project) => setModalProject(project)}
-                setModalMode={(mode) => setModalMode(mode)}
-                setModalImage={(image) => setModalImage(image)}
-                project={project}
-                gridLayout={"grid-1"}
-                key={project.name + "_" + index}
-              />
-            );
-          })}
+            <ProjectModal
+              modalOpen={modalOpen}
+              setModalOpen={(bool) => setModalOpen(bool)}
+              modalProject={modalProject}
+              setModalProject={(project) => setModalProject(project)}
+              modalMode={modalMode}
+              setModalMode={(mode) => setModalMode(mode)}
+              modalImage={modalImage}
+              setModalImage={(image) => setModalImage(image)}
+            />
+            {/* <button onClick={() => setIsOpen(true)}>DIALOG</button> */}
+            {projects.map((project, index) => {
+              return (
+                <ProjectPanel
+                  setModalOpen={(bool) => setModalOpen(bool)}
+                  setModalProject={(project) => setModalProject(project)}
+                  setModalMode={(mode) => setModalMode(mode)}
+                  setModalImage={(image) => setModalImage(image)}
+                  project={project}
+                  gridLayout={"grid-1"}
+                  key={project.name + "_" + index}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
