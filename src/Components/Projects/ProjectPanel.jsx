@@ -65,18 +65,16 @@ export const ProjectPanel = ({
   return (
     <div className="project-panel">
       <div className="project-panel-header">
-        <span className="project-panel-title">
-          {project.title}
+        <div className="project-panel-title-client">
+          <span className="project-panel-title">{project.title}</span>
           <span className="project-panel-client">
-            {" // " + project.client}
+            {view !== "mobile" && " // "}
+            {project.client}
           </span>
-          {/* 
-            <span style={{ color: "red" }}>
-              DEBUG LAYOUT GRID = {project.gridLayout}
-            </span>
-           */}
-        </span>
-        <span className="project-panel-year">{project.year}</span>
+        </div>
+        <div className="project-panel-year">
+          <span>{project.year}</span>
+        </div>
       </div>
       <LazyLoad
         offset={800}

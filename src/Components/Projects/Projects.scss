@@ -1,7 +1,8 @@
 @use "../_vars.scss" as *;
 
 .projects {
-  margin-top: 41px;
+  padding-top: 41px;
+  // margin-bottom: 41px;
   background-color: $LightOffWhite;
   font-family: Roboto;
   font-weight: 400;
@@ -15,10 +16,20 @@
 
 .project-panel-header {
   height: 64px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem 0 2rem;
+}
+
+.project-panel-title-client {
+  display: flex;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 
 .project-panel-title {
@@ -29,6 +40,17 @@
 .project-panel-client {
   text-transform: uppercase;
   font-weight: 400;
+}
+
+.project-panel-year {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  span {
+    margin-left: auto;
+  }
 }
 
 .project-panel-image-section {
@@ -187,13 +209,43 @@
 
 //breakpoints
 
+//mobile
 @media only screen and (max-width: 768px) {
+  .project-panel-header {
+    height: 80x;
+    grid-template-columns: 80% 20%;
+  }
+
+  .project-panel-title-client {
+    height: 100%;
+    display: grid;
+    row-gap: 0px;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .project-panel-title {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .project-panel-client {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .project-panel-year {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin-top: auto;
+  }
+
   .project-panel-details-section {
-    display: block;
+    grid-template-columns: 1fr;
     margin-right: 2rem;
   }
 }
 
+//desktop-large
 @media only screen and (min-width: 1768px) {
   .project-panel-header {
     height: 80px;
@@ -214,9 +266,12 @@
     p {
       font-size: 1.1rem;
     }
+  }
 
+  .project-panel-badges {
+    height: 0.8rem;
     span {
-      font-size: 1.1rem;
+      font-size: 1.1 rem;
     }
   }
 }

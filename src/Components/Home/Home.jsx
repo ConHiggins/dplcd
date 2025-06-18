@@ -17,7 +17,6 @@ import "./Home.scss";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 const Home = ({ scPostsData }) => {
-  console.log(scPostsData);
   //! REFACTOR THIS - not nice and probably unperformant
   const fractelXDsplaced = scPostsData.find((p) => {
     return p.slug === "terrasyn";
@@ -59,7 +58,7 @@ const Home = ({ scPostsData }) => {
       wrapper.current = ScrollSmoother.create({
         wrapper: wrapper.current,
         content: content.current,
-        smooth: 1,
+        smooth: 3,
         effects: true,
       });
     },
@@ -70,7 +69,7 @@ const Home = ({ scPostsData }) => {
     let mm = gsap.matchMedia();
 
     //fractal-anims
-    const pinVideo = "+=1200";
+    const pinVal = "+=1440";
 
     mm.add("(min-width: 768px)", () => {
       gsap.from("#fractel-1", {
@@ -110,7 +109,7 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#fractel-image-section",
           start: "top top",
-          end: "+=600",
+          end: pinVal,
           scrub: true,
           pin: true,
         },
@@ -151,7 +150,7 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#my-protein-image-section",
           start: "top top",
-          end: "+=600",
+          end: pinVal,
           scrub: true,
           pin: true,
         },
@@ -162,7 +161,7 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#stillness-video-container",
           start: "top top",
-          end: pinVideo,
+          end: pinVal,
           scrub: true,
           pin: true,
         },
@@ -203,7 +202,7 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#alan-johnson-image-section",
           start: "top top",
-          end: "+=600",
+          end: pinVal,
           scrub: true,
           pin: true,
         },
@@ -244,7 +243,7 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#highline-zine-image-section",
           start: "top top",
-          end: "+=600",
+          end: pinVal,
           scrub: true,
           pin: true,
         },
@@ -255,7 +254,7 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#bop-video",
           start: "top top",
-          end: pinVideo,
+          end: pinVal,
           scrub: true,
           pin: true,
           markers: false,
@@ -267,7 +266,7 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#highline-dsplaced-video",
           start: "top top",
-          end: pinVideo,
+          end: pinVal,
           scrub: true,
           pin: true,
           markers: false,
@@ -279,7 +278,7 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#fthmlss-video",
           start: "top top",
-          end: pinVideo,
+          end: pinVal,
           scrub: true,
           pin: true,
           markers: false,
