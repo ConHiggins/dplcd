@@ -18,19 +18,6 @@ export const ProjectPanel = ({
 
   const video = useRef(null);
 
-  if (project.slug === "highline-zine") {
-    console.log("HELLO");
-  }
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      if (entry.isIntersecting) {
-        console.log(entry);
-      }
-    });
-    video.current && observer.observe(video.current);
-  }, []);
-
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
