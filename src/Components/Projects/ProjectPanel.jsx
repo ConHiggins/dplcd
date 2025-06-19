@@ -53,7 +53,7 @@ export const ProjectPanel = ({
     <div className="project-panel">
       <div className="project-panel-header">
         <div className="project-panel-title-client">
-          <span className="project-panel-title">{project.title}</span>
+          <span className="project-panel-title">{`${project.title} `}</span>
           <span className="project-panel-client">
             {view !== "mobile" && " // "}
             {project.client}
