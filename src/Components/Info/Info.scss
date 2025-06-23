@@ -24,15 +24,19 @@
     width: 55vw;
     height: 100vh;
     //align-items: center;
-    font-size: min(1.5rem, 3vw);
+    // font-size: min(1.5rem, 3vw);
     font-weight: 400;
     color: $OffWhite;
     left: 0vw;
     animation-delay: 2s;
     z-index: 999;
 
+    p {
+      margin-top: 0;
+    }
+
     &-links {
-      height: 10rem;
+      //   height: 10rem;
       display: flex;
       flex-direction: column;
       //justify-content: flex-end;
@@ -42,25 +46,26 @@
 
     &__descr {
       text-align: left;
-      font-size: min(1.5rem, 3vw);
+      font-size: min(1.25rem, 2.5vw);
       color: $OffWhite;
     }
 
     &__serv {
-      font-size: min(0.8rem, 1.8vw);
+      font-size: min(1rem, 1.8vw);
       padding: none;
       margin: 0;
       opacity: 70%;
     }
 
-    &__serv_title {
-      font-size: min(0.8rem, 1.8vw);
+    &__serv-title {
+      font-size: min(1rem, 1.8vw);
       margin: 0 0 0 0;
     }
 
     &__link {
       padding-top: 1rem;
       color: $OffWhite;
+      font-size: min(1rem, 1.8vw);
       text-decoration: none;
       &-snap {
         // position: absolute;
@@ -83,15 +88,19 @@
 
 @media screen and (min-width: 768px) {
   .info {
-    &-links {
-      //position:initial;
-      //   display: flex;
-      //   flex-direction: column;
-      //   justify-content: flex-end;
-      // height: 10vh;
+    &__desc {
+      font-size: 1.25rem;
     }
 
-    &__desc {
+    &__serv {
+      font-size: 1rem;
+    }
+
+    &__serv-title {
+      font-size: 1rem;
+    }
+
+    &__link {
       font-size: 1rem;
     }
   }
@@ -100,15 +109,19 @@
 @media screen and (min-width: 1024px) {
   .info {
     &__descr {
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
 
     &__serv {
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
 
     &__serv-title {
-      font-size: 0.8rem;
+      font-size: 1rem;
+    }
+
+    &__link {
+      font-size: 1rem;
     }
   }
 }
@@ -116,15 +129,19 @@
 @media screen and (min-width: 1920px) {
   .info {
     &__descr {
-      font-size: 2rem;
+      font-size: 2.45rem;
     }
 
     &__serv {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
     }
 
     &__serv-title {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
+    }
+
+    &__link {
+      font-size: 2.2rem;
     }
   }
 }
