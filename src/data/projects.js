@@ -58,10 +58,9 @@ import fract_7 from "../Assets/STUDIO-8.jpg";
 
 import fractFolio from "../Assets/FRACTELCLIP_1.mp4";
 
-import myproteinFolio from "../Assets/HOMEPAGE+ PROJECT.jpg";
 import myproteinProj1 from "../Assets/PROJECT.jpg";
-import myproteinProj2 from "../Assets/use.jpg";
-import myproteinProj3 from "../Assets/use2.jpg";
+import myproteinProj2 from "../Assets/my-protein-n1.jpeg";
+import myproteinProj3 from "../Assets/my-protein-n2.jpeg";
 
 //stillness
 import ajFolio from "../Assets/HOMEPAGE.mp4";
@@ -107,12 +106,7 @@ import hlStill6 from "../Assets/columbia-at95-006.jpg";
 import hlStill7 from "../Assets/columbia-at95-007.jpg";
 import hlStill8 from "../Assets/columbia-at95-008.jpg";
 
-const myproteinPics = [
-  myproteinFolio,
-  myproteinProj1,
-  myproteinProj2,
-  myproteinProj3,
-];
+const myproteinPics = [myproteinProj2, myproteinProj3, myproteinProj1];
 
 const highlineStills = [
   hlStill1,
@@ -213,7 +207,7 @@ const projects = [
     year: 2024,
     description: "Photography for MyProtein x Runna",
     badges: ["CREATIVE DIRECTION", "PHOTOGRAPHY"],
-    gridLayout: 3,
+    gridLayout: 1,
     imageStack: myproteinPics,
     home: true,
     projects: true,

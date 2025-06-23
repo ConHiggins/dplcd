@@ -5,6 +5,10 @@
   font-family: "Roboto", sans-serif, cursive !important;
 }
 
+body {
+  font-family: "Roboto", sans-serif, cursive !important;
+}
+
 .site {
   display: flex;
   flex-direction: column;
