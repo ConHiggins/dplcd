@@ -1,4 +1,9 @@
-import fthmlssSheets from "../Assets/Fthmlss-Sheet.jpg";
+import at95Vid from "../Assets/dsplaced-at95.mp4";
+import at95Still1 from "../Assets/dsplaced-at95-1.png";
+import at95Still2 from "../Assets/dsplaced-at95-2.png";
+import at95Still3 from "../Assets/dsplaced-at95-3.png";
+import at95Still4 from "../Assets/dsplaced-at95-4.png";
+import at95Still5 from "../Assets/dsplaced-at95-5.png";
 
 //fthmless port
 import fthmlssPortVid from "../Assets/FthmlssProfileVideo.mp4";
@@ -107,6 +112,8 @@ import hlStill7 from "../Assets/columbia-at95-007.jpg";
 import hlStill8 from "../Assets/columbia-at95-008.jpg";
 
 const myproteinPics = [myproteinProj2, myproteinProj3, myproteinProj1];
+
+const at95Stills = [at95Still1, at95Still2, at95Still3, at95Still4, at95Still5];
 
 const highlineStills = [
   hlStill1,
@@ -253,16 +260,30 @@ const projects = [
     projects: true,
   },
   {
+    slug: "highline-film",
+    title: "Highline Film",
+    client: "Columbia",
+    year: 2024,
+    description:
+      "A short film as part of a wider highlining project with Columbia",
+    badges: ["VIDEO PRODUCTION"],
+    gridLayout: 5,
+    video: highlineDsplacedVideo,
+    imageStack: highlineStills,
+    home: true,
+    projects: true,
+  },
+  {
     slug: "hike-society-AT95",
-    title: "Hike Society X AT95 Film",
+    title: "Hike Society x AT95 Film",
     client: "Columbia",
     year: 2024,
     description:
       "Short film created for Columbia as part of their Hike Society series, featuring AT95",
     badges: ["VIDEO PRODUCTION"],
-    gridLayout: 5,
-    video: highlineDsplacedVideo,
-    imageStack: highlineStills,
+    gridLayout: 2,
+    video: at95Vid,
+    imageStack: at95Stills,
     home: true,
     projects: true,
   },
