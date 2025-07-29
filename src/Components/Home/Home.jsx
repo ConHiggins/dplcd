@@ -13,6 +13,7 @@ import HomeImage from "./HomeImage.jsx";
 
 //css
 import "./Home.scss";
+//test origin push
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
