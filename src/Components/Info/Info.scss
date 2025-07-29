@@ -1,147 +1,221 @@
 @use "../_vars.scss" as *;
 // @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&family=Kanit:ital,wght@1,300&display=swap');
 
-@media screen and (min-width: 320px) {
-  @keyframes slideInLeft {
-    0% {
-      position: absolute;
-      right: -30vw;
-    }
-    100% {
-      position: absolute;
-      right: 0;
-    }
-  }
-
-  .info {
-    position: relative;
-    //margin-top: 4rem;
-    padding-right: 4rem;
-    padding-left: 5vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 55vw;
-    height: 100vh;
-    //align-items: center;
-    // font-size: min(1.5rem, 3vw);
-    font-weight: 400;
-    color: $OffWhite;
-    left: 0vw;
-    animation-delay: 2s;
-    z-index: 999;
-
-    p {
-      margin-top: 0;
-    }
-
-    &-links {
-      //   height: 10rem;
-      display: flex;
-      flex-direction: column;
-      //justify-content: flex-end;
-      // right: 20%;
-      // text-align: right;
-    }
-
-    &__descr {
-      text-align: left;
-      font-size: min(1.25rem, 2.5vw);
-      color: $OffWhite;
-    }
-
-    &__serv {
-      font-size: min(1rem, 1.8vw);
-      padding: none;
-      margin: 0;
-      opacity: 70%;
-    }
-
-    &__serv-title {
-      font-size: min(1rem, 1.8vw);
-      margin: 0 0 0 0;
-    }
-
-    &__link {
-      padding-top: 1rem;
-      color: $OffWhite;
-      font-size: min(1rem, 1.8vw);
-      text-decoration: none;
-      &-snap {
-        // position: absolute;
-        // left:200%;
-        &:visited {
-          color: $OffWhite;
-        }
-      }
-
-      &:visited {
-        color: $OffWhite;
-      }
-
-      &:hover {
-        color: $OffWhite;
-      }
-    }
+.info {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: $LighterOffWhite;
+  display: flex;
+  p,
+  span {
+    color: $RainydayBlue;
+    font-family: "Stolzl";
   }
 }
 
-@media screen and (min-width: 768px) {
-  .info {
-    &__desc {
-      font-size: 1.25rem;
-    }
+.info-left {
+  min-height: 100vh;
+  width: 50vw;
+}
 
-    &__serv {
-      font-size: 1rem;
-    }
+.info-right {
+  min-height: 100vh;
+  width: 50vw;
+  background-color: $LightOffWhite;
+}
 
-    &__serv-title {
-      font-size: 1rem;
-    }
+.info-text-container {
+  margin-top: 128px;
+  margin-left: 64px;
+  margin-right: 96px;
+}
 
-    &__link {
-      font-size: 1rem;
-    }
+.info-title {
+  font-size: 48px;
+  margin: 0;
+}
+
+.info-blurb {
+  font-size: 24px;
+  margin: 0;
+  margin-top: 1em;
+}
+
+.info-services {
+  margin-top: 1em;
+}
+
+.info-services-title {
+  font-size: 24px;
+  text-decoration: underline;
+  margin-bottom: 0.5em;
+}
+
+.info-services-item {
+  font-size: 24px;
+  margin: 0;
+  opacity: 70%;
+}
+
+.info-email {
+  font-size: 24px;
+  margin: 0;
+  margin-top: 1em;
+  text-decoration: underline;
+  a {
+    color: $RainydayBlue;
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .info {
-    &__descr {
-      font-size: 1.25rem;
-    }
-
-    &__serv {
-      font-size: 1rem;
-    }
-
-    &__serv-title {
-      font-size: 1rem;
-    }
-
-    &__link {
-      font-size: 1rem;
-    }
+.info-instagram {
+  font-size: 24px;
+  margin-top: 0.25em;
+  text-decoration: underline;
+  a {
+    color: $RainydayBlue;
   }
 }
+// @media screen and (min-width: 320px) {
+//   @keyframes slideInLeft {
+//     0% {
+//       position: absolute;
+//       right: -30vw;
+//     }
+//     100% {
+//       position: absolute;
+//       right: 0;
+//     }
+//   }
 
-@media screen and (min-width: 1920px) {
-  .info {
-    &__descr {
-      font-size: 2.45rem;
-    }
+//   .info {
+//     position: relative;
+//     //margin-top: 4rem;
+//     padding-right: 4rem;
+//     padding-left: 5vw;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     width: 55vw;
+//     height: 100vh;
+//     //align-items: center;
+//     // font-size: min(1.5rem, 3vw);
+//     font-weight: 400;
+//     color: $OffWhite;
+//     left: 0vw;
+//     animation-delay: 2s;
+//     z-index: 999;
 
-    &__serv {
-      font-size: 2.2rem;
-    }
+//     p {
+//       margin-top: 0;
+//     }
 
-    &__serv-title {
-      font-size: 2.2rem;
-    }
+//     &-links {
+//       //   height: 10rem;
+//       display: flex;
+//       flex-direction: column;
+//       //justify-content: flex-end;
+//       // right: 20%;
+//       // text-align: right;
+//     }
 
-    &__link {
-      font-size: 2.2rem;
-    }
-  }
-}
+//     &__descr {
+//       text-align: left;
+//       font-size: min(1.25rem, 2.5vw);
+//       color: $OffWhite;
+//     }
+
+//     &__serv {
+//       font-size: min(1rem, 1.8vw);
+//       padding: none;
+//       margin: 0;
+//       opacity: 70%;
+//     }
+
+//     &__serv-title {
+//       font-size: min(1rem, 1.8vw);
+//       margin: 0 0 0 0;
+//     }
+
+//     &__link {
+//       padding-top: 1rem;
+//       color: $OffWhite;
+//       font-size: min(1rem, 1.8vw);
+//       text-decoration: none;
+//       &-snap {
+//         // position: absolute;
+//         // left:200%;
+//         &:visited {
+//           color: $OffWhite;
+//         }
+//       }
+
+//       &:visited {
+//         color: $OffWhite;
+//       }
+
+//       &:hover {
+//         color: $OffWhite;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (min-width: 768px) {
+//   .info {
+//     &__desc {
+//       font-size: 1.25rem;
+//     }
+
+//     &__serv {
+//       font-size: 1rem;
+//     }
+
+//     &__serv-title {
+//       font-size: 1rem;
+//     }
+
+//     &__link {
+//       font-size: 1rem;
+//     }
+//   }
+// }
+
+// @media screen and (min-width: 1024px) {
+//   .info {
+//     &__descr {
+//       font-size: 1.25rem;
+//     }
+
+//     &__serv {
+//       font-size: 1rem;
+//     }
+
+//     &__serv-title {
+//       font-size: 1rem;
+//     }
+
+//     &__link {
+//       font-size: 1rem;
+//     }
+//   }
+// }
+
+// @media screen and (min-width: 1920px) {
+//   .info {
+//     &__descr {
+//       font-size: 2.45rem;
+//     }
+
+//     &__serv {
+//       font-size: 2.2rem;
+//     }
+
+//     &__serv-title {
+//       font-size: 2.2rem;
+//     }
+
+//     &__link {
+//       font-size: 2.2rem;
+//     }
+//   }
+// }

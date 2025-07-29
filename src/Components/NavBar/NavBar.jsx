@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 
 const NavBar = ({ context }) => {
   const pages = [
-    { label: "Shop", to: "/shop" },
     { label: "Info", to: "/info" },
     { label: "Projects", to: "/projects" },
   ];
