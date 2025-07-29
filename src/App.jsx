@@ -1,22 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 import React, { useEffect, useState, createContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Projects from "./Components/Projects/Projects.jsx";
-import AllPosts from "./Components/AllPosts/AllPosts.jsx";
-import SinglePost from "./Components/SinglePost/SinglePost.jsx";
 import NavBar from "./Components/NavBar/NavBar";
-import Footer from "./Components/Footer/Footer.jsx";
-import Shop from "./Components/Shop/Shop.jsx";
-import Terrain from "./Components/Terrain/Terrain.jsx";
-
-import MyThree from "./Components/THREE/MyThree.jsx";
 
 import projects from "./data/projects";
 import Info from "./Components/Info/Info";
-import GridPosts from "./Components/GridPosts/GridPosts";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -109,10 +100,7 @@ function App() {
             path="/projects"
             exact
           />
-          <Route element={<SinglePost />} path="/:slug" exact />
           <Route element={<Info />} path="/info" exact />
-          <Route element={<Shop />} path="/shop" exact />
-          <Route element={<Terrain />} path="/terrain" exact />
         </Routes>
       </div>
     </BrowserRouter>
