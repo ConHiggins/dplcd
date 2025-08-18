@@ -46,29 +46,6 @@ const Info = () => {
         </div>
         <div className="info-right"></div>
       </div>
-
-      {/* <div className="info">
-        <p className="info__descr">{info.title.toUpperCase()}</p>
-        <p className="info__descr">{info.blurb.toUpperCase()}</p>
-        <p className="info__serv-title">SERVICES</p>
-        <p className="info__serv">CREATIVE DIRECTION</p>
-        <p className="info__serv">BRAND</p>
-        <p className="info__serv">FILM & PHOTOGRAPHY</p>
-        <p className="info__serv">PRODUCTION</p>
-        <p className="info__serv">EXPERIENCES</p>
-        <p className="info__serv">DESIGN</p>
-        <p className="info__serv">2D/3D MOTION</p>
-        <p className="info__serv">WEB DEVELOPMENT</p>
-        <p className="info__serv">SOUND</p>
-        <div className="info-links">
-          <a className="info__link" href="mailto:contact@dsplaced.co.uk">
-            contact@dsplaced.co.uk
-          </a>
-          <a className="info__link" href="https://www.instagram.com/dsplaced/">
-            @dsplaced
-          </a>
-        </div>
-      </div> */}
     </>
   );
 };
