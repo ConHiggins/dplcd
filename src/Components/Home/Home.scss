@@ -6,22 +6,9 @@
 }
 
 .folio-post {
-  // position: absolute;
-  // top:0;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
-
-  // margin: auto;
   display: flex;
   flex-direction: column;
 }
-
-// .folio-video {
-//   min-width: 100%;
-//   min-height: 100vh;
-//   object-fit: cover;
-// }
 
 .image-section {
   width: 100vw;
@@ -35,7 +22,6 @@
   padding-top: 25vh;
   padding-bottom: 25vh;
   gap: 32px;
-  // position: sticky;
 }
 
 .image-buffer {
@@ -68,14 +54,21 @@
 
 //! simplify and consolidate video stuff into class
 .home {
-  // width: 100vw;
-  // height: 100vh;
-
   video {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
   }
+}
+
+#landing {
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
+}
+
+h1 {
+  font-family: Stolzl;
 }
 
 #stillness-video-container {
@@ -84,41 +77,6 @@
   height: auto;
   background-color: black;
 }
-
-// #bop-video {
-//   width: 100vw;
-//   height: 100vh;
-
-//   video {
-//     width: 100vw;
-//     height: 100vh;
-//     object-fit: cover;
-//     z-index: 100;
-//   }
-// }
-
-// #highline-dsplaced-video {
-//   width: 100vw;
-//   height: 100vh;
-
-//   video {
-//     width: 100vw;
-//     height: 100vh;
-//     object-fit: cover;
-//   }
-// }
-
-// #fthmlss-video {
-//   width: 100vw;
-//   height: 100vh;
-
-//   video {
-//     width: 100vw;
-//     height: 100vh;
-//     object-fit: cover;
-//     z-index: 90;
-//   }
-// }
 
 //!Mobile
 

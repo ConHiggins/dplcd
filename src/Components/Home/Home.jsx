@@ -18,37 +18,37 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 const Home = ({ scPostsData }) => {
   //! REFACTOR THIS - not nice and probably unperformant
-  const fractelXDsplaced = scPostsData.find((p) => {
-    return p.slug === "terrasyn";
-  });
+  // const fractelXDsplaced = scPostsData.find((p) => {
+  //   return p.slug === "terrasyn";
+  // });
 
-  const myProtein = scPostsData.find((p) => {
-    return p.slug === "manchester-run-club";
-  });
+  // const myProtein = scPostsData.find((p) => {
+  //   return p.slug === "manchester-run-club";
+  // });
 
-  const ajStillness = scPostsData.find((p) => {
-    return p.slug === "alan-johnson-stillness";
-  });
+  // const ajStillness = scPostsData.find((p) => {
+  //   return p.slug === "alan-johnson-stillness";
+  // });
 
-  const ajProfile = scPostsData.find((p) => {
-    return p.slug === "alan-johnson-profile";
-  });
+  // const ajProfile = scPostsData.find((p) => {
+  //   return p.slug === "alan-johnson-profile";
+  // });
 
-  const highlineZine = scPostsData.find((p) => {
-    return p.slug === "highline-zine";
-  });
+  // const highlineZine = scPostsData.find((p) => {
+  //   return p.slug === "highline-zine";
+  // });
 
-  const bop = scPostsData.find((p) => {
-    return p.slug === "dj-academy";
-  });
+  // const bop = scPostsData.find((p) => {
+  //   return p.slug === "dj-academy";
+  // });
 
-  const highlineDsplacedVideo = scPostsData.filter((p) => {
-    return p.slug === "hike-society-AT95";
-  });
+  // const highlineDsplacedVideo = scPostsData.filter((p) => {
+  //   return p.slug === "hike-society-AT95";
+  // });
 
-  const fthmlssVideo = scPostsData.filter((p) => {
-    return p.slug === "niagra";
-  });
+  // const fthmlssVideo = scPostsData.filter((p) => {
+  //   return p.slug === "niagra";
+  // });
 
   const wrapper = useRef();
   const content = useRef();
@@ -69,7 +69,7 @@ const Home = ({ scPostsData }) => {
     <div id="smooth-wrapper" ref={wrapper}>
       <div id="smooth-content" ref={content}>
         <div className="home">
-          <div></div>
+          <div className="landing"></div>
         </div>
       </div>
     </div>
