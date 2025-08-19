@@ -1,6 +1,10 @@
 //IMPORTS
+//landing
+import landingVideo from "../Assets/landing-video/landing-video-desat-slowed.mp4";
+
 //myprotein-alfie
 import alfieVideo from "../Assets/myprotein-alfie/alfie-video.mp4";
+import alfie1 from "../Assets/myprotein-alfie/alfie-1.jpg";
 
 //SIS
 //! assets to follow
@@ -67,18 +71,32 @@ import stillness3 from "../Assets/aj-stillness/stillness-3.jpg";
 import stillness4 from "../Assets/aj-stillness/stillness-4.jpg";
 
 const projects = [
-  // {
-  //   slug: "myprotein-alfie",
-  //   title: "Alfie",
-  //   client: "Myprotein",
-  //   year: 2025,
-  //   description:
-  //     "Video production and photography for Myprotein Pro with Alfie Manthorpe ahead of the British Championships",
-  //   badges: ["VIDEO PRODUCTION", "PHOTOGRAPHY"],
-  //   gridLayout: 0,
-  //   imageStack: undefined,
-  //   video: alfieVideo,
-  // },
+  {
+    slug: "landing-video",
+    title: "Landing",
+    client: "Landing",
+    year: 2025,
+    description:
+      "Video production and photography for Myprotein Pro with Alfie Manthorpe ahead of the British Championships",
+    badges: ["VIDEO PRODUCTION", "PHOTOGRAPHY"],
+    gridLayout: 0,
+    imageStack: undefined,
+    video: landingVideo,
+    projectsPage: false,
+  },
+  {
+    slug: "myprotein-alfie",
+    title: "Alfie",
+    client: "Myprotein",
+    year: 2025,
+    description:
+      "Video production and photography for Myprotein Pro with Alfie Manthorpe ahead of the British Championships",
+    badges: ["VIDEO PRODUCTION", "PHOTOGRAPHY"],
+    gridLayout: 0,
+    imageStack: [alfie1],
+    video: alfieVideo,
+    projectsPage: true,
+  },
   // {
   //   slug: "sis-hydro",
   //   title: "Hydro Campaign",
@@ -90,6 +108,7 @@ const projects = [
   //   gridLayout: 0,
   //   imageStack: undefined,
   //   video: undefined,
+  //   projectsPage: true,
   // },
   // {
   //   slug: "myprotein-ross-edgely",
@@ -102,6 +121,7 @@ const projects = [
   //   gridLayout: 0,
   //   imageStack: undefined,
   //   video: rossEdgelyVideo,
+  //   projectsPage: true,
   // },
   // {
   //   slug: "myprotein-hyrox-chicago",
@@ -114,6 +134,7 @@ const projects = [
   //   gridLayout: 0,
   //   imageStack: undefined,
   //   video: undefined,
+  //projectsPage: true,
   // },
   {
     slug: "fractel-x-dsplaced-terrasyn",
@@ -134,6 +155,7 @@ const projects = [
       terrasyn7,
     ],
     video: terrasynVideo,
+    projectsPage: true,
   },
   // {
   //   slug: "lucy-davis",
@@ -145,6 +167,7 @@ const projects = [
   //   gridLayout: 0,
   //   imageStack: undefined,
   //   video: undefined,
+  //    projectsPage: true,
   // },
   {
     slug: "myprotein-runna",
@@ -156,6 +179,7 @@ const projects = [
     gridLayout: 0,
     imageStack: [runna1, runna2, runna3, runna4, runna5, runna6, runna7],
     video: undefined,
+    projectsPage: true,
   },
   {
     slug: "cotic-flaremax",
@@ -175,6 +199,7 @@ const projects = [
       flaremax6,
     ],
     video: undefined,
+    projectsPage: true,
   },
   {
     slug: "lock-holds-supernova",
@@ -195,6 +220,7 @@ const projects = [
       supernova7,
     ],
     video: undefined,
+    projectsPage: true,
   },
   {
     slug: "niagra",
@@ -207,6 +233,7 @@ const projects = [
     gridLayout: 1,
     video: niagraVideo,
     imageStack: [niagra1, niagra2, niagra3, niagra4, niagra5],
+    projectsPage: true,
   },
   {
     slug: "alan-johnson-stillness",
@@ -219,6 +246,7 @@ const projects = [
     gridLayout: 4,
     video: stillnessVideo,
     imageStack: [stillness1, stillness2, stillness3, stillness4],
+    projectsPage: true,
   },
 ];
 

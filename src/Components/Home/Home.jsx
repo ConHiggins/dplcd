@@ -18,9 +18,18 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 const Home = ({ scPostsData }) => {
   //! REFACTOR THIS - not nice and probably unperformant
-  // const fractelXDsplaced = scPostsData.find((p) => {
-  //   return p.slug === "terrasyn";
-  // });
+
+  const landingVideo = scPostsData.find((p) => {
+    return p.slug === "landing-video";
+  });
+
+  const alfie = scPostsData.find((p) => {
+    return p.slug === "myprotein-alfie";
+  });
+
+  const terrasyn = scPostsData.find((p) => {
+    return p.slug === "fractel-x-dsplaced-terrasyn";
+  });
 
   // const myProtein = scPostsData.find((p) => {
   //   return p.slug === "manchester-run-club";
@@ -69,7 +78,53 @@ const Home = ({ scPostsData }) => {
     <div id="smooth-wrapper" ref={wrapper}>
       <div id="smooth-content" ref={content}>
         <div className="home">
-          <div className="landing"></div>
+          <div id="landing">
+            <h1 id="rainyday-logo">RAINYDAY</h1>
+            <div id="terrasyn-video-container">
+              <HomeVideo type="video" post={landingVideo} playVid={true} />
+            </div>
+          </div>
+          <div id="info">
+            <div id="info-left">
+              <div id="info-text-container">
+                <h2>RAINYDAY</h2>
+                <p>
+                  <span className="emph">RAINYDAY</span> is a UK based creative
+                  studio & production house working globally across creative
+                  direction, film & still image.
+                </p>
+                <p>
+                  We offer a full service approach,{" "}
+                  <span className="emph">RAINYDAY</span> works from concept
+                  development and ideation through to production and execution
+                  of creative campaigns.
+                </p>
+              </div>
+            </div>
+            <div id="info-right">
+              <img id="info-image" src={alfie.imageStack[0]} />
+            </div>
+          </div>
+          <div id="video">
+            <HomeVideo type="video" post={alfie} playVid={true} />
+          </div>
+          <div id="home-projects">
+            <div id="home-projects-text-container">
+              <h1 id="home-projects-text">PROJECTS</h1>
+            </div>
+            <div className="home-project-grid">
+              <div className="home-project-container" id="project-1-container">
+                <div className="home-project-image-container"></div>
+                <h3>PROJECT 1</h3>
+                <p>Some small write up and description about Project 1</p>
+              </div>
+              <div className="home-project-container" id="project-2-container">
+                <div className="home-project-image-container"></div>
+                <h3>PROJECT 2</h3>
+                <p>Another small write up and description about Project 2</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

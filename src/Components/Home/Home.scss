@@ -52,7 +52,6 @@
   background: $LighterOffWhite;
 }
 
-//! simplify and consolidate video stuff into class
 .home {
   video {
     width: 100vw;
@@ -61,22 +60,149 @@
   }
 }
 
+//LANDING
 #landing {
   height: 100vh;
   width: 100vw;
-  background-color: red;
+  position: relative;
+  h1 {
+    font-family: Stolzl-Medium;
+    font-weight: 100;
+    font-size: 160px;
+    color: white;
+    mix-blend-mode: difference;
+    margin: 0;
+    position: absolute;
+    background: none;
+    z-index: 20;
+    left: 50%;
+    top: 50%;
+    //for centered fontsize 124 px
+    // margin-left: -323px;
+    // margin-top: -82.5px;
+
+    //for centered fontsize 196 px
+    // margin-left: -511px;
+    // margin-top: -131px;
+
+    //for centered fontsize 160px
+    margin-left: -417.5px;
+    margin-top: -107px;
+  }
 }
 
-h1 {
-  font-family: Stolzl;
+#terrasyn-video-container {
+  position: absolute;
+  z-index: 10;
 }
 
-#stillness-video-container {
+//INFO
+#info {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  grid-template-rows: 1fr;
+
+  h2 {
+    font-family: Stolzl-Medium;
+    font-size: 72px;
+    text-align: right;
+    color: $RainydayBlue;
+    margin: 2rem 0 2rem 0;
+  }
+
+  p {
+    font-family: Stolzl-Regular;
+    font-size: 30px;
+    text-align: right;
+    color: $RainydayBlue;
+    margin: 2rem 0 2rem 0;
+  }
+}
+
+.emph {
+  font-family: Stolzl-Medium;
+}
+
+#info-left {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  max-height: 100vh;
+  padding: 64px;
+}
+
+#info-text-container {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#info-right {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  min-width: 45vw;
   display: flex;
   justify-content: center;
-  height: auto;
-  background-color: black;
 }
+
+#info-image {
+  overflow: hidden;
+  img {
+    object-fit: cover;
+  }
+}
+
+//PROJECTS
+#home-projects {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  grid-template-columns: 15% 42.5% 42.5%;
+  font-family: Stolzl-Regular;
+}
+
+#home-projects-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-projects-text {
+  writing-mode: sideways-lr;
+  margin: 0;
+  font-size: 10vw;
+  color: $RainydayBlue;
+}
+
+.home-project-container {
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+.home-project-image-container {
+  height: 70%;
+  background-color: grey;
+}
+
+#project-1-container {
+}
+
+#project-2-container {
+  padding-right: 2rem;
+}
+
+// #stillness-video-container {
+//   display: flex;
+//   justify-content: center;
+//   height: auto;
+//   background-color: black;
+// }
 
 //!Mobile
 
