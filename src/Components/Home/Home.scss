@@ -21,16 +21,14 @@
   width: 100vw;
   display: grid;
   grid-template-columns: 55% 45%;
-  grid-template-rows: 1fr 200px;
   h1 {
     font-family: Stolzl-Medium;
-    font-weight: 100;
     font-size: 152px;
+    line-height: 95px;
     color: $RainydayBlue;
-    margin: auto;
-    margin-bottom: 0;
     background: none;
     z-index: 20;
+    margin: 0;
     // left: 50%;
     // top: 50%;
     //for centered fontsize 124 px
@@ -49,21 +47,17 @@
 
 #rainyday-logo-container {
   display: flex;
-  grid-column: 1;
-  grid-row: 2;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 #landing-image-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  grid-column: 2;
-  grid-row: 1 / 3;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   img {
-    margin: auto;
-    max-height: 80%;
-    overflow: hidden;
     object-fit: cover;
+    height: 80vh;
   }
 }
 
@@ -74,6 +68,8 @@
   display: grid;
   grid-template-columns: 55% 45%;
   grid-template-rows: 1fr;
+  background-color: $LighterOffWhite;
+  z-index: 30;
 
   h2 {
     font-family: Stolzl-Medium;

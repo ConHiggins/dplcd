@@ -19,9 +19,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
 const Home = ({ scPostsData }) => {
   const [landingImage, setLandingImage] = useState(0);
-  useEffect(() => {
-    console.log(landingImage);
-  }, [landingImage]);
 
   //stub data
   const servicesList = [
@@ -97,8 +94,6 @@ const Home = ({ scPostsData }) => {
   useGSAP(() => {
     let mm = gsap.matchMedia();
 
-    console.log(landingRef.current.height);
-
     mm.add("(min-width: 768px)", () => {
       // gsap.from("#landing", {
       //   scrollTrigger: {},
@@ -107,9 +102,20 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#landing",
           start: "top top",
-          end: "+=1500",
+          end: "+=750",
           pin: true,
           onUpdate: (self) => setLandingImage(Math.floor(self.progress * 5)),
+        },
+      });
+
+      gsap.from("#rainyday-logo", {
+        scrollTrigger: {
+          trigger: "#rainyday-logo",
+          start: "top top",
+          end: "bottom 12%",
+          pin: true,
+          markers: true,
+          scrub: true,
         },
       });
     });
