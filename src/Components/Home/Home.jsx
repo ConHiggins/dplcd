@@ -10,7 +10,6 @@ import { SplitText } from "gsap/all";
 
 //components
 import HomeVideo from "./HomeVideo.jsx";
-import HomeImage from "./HomeImage.jsx";
 
 //css
 import "./Home.scss";
@@ -18,7 +17,7 @@ import "./Home.scss";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
 const Home = ({ scPostsData }) => {
-  const [landingImage, setLandingImage] = useState(0);
+  const [landingImageIndex, setLandingImageIndex] = useState(0);
 
   //stub data
   const servicesList = [
@@ -47,34 +46,6 @@ const Home = ({ scPostsData }) => {
     return p.slug === "fractel-x-dsplaced-terrasyn";
   });
 
-  // const myProtein = scPostsData.find((p) => {
-  //   return p.slug === "manchester-run-club";
-  // });
-
-  // const ajStillness = scPostsData.find((p) => {
-  //   return p.slug === "alan-johnson-stillness";
-  // });
-
-  // const ajProfile = scPostsData.find((p) => {
-  //   return p.slug === "alan-johnson-profile";
-  // });
-
-  // const highlineZine = scPostsData.find((p) => {
-  //   return p.slug === "highline-zine";
-  // });
-
-  // const bop = scPostsData.find((p) => {
-  //   return p.slug === "dj-academy";
-  // });
-
-  // const highlineDsplacedVideo = scPostsData.filter((p) => {
-  //   return p.slug === "hike-society-AT95";
-  // });
-
-  // const fthmlssVideo = scPostsData.filter((p) => {
-  //   return p.slug === "niagra";
-  // });
-
   const wrapper = useRef();
   const content = useRef();
   const landingRef = useRef();
@@ -95,31 +66,46 @@ const Home = ({ scPostsData }) => {
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {
-      // gsap.from("#landing", {
-      //   scrollTrigger: {},
-      // });
+      //rainyday-logo-translation
+      const landingTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#landing",
+          start: "top top",
+          end: "85%",
+          markers: true,
+          scrub: true,
+          // pin: true,
+          onUpdate: (self) => {
+            let val = Math.ceil(self.progress * 6 - 1);
+            if (val < 0) val = 0;
+            console.log(Math.abs(val));
+            setLandingImageIndex(Math.abs(val));
+          },
+        },
+      });
+
+      const flushY =
+        document.querySelector("#landing-image").offsetHeight -
+        document.querySelector("#rainyday-logo").offsetHeight * 0.155;
+
+      landingTimeline.to("#rainyday-logo", {
+        y: flushY,
+        ease: "none",
+      });
+
+      //landing-section pinning
       gsap.from("#landing", {
         scrollTrigger: {
           trigger: "#landing",
           start: "top top",
-          end: "+=750",
-          pin: true,
-          onUpdate: (self) => setLandingImage(Math.floor(self.progress * 5)),
-        },
-      });
-
-      gsap.from("#rainyday-logo", {
-        scrollTrigger: {
-          trigger: "#rainyday-logo",
-          start: "top top",
-          end: "bottom 12%",
-          pin: true,
-          markers: true,
+          end: "+800",
           scrub: true,
+          pin: true,
         },
       });
     });
   });
+
   return (
     <div id="smooth-wrapper" ref={wrapper}>
       <div id="smooth-content" ref={content}>
@@ -129,7 +115,7 @@ const Home = ({ scPostsData }) => {
               <h1 id="rainyday-logo">RAINYDAY</h1>
             </div>
             <div id="landing-image-container">
-              <img id="landing-image" src={landing.imageStack[landingImage]} />
+              <img id="landing-image" src={landing.imageStack[3]} />
             </div>
           </div>
           <div id="info">

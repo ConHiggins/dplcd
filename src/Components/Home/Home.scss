@@ -23,12 +23,15 @@
   grid-template-columns: 55% 45%;
   h1 {
     font-family: Stolzl-Medium;
-    font-size: 152px;
-    line-height: 95px;
     color: $RainydayBlue;
     background: none;
     z-index: 20;
     margin: 0;
+
+    //tuned values for animation
+    line-height: 0;
+    padding-top: 4.67vh;
+    font-size: 15vh;
     // left: 50%;
     // top: 50%;
     //for centered fontsize 124 px
@@ -47,17 +50,18 @@
 
 #rainyday-logo-container {
   display: flex;
-  justify-content: center;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  justify-content: flex-end;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  padding-right: 16px;
 }
 
 #landing-image-container {
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
   img {
     object-fit: cover;
-    height: 80vh;
+    height: 70vh;
   }
 }
 
