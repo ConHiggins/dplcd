@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Stolzl-Thin";
-  src: local("Stolzl-Thin"), url(./Assets/stolzl_font/Stolzl-Thin.woff),
+  src: local("Stolzl-Thin"), url(./Assets/fonts/Stolzl-Thin.woff),
     format("woff");
   font-weight: thin;
   font-style: normal;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "Stolzl-Light";
-  src: local("Stolzl-Light"), url(./Assets/stolzl_font/Stolzl-Light.woff),
+  src: local("Stolzl-Light"), url(./Assets/fonts/Stolzl-Light.woff),
     format("woff");
   font-weight: light;
   font-style: normal;
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: "Stolzl-Regular";
-  src: local("Stolzl-Regular"), url(./Assets/stolzl_font/Stolzl-Regular.woff),
+  src: local("Stolzl-Regular"), url(./Assets/fonts/Stolzl-Regular.woff),
     format("woff");
   font-weight: regular;
   font-style: normal;
@@ -26,7 +26,7 @@
 
 @font-face {
   font-family: "Stolzl-Medium";
-  src: local("Stolzl-Medium"), url(./Assets/stolzl_font/Stolzl-Medium.woff),
+  src: local("Stolzl-Medium"), url(./Assets/fonts/Stolzl-Medium.woff),
     format("woff");
   font-weight: medium;
   font-style: normal;
@@ -34,9 +34,16 @@
 
 @font-face {
   font-family: "Stolzl-Bold";
-  src: local("Stolzl-Bold"), url(./Assets/stolzl_font/Stolzl-Bold.woff),
+  src: local("Stolzl-Bold"), url(./Assets/fonts/Stolzl-Bold.woff),
     format("woff");
   font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JetBrainsMono-SemiBold";
+  src: local("JetBrainsMono-SemiBold"),
+    url(./Assets//fonts/JetBrainsMono-SemiBold.ttf), format("ttf");
   font-style: normal;
 }
 

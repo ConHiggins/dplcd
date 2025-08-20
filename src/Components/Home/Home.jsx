@@ -154,15 +154,26 @@ const Home = ({ scPostsData }) => {
             <div id="home-projects-text-container">
               <h1 id="home-projects-text">PROJECTS</h1>
             </div>
-            <div className="home-project-container" id="project-1-container">
-              <div className="home-project-image-container"></div>
-              <h3>PROJECT 1</h3>
-              <p>Some small write up and description about Project 1</p>
-            </div>
-            <div className="home-project-container" id="project-2-container">
-              <div className="home-project-image-container"></div>
-              <h3>PROJECT 2</h3>
-              <p>Another small write up and description about Project 2</p>
+            <div id="home-project-section">
+              <div className="home-project-container" id="project-1-container">
+                <div className="home-project-image-container"></div>
+                <div className="home-project-details">
+                  <h3>PROJECT 1</h3>
+                  <p>Some small write up and description about Project 1</p>
+                </div>
+              </div>
+              <div className="home-project-container" id="project-2-container">
+                <div className="home-project-image-container"></div>
+                <div className="home-project-details">
+                  <h3>PROJECT 2</h3>
+                  <p>
+                    Another small write up and description about Project 2 Lorem
+                    ipsum, dolor sit amet consectetur adipisicing elit.
+                    Aspernatur aperiam eum accusantium eligendi nesciunt
+                    perferendis maiores iure quae quidem cupiditate!
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <div id="services">
@@ -196,13 +207,24 @@ const Home = ({ scPostsData }) => {
                 <span>RAINYDAY</span>
               </div>
               <div className="contact-footer-block" id="contact-footer-email">
-                <span>E:</span> <span>contact@raindaystudio.co.uk</span>
+                <span>
+                  <span className="contact-footer-bold">E:</span>{" "}
+                  <span className="contact-footer-link">
+                    <a href="mailto:contact@raindaystudio.co.uk">
+                      contact@raindaystudio.co.uk
+                    </a>
+                  </span>
+                </span>
               </div>
               <div
                 className="contact-footer-block"
                 id="contact-footer-instagram"
               >
-                <span>Instagram</span>
+                <span className="contact-footer-link">
+                  <a href="https://www.instagram.com/rainydaystudio__">
+                    Instagram{" "}
+                  </a>
+                </span>
               </div>
               <div className="contact-footer-block" id="contact-footer-site">
                 <span>Site Design & Development</span>
@@ -211,15 +233,20 @@ const Home = ({ scPostsData }) => {
                 className="contact-footer-block"
                 id="contact-footer-site-credit"
               >
-                <span>INTERSECT </span>
-                <span>|</span>
-                <span> RAINYDAY</span>
+                <span>
+                  <span className="contact-footer-intersect">INTERSECT</span>
+                  <span> | </span>
+                  <span className="contact-footer-rainyday">RAINYDAY</span>
+                </span>
               </div>
               <div
                 className="contact-footer-block"
                 id="contact-footer-copyright"
               >
-                <span>© RAINYDAY 2025</span>
+                <span>
+                  © <span className="contact-footer-rainyday">RAINYDAY</span>{" "}
+                  2025
+                </span>
               </div>
             </div>
           </div>
