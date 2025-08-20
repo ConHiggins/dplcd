@@ -1,11 +1,12 @@
 //react
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 //gsap
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { SplitText } from "gsap/all";
 
 //components
 import HomeVideo from "./HomeVideo.jsx";
@@ -14,13 +15,31 @@ import HomeImage from "./HomeImage.jsx";
 //css
 import "./Home.scss";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
 const Home = ({ scPostsData }) => {
-  //! REFACTOR THIS - not nice and probably unperformant
+  const [landingImage, setLandingImage] = useState(0);
+  useEffect(() => {
+    console.log(landingImage);
+  }, [landingImage]);
 
-  const landingVideo = scPostsData.find((p) => {
-    return p.slug === "landing-video";
+  //stub data
+  const servicesList = [
+    "CREATIVE DIRECTION",
+    "BRAND",
+    "FILM & PHOTOGRAPHY",
+    "PRODUCTION",
+    "DESIGN",
+    "2D / 3D MOTION",
+  ];
+
+  //assets
+  const landing = scPostsData.find((p) => {
+    return p.slug === "landing";
+  });
+
+  const services = scPostsData.find((p) => {
+    return p.slug === "services";
   });
 
   const alfie = scPostsData.find((p) => {
@@ -61,6 +80,7 @@ const Home = ({ scPostsData }) => {
 
   const wrapper = useRef();
   const content = useRef();
+  const landingRef = useRef();
 
   useGSAP(
     () => {
@@ -74,14 +94,36 @@ const Home = ({ scPostsData }) => {
     { scope: wrapper }
   );
 
+  useGSAP(() => {
+    let mm = gsap.matchMedia();
+
+    console.log(landingRef.current.height);
+
+    mm.add("(min-width: 768px)", () => {
+      // gsap.from("#landing", {
+      //   scrollTrigger: {},
+      // });
+      gsap.from("#landing", {
+        scrollTrigger: {
+          trigger: "#landing",
+          start: "top top",
+          end: "+=1500",
+          pin: true,
+          onUpdate: (self) => setLandingImage(Math.floor(self.progress * 5)),
+        },
+      });
+    });
+  });
   return (
     <div id="smooth-wrapper" ref={wrapper}>
       <div id="smooth-content" ref={content}>
         <div className="home">
-          <div id="landing">
-            <h1 id="rainyday-logo">RAINYDAY</h1>
-            <div id="terrasyn-video-container">
-              <HomeVideo type="video" post={landingVideo} playVid={true} />
+          <div id="landing" ref={landingRef}>
+            <div id="rainyday-logo-container">
+              <h1 id="rainyday-logo">RAINYDAY</h1>
+            </div>
+            <div id="landing-image-container">
+              <img id="landing-image" src={landing.imageStack[landingImage]} />
             </div>
           </div>
           <div id="info">
@@ -112,16 +154,72 @@ const Home = ({ scPostsData }) => {
             <div id="home-projects-text-container">
               <h1 id="home-projects-text">PROJECTS</h1>
             </div>
-            <div className="home-project-grid">
-              <div className="home-project-container" id="project-1-container">
-                <div className="home-project-image-container"></div>
-                <h3>PROJECT 1</h3>
-                <p>Some small write up and description about Project 1</p>
+            <div className="home-project-container" id="project-1-container">
+              <div className="home-project-image-container"></div>
+              <h3>PROJECT 1</h3>
+              <p>Some small write up and description about Project 1</p>
+            </div>
+            <div className="home-project-container" id="project-2-container">
+              <div className="home-project-image-container"></div>
+              <h3>PROJECT 2</h3>
+              <p>Another small write up and description about Project 2</p>
+            </div>
+          </div>
+          <div id="services">
+            <div id="services-text-container">
+              {servicesList.map((service) => {
+                return <h2>{service}</h2>;
+              })}
+            </div>
+            <div id="services-image-container">
+              <img src={services.imageStack[0]} />
+            </div>
+          </div>
+          <div id="contact">
+            <div id="contact-video-container">
+              <video
+                className={`folio-video`}
+                type="video/mp4"
+                autoPlay={true}
+                id="video"
+                crossOrigin="true"
+                playsInline
+                muted
+                webkit-playsinline="true"
+                loop
+              >
+                <source src={terrasyn.video} />
+              </video>
+            </div>
+            <div id="contact-footer">
+              <div className="contact-footer-block" id="contact-footer-logo">
+                <span>RAINYDAY</span>
               </div>
-              <div className="home-project-container" id="project-2-container">
-                <div className="home-project-image-container"></div>
-                <h3>PROJECT 2</h3>
-                <p>Another small write up and description about Project 2</p>
+              <div className="contact-footer-block" id="contact-footer-email">
+                <span>E:</span> <span>contact@raindaystudio.co.uk</span>
+              </div>
+              <div
+                className="contact-footer-block"
+                id="contact-footer-instagram"
+              >
+                <span>Instagram</span>
+              </div>
+              <div className="contact-footer-block" id="contact-footer-site">
+                <span>Site Design & Development</span>
+              </div>
+              <div
+                className="contact-footer-block"
+                id="contact-footer-site-credit"
+              >
+                <span>INTERSECT </span>
+                <span>|</span>
+                <span> RAINYDAY</span>
+              </div>
+              <div
+                className="contact-footer-block"
+                id="contact-footer-copyright"
+              >
+                <span>© RAINYDAY 2025</span>
               </div>
             </div>
           </div>

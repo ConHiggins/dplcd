@@ -1,6 +1,15 @@
 //IMPORTS
 //landing
-import landingVideo from "../Assets/landing-video/landing-video-desat-slowed.mp4";
+import landingVideo from "../Assets/landing/landing-video-desat-slowed.mp4";
+import landing1 from "../Assets/landing/landing-1-sd.jpg";
+import landing2 from "../Assets/landing/landing-2-sd.jpg";
+import landing3 from "../Assets/landing/landing-3-sd.jpg";
+import landing4 from "../Assets/landing/landing-4-sd.jpg";
+import landing5 from "../Assets/landing/landing-5-sd.jpg";
+import landing6 from "../Assets/landing/landing-6-sd.jpg";
+
+//services
+import servicesCollage from "../Assets/services/services-collage.jpg";
 
 //myprotein-alfie
 import alfieVideo from "../Assets/myprotein-alfie/alfie-video.mp4";
@@ -72,16 +81,16 @@ import stillness4 from "../Assets/aj-stillness/stillness-4.jpg";
 
 const projects = [
   {
-    slug: "landing-video",
-    title: "Landing",
-    client: "Landing",
-    year: 2025,
-    description:
-      "Video production and photography for Myprotein Pro with Alfie Manthorpe ahead of the British Championships",
-    badges: ["VIDEO PRODUCTION", "PHOTOGRAPHY"],
-    gridLayout: 0,
-    imageStack: undefined,
+    slug: "landing",
+    imageStack: [landing1, landing2, landing3, landing4, landing5, landing6],
     video: landingVideo,
+    projectsPage: false,
+  },
+  {
+    slug: "services",
+    gridLayout: 0,
+    imageStack: [servicesCollage],
+    video: undefined,
     projectsPage: false,
   },
   {
