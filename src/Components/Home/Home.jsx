@@ -129,7 +129,7 @@ const Home = ({ scPostsData }) => {
           <div id="info">
             <div id="info-left">
               <div id="info-text-container">
-                <h2>RAINYDAY</h2>
+                {/* <h2>RAINYDAY</h2> */}
                 <p>
                   <span className="emph">RAINYDAY</span> is a UK based creative
                   studio & production house working globally across creative
@@ -179,7 +179,7 @@ const Home = ({ scPostsData }) => {
           <div id="services">
             <div id="services-text-container">
               {servicesList.map((service) => {
-                return <h2>{service}</h2>;
+                return <span>{service}</span>;
               })}
             </div>
             <div id="services-image-container">

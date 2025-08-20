@@ -49,7 +49,6 @@
 
 #rainyday-logo-container {
   display: flex;
-  position: absolute;
   grid-column: 1;
   grid-row: 2;
 }
@@ -78,7 +77,6 @@
 
   h2 {
     font-family: Stolzl-Medium;
-    font-size: 72px;
     text-align: right;
     color: $RainydayBlue;
     margin: 2rem 0 2rem 0;
@@ -86,7 +84,7 @@
 
   p {
     font-family: Stolzl-Regular;
-    font-size: 30px;
+    font-size: 24px;
     text-align: right;
     color: $RainydayBlue;
     margin: 2rem 0 2rem 0;
@@ -139,7 +137,15 @@
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  font-family: Stolzl-Regular;
+
+  h3 {
+    color: $RainydayBlue;
+    font-family: Stolzl-Medium;
+  }
+
+  p {
+    font-family: Stolzl-Regular;
+  }
 }
 
 #home-projects-text-container {
@@ -184,9 +190,10 @@
   width: 100vw;
   display: grid;
   grid-template-columns: 45% 55%;
-  h2 {
-    font-family: Stolzl-Regular;
+  span {
+    font-family: Stolzl-Medium;
     margin: 0;
+    font-size: 24px;
     margin-bottom: 1rem;
     color: $RainydayBlue;
   }
