@@ -122,17 +122,17 @@ const Home = ({ scPostsData }) => {
       //   ease: "none",
       // });
 
-      gsap.from("#landing-image", {
-        scrollTrigger: {
-          target: "#landing",
-          start: "top top",
-          end: "100px",
-          scrub: true,
-          markers: true,
-        },
-        height: "80vh",
-        ease: "none",
-      });
+      // gsap.from("#landing-image", {
+      //   scrollTrigger: {
+      //     target: "#landing",
+      //     start: "top top",
+      //     end: "100px",
+      //     scrub: true,
+      //     markers: true,
+      //   },
+      //   height: "80vh",
+      //   ease: "none",
+      // });
 
       //landing-section pinning
       gsap.from("#landing", {

@@ -19,8 +19,8 @@
 #landing {
   height: 100vh;
   width: 100vw;
-  display: grid;
-  grid-template-rows: 15% 70% 15%;
+  display: flex;
+  justify-content: center;
   // grid-template-columns: 55% 45%;
   h1 {
     font-family: Stolzl-Medium;
@@ -60,7 +60,8 @@
 }
 
 #landing-image-container {
-  margin-right: 10vw;
+  height: 100%;
+  // margin-right: 10vw;
   img {
     object-fit: cover;
     height: 70vh;
