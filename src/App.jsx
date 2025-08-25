@@ -100,7 +100,11 @@ function App() {
             path="/projects"
             exact
           />
-          <Route element={<Info />} path="/info" exact />
+          <Route
+            element={<Info scPostsData={scPostsData} />}
+            path="/info"
+            exact
+          />
         </Routes>
       </div>
     </BrowserRouter>

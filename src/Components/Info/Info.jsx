@@ -1,10 +1,16 @@
 import "./Info.scss";
 
-const Info = () => {
+const Info = ({ scPostsData }) => {
+  const services = scPostsData.find((p) => {
+    return p.slug === "services";
+  });
+
   const info = {
     title: "RAINYDAY",
-    blurb:
-      "RAINYDAY IS A CREATIVE COMPANY FOCUSED ON THE DEVELOPMENT & DELIVERY OF IDEAS. WE ARE FOUNDED WITH A COMMITMENT TO CREATIVE EXPRESSION AND COLLABORATION. THROUGH CREATIVE DIRECTION, VISUAL PRODUCTION, DESIGN AND SOUND, WE WORK TO REALISE CONCEPTS",
+    blurb1:
+      "RAINYDAY is a UK based creative studio & production house working globally across creative direction, film & still image.",
+    blurb2:
+      "We offer a full service approach RAINYDAY works from concept development and ideation through to production and execution of creative campaigns.",
     services: [
       "FILM & PHOTOGRAPHY",
       "CREATIVE DIRECTION",
@@ -26,8 +32,9 @@ const Info = () => {
       <div className="info">
         <div className="info-left">
           <div className="info-text-container">
-            <p className="info-title">{info.title}</p>
-            <p className="info-blurb">{info.blurb}</p>
+            <h1 className="info-title">{info.title}</h1>
+            <p className="info-blurb">{info.blurb1}</p>
+            <p className="info-blurb">{info.blurb2}</p>
             <div className="info-services">
               <p className="info-services-title">SERVICES</p>
               <>
@@ -40,11 +47,14 @@ const Info = () => {
               <a href={info.emailTo}>{info.email}</a>
             </p>
             <p className="info-instagram">
-              <a href={info.instagramTo}>{info.instagram}</a>
+              <a href={info.instagramTo}>Instagram</a>
             </p>
           </div>
         </div>
-        <div className="info-right"></div>
+        <div className="info-right">
+          {" "}
+          <img src={services.imageStack[0]} />
+        </div>
       </div>
     </>
   );
