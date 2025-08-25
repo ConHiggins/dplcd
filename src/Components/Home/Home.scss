@@ -7,7 +7,7 @@
 }
 
 .home {
-  background: $LightOffWhite;
+  background: $LighterOffWhite;
   video {
     width: 100vw;
     height: 100vh;
@@ -20,18 +20,17 @@
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-rows: 15% 70% 15%;
+  // grid-template-columns: 55% 45%;
   h1 {
     font-family: Stolzl-Medium;
     color: $RainydayBlue;
-    background: none;
     z-index: 20;
     margin: 0;
-
-    //tuned values for animation
-    line-height: 0;
-    padding-top: 4.67vh;
+    padding-right: 2vw;
     font-size: 15vh;
+    line-height: 0;
+    padding-bottom: 5vh;
     // left: 50%;
     // top: 50%;
     //for centered fontsize 124 px
@@ -48,17 +47,20 @@
   }
 }
 
-#rainyday-logo-container {
+#landing-body {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding-top: 15vh;
   padding-bottom: 15vh;
-  padding-right: 16px;
+}
+
+#rainyday-logo-container {
+  display: flex;
+  flex-direction: column;
 }
 
 #landing-image-container {
-  padding-top: 15vh;
-  padding-bottom: 15vh;
+  margin-right: 10vw;
   img {
     object-fit: cover;
     height: 70vh;
@@ -66,11 +68,11 @@
 }
 
 //INFO
-#info {
+#home-info {
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 65% 35%;
   grid-template-rows: 1fr;
   background-color: $LighterOffWhite;
   z-index: 30;
@@ -95,52 +97,61 @@
   font-family: Stolzl-Medium;
 }
 
-#info-left {
+#home-info-left {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
   display: flex;
   max-height: 100vh;
-  padding: 64px;
+  // padding: 64px;
 }
 
-#info-text-container {
+#home-info-text-container {
   margin-top: auto;
   margin-bottom: auto;
+  padding-left: 128px;
+  padding-right: 64px;
 }
 
-#info-right {
+#home-info-right {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
-  min-width: 45vw;
-  display: flex;
-  justify-content: center;
+  overflow: hidden;
+  // display: flex;
+  // justify-content: center;
 }
 
-#info-image {
+#home-info-image {
+  height: 100%;
   overflow: hidden;
   img {
-    max-height: 100vh;
-    height: auto;
-    width: auto;
-    max-width: 45vw;
+    max-height: 1088px;
+    // width: 100%;
+    //max-width: 45vw;
     object-fit: cover;
+    overflow: hidden;
   }
+}
+
+//VIDEO
+
+#home-video {
+  height: 100vh;
+  z-index: 20;
 }
 
 //PROJECTS
 #home-projects {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: space-between;
-
+  display: grid;
+  grid-template-columns: 20vw 1fr;
   h3 {
     color: $RainydayBlue;
-    font-family: Stolzl-Medium;
+    font-family: Stolzl-Regular;
   }
 
   p {
@@ -164,7 +175,6 @@
 
 #home-project-section {
   display: flex;
-  width: 80vw;
   justify-content: flex-end;
 }
 
@@ -184,16 +194,21 @@
   width: 29vw;
 }
 
+#project-2-container {
+  padding-right: 2vw;
+}
+
 //SERVICES
 #services {
   height: 100vh;
   width: 100vw;
   display: grid;
   grid-template-columns: 45% 55%;
-  span {
+  p {
+    text-align: center;
     font-family: Stolzl-Medium;
     margin: 0;
-    font-size: 24px;
+    font-size: 36px;
     margin-bottom: 1rem;
     color: $RainydayBlue;
   }
@@ -236,6 +251,7 @@
   height: 96px;
   z-index: 20;
   background-color: $LighterOffWhite;
+  color: #606060;
   span {
     font-size: 14px;
     font-family: Roboto;
@@ -257,7 +273,7 @@
 .contact-footer-link {
   text-decoration: underline;
   a {
-    color: black;
+    color: rgb(69, 69, 69);
   }
 }
 
@@ -295,6 +311,7 @@
   grid-row: 2;
   padding-bottom: 21px;
   .contact-footer-intersect {
+    color: black;
     font-family: JetBrainsMono-SemiBold;
     margin-right: 4px;
   }

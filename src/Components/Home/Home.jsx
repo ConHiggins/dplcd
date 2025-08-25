@@ -66,15 +66,17 @@ const Home = ({ scPostsData }) => {
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {
-      //rainyday-logo-translation
+      const pinSectionVal = "+=1200";
+
+      //!LANDING
+      //rainyday logo translation;
       const landingTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: "#landing",
           start: "top top",
           end: "85%",
-          markers: true,
           scrub: true,
-          // pin: true,
+          //switch inages on scroll
           onUpdate: (self) => {
             let val = Math.ceil(self.progress * 6 - 1);
             if (val < 0) val = 0;
@@ -84,12 +86,51 @@ const Home = ({ scPostsData }) => {
         },
       });
 
-      const flushY =
-        document.querySelector("#landing-image").offsetHeight -
-        document.querySelector("#rainyday-logo").offsetHeight * 0.155;
+      const remainingHeight =
+        document.querySelector("#landing-image").offsetHeight;
 
-      landingTimeline.to("#rainyday-logo", {
-        y: flushY,
+      landingTimeline.to(
+        "#rainyday-logo",
+        {
+          y: remainingHeight,
+          ease: "none",
+        },
+        0
+      );
+
+      // gsap.from("#rainyday-logo", {
+      //   scrollTrigger: {
+      //     target: "#landing",
+      //     start: "top top",
+      //     end: "100px",
+      //     scrub: true,
+      //     markers: true,
+      //   },
+      //   opacity: 0,
+      //   ease: "none",
+      // });
+
+      // gsap.from("#landing-image", {
+      //   scrollTrigger: {
+      //     target: "#landing",
+      //     start: "top top",
+      //     end: "100px",
+      //     scrub: true,
+      //     markers: true,
+      //   },
+      //   xPercent: -45,
+      //   ease: "none",
+      // });
+
+      gsap.from("#landing-image", {
+        scrollTrigger: {
+          target: "#landing",
+          start: "top top",
+          end: "100px",
+          scrub: true,
+          markers: true,
+        },
+        height: "80vh",
         ease: "none",
       });
 
@@ -98,7 +139,104 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#landing",
           start: "top top",
-          end: "+800",
+          end: pinSectionVal,
+          scrub: true,
+          pin: true,
+        },
+      });
+
+      //!HOME-INFO
+      const infoText = SplitText.create("#home-info-text-container", {
+        type: "words",
+      });
+
+      const infoTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#home-info",
+          start: "top center",
+          end: "85%",
+          scrub: true,
+          // pin: true,
+        },
+      });
+
+      infoTimeline.from(infoText.words, {
+        y: -30,
+        autoAlpha: 0,
+        stagger: 0.02,
+      });
+
+      gsap.from("#home-info-image", {
+        scrollTrigger: {
+          trigger: "#home-info",
+          start: "top center",
+          end: "30%",
+          scrub: true,
+          // pin: true,
+        },
+        y: 400,
+        easing: "none",
+      });
+
+      //home-info pinning
+      gsap.from("#home-info", {
+        scrollTrigger: {
+          trigger: "#home-info",
+          start: "top top",
+          end: pinSectionVal,
+          scrub: true,
+          pin: true,
+        },
+      });
+
+      //!HOME-VIDEO
+      gsap.from("#home-video", {
+        scrollTrigger: {
+          trigger: "#home-video",
+          start: "top top",
+          end: pinSectionVal,
+          scrub: true,
+          pin: true,
+        },
+      });
+
+      //!HOME-PROJECTS
+      gsap.from("#home-projects", {
+        scrollTrigger: {
+          trigger: "#home-projects",
+          start: "top top",
+          end: pinSectionVal,
+          scrub: true,
+          pin: true,
+        },
+      });
+
+      //!SERVICES
+      const servicesText = SplitText.create("#services-text-container", {
+        type: "lines",
+      });
+
+      const servicesTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#services",
+          start: "top center",
+          end: "85%",
+          scrub: true,
+          // pin: true,
+        },
+      });
+
+      servicesTimeline.from(servicesText.lines, {
+        y: -30,
+        autoAlpha: 0,
+        stagger: 0.1,
+      });
+
+      gsap.from("#services", {
+        scrollTrigger: {
+          trigger: "#services",
+          start: "top top",
+          end: pinSectionVal,
           scrub: true,
           pin: true,
         },
@@ -111,16 +249,31 @@ const Home = ({ scPostsData }) => {
       <div id="smooth-content" ref={content}>
         <div className="home">
           <div id="landing" ref={landingRef}>
-            <div id="rainyday-logo-container">
-              <h1 id="rainyday-logo">RAINYDAY</h1>
-            </div>
-            <div id="landing-image-container">
-              <img id="landing-image" src={landing.imageStack[3]} />
+            <div id="landing-body">
+              <div id="rainyday-logo-container">
+                <h1 id="rainyday-logo">RAINYDAY</h1>
+              </div>
+              <div id="landing-image-container">
+                {landing.imageStack.map((image, index) => {
+                  return (
+                    <img
+                      key={image + "_" + index}
+                      style={{
+                        display: index === landingImageIndex ? "block" : "none",
+                        visibility:
+                          index === landingImageIndex ? "visible" : "hidden",
+                      }}
+                      id="landing-image"
+                      src={image}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
-          <div id="info">
-            <div id="info-left">
-              <div id="info-text-container">
+          <div id="home-info">
+            <div id="home-info-left">
+              <div id="home-info-text-container">
                 {/* <h2>RAINYDAY</h2> */}
                 <p>
                   <span className="emph">RAINYDAY</span> is a UK based creative
@@ -135,11 +288,11 @@ const Home = ({ scPostsData }) => {
                 </p>
               </div>
             </div>
-            <div id="info-right">
-              <img id="info-image" src={alfie.imageStack[0]} />
+            <div id="home-info-right">
+              <img id="home-info-image" src={alfie.imageStack[0]} />
             </div>
           </div>
-          <div id="video">
+          <div id="home-video">
             <HomeVideo type="video" post={alfie} playVid={true} />
           </div>
           <div id="home-projects">
@@ -171,11 +324,11 @@ const Home = ({ scPostsData }) => {
           <div id="services">
             <div id="services-text-container">
               {servicesList.map((service) => {
-                return <span>{service}</span>;
+                return <p>{service}</p>;
               })}
             </div>
             <div id="services-image-container">
-              <img src={services.imageStack[0]} />
+              <img src={services.imageStack[landingImageIndex]} />
             </div>
           </div>
           <div id="contact">
@@ -247,228 +400,5 @@ const Home = ({ scPostsData }) => {
     </div>
   );
 };
-
-//!!! Keep GSAP Snips for later ref
-// useGSAP(() => {
-//   let mm = gsap.matchMedia();
-
-//   //fractal-anims
-//   const pinVal = "+=1440";
-
-//   mm.add("(min-width: 768px)", () => {
-//     gsap.from("#fractel-1", {
-//       y: 450,
-//       scrollTrigger: {
-//         trigger: "#fractel-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//         markers: false,
-//       },
-//     });
-
-//     gsap.from("#fractel-2", {
-//       y: 750,
-//       scrollTrigger: {
-//         trigger: "#fractel-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//         markers: false,
-//       },
-//     });
-
-//     gsap.from("#fractel-3", {
-//       y: 1050,
-//       scrollTrigger: {
-//         trigger: "#fractel-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//         markers: false,
-//       },
-//     });
-
-//     gsap.from("#fractel-images", {
-//       scrollTrigger: {
-//         trigger: "#fractel-image-section",
-//         start: "top top",
-//         end: pinVal,
-//         scrub: true,
-//         pin: true,
-//       },
-//     });
-
-//     //my-protein-anims
-//     gsap.from("#my-protein-1", {
-//       y: 1050,
-//       scrollTrigger: {
-//         trigger: "#my-protein-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//       },
-//     });
-
-//     gsap.from("#my-protein-2", {
-//       y: 750,
-//       scrollTrigger: {
-//         trigger: "#my-protein-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//       },
-//     });
-
-//     gsap.from("#my-protein-3", {
-//       y: 450,
-//       scrollTrigger: {
-//         trigger: "#my-protein-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//       },
-//     });
-
-//     gsap.from("#my-protein-images", {
-//       scrollTrigger: {
-//         trigger: "#my-protein-image-section",
-//         start: "top top",
-//         end: pinVal,
-//         scrub: true,
-//         pin: true,
-//       },
-//     });
-
-//     //stillness-anims
-//     gsap.from("#stillness-video-container", {
-//       scrollTrigger: {
-//         trigger: "#stillness-video-container",
-//         start: "top top",
-//         end: pinVal,
-//         scrub: true,
-//         pin: true,
-//       },
-//     });
-
-//     //alan-johnson-anims
-//     gsap.from("#alan-johnson-1", {
-//       y: 450,
-//       scrollTrigger: {
-//         trigger: "#alan-johnson-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//       },
-//     });
-
-//     gsap.from("#alan-johnson-2", {
-//       y: 750,
-//       scrollTrigger: {
-//         trigger: "#alan-johnson-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//       },
-//     });
-
-//     gsap.from("#alan-johnson-3", {
-//       y: 1050,
-//       scrollTrigger: {
-//         trigger: "#alan-johnson-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//       },
-//     });
-
-//     gsap.from("#alan-johnson-images", {
-//       scrollTrigger: {
-//         trigger: "#alan-johnson-image-section",
-//         start: "top top",
-//         end: pinVal,
-//         scrub: true,
-//         pin: true,
-//       },
-//     });
-
-//     //highline-zine-anims
-//     gsap.from("#highline-zine-1", {
-//       y: 1050,
-//       scrollTrigger: {
-//         trigger: "#highline-zine-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//       },
-//     });
-
-//     gsap.from("#highline-zine-2", {
-//       y: 750,
-//       scrollTrigger: {
-//         trigger: "#highline-zine-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//       },
-//     });
-
-//     gsap.from("#highline-zine-3", {
-//       y: 450,
-//       scrollTrigger: {
-//         trigger: "#highline-zine-image-section",
-//         start: "top bottom",
-//         end: "+=1080",
-//         scrub: true,
-//       },
-//     });
-
-//     gsap.from("#highline-zine-images", {
-//       scrollTrigger: {
-//         trigger: "#highline-zine-image-section",
-//         start: "top top",
-//         end: pinVal,
-//         scrub: true,
-//         pin: true,
-//       },
-//     });
-
-//     //bop anims
-//     gsap.from("#bop-video", {
-//       scrollTrigger: {
-//         trigger: "#bop-video",
-//         start: "top top",
-//         end: pinVal,
-//         scrub: true,
-//         pin: true,
-//         markers: false,
-//       },
-//     });
-
-//     //highline video anims
-//     gsap.from("#highline-dsplaced-video", {
-//       scrollTrigger: {
-//         trigger: "#highline-dsplaced-video",
-//         start: "top top",
-//         end: pinVal,
-//         scrub: true,
-//         pin: true,
-//         markers: false,
-//       },
-//     });
-
-//     //fthmless anims
-//     gsap.from("#fthmlss-video", {
-//       scrollTrigger: {
-//         trigger: "#fthmlss-video",
-//         start: "top top",
-//         end: pinVal,
-//         scrub: true,
-//         pin: true,
-//         markers: false,
-//       },
-//     });
-//   });
-// });
 
 export default Home;
