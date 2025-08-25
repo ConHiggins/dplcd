@@ -9,7 +9,7 @@ import landing5 from "../Assets/landing/landing-5-sd.jpg";
 import landing6 from "../Assets/landing/landing-6-sd.jpg";
 
 //services
-import servicesCollage from "../Assets/services/services-collage.jpg";
+import servicesCollage from "../Assets/services/services-collage.png";
 
 //myprotein-alfie
 import alfieVideo from "../Assets/myprotein-alfie/alfie-video.mp4";

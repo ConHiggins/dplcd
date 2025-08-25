@@ -16,6 +16,24 @@ import "./Home.scss";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
+const RainydayLogoSVG = () => {
+  return (
+    <svg
+      id="rainyday-svg"
+      width="503"
+      height="69"
+      viewBox="0 0 503 69"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.914797 69V0.399995H30.4128C45.1128 0.399995 53.8348 9.122 53.8348 22.744C53.8348 33.916 48.0528 40.776 38.5468 43.226L57.6568 69H40.4088L22.6708 44.304H14.9288V69H0.914797ZM14.9288 32.054H28.8448C36.1948 32.054 39.6248 28.526 39.6248 22.94C39.6248 17.256 36.0968 13.728 28.8448 13.728H14.9288V32.054ZM63.0116 69L88.6876 0.399995H106.426L132.102 69H117.206L111.326 52.83H83.6896L77.8096 69H63.0116ZM88.4916 39.502H106.524L97.5076 14.512L88.4916 39.502ZM142.268 69V0.399995H156.282V69H142.268ZM186.657 0.399995L216.547 48.322L215.273 29.114V0.399995H229.287V69H213.117L183.325 20.98L184.599 40.286V69H170.585V0.399995H186.657ZM239.01 0.399995H254.788L270.272 30.584L285.756 0.399995H301.534L277.328 46.264V69H263.216L263.314 46.558L239.01 0.399995ZM311.759 69V0.399995H336.553C356.545 0.399995 371.637 15.002 371.637 34.7C371.637 54.3 356.545 69 336.553 69H311.759ZM325.773 55.672H336.553C348.901 55.672 357.623 47.048 357.623 34.7C357.623 22.352 348.901 13.728 336.553 13.728H325.773V55.672ZM374.908 69L400.584 0.399995H418.322L443.998 69H429.102L423.222 52.83H395.586L389.706 69H374.908ZM400.388 39.502H418.42L409.404 14.512L400.388 39.502ZM439.699 0.399995H455.477L470.961 30.584L486.445 0.399995H502.223L478.017 46.264V69H463.905L464.003 46.558L439.699 0.399995Z"
+        fill="#023373"
+      />
+    </svg>
+  );
+};
+
 const Home = ({ scPostsData }) => {
   const [landingImageIndex, setLandingImageIndex] = useState(0);
 
@@ -45,6 +63,17 @@ const Home = ({ scPostsData }) => {
   const terrasyn = scPostsData.find((p) => {
     return p.slug === "fractel-x-dsplaced-terrasyn";
   });
+
+  const lockholds = scPostsData.find((p) => {
+    return p.slug === "lock-holds-supernova";
+  });
+
+  const cotic = scPostsData.find((p) => {
+    return p.slug === "cotic-flaremax";
+  });
+
+  const project1 = lockholds;
+  const project2 = cotic;
 
   const wrapper = useRef();
   const content = useRef();
@@ -86,53 +115,21 @@ const Home = ({ scPostsData }) => {
         },
       });
 
-      const remainingHeight =
-        document.querySelector("#landing-image").offsetHeight;
+      const imageHeight = document.querySelector("#landing-image").offsetHeight;
+      const SVGHeight = document
+        .querySelector("#rainyday-svg")
+        .getBoundingClientRect().height;
+
+      const translateVal = imageHeight - SVGHeight;
 
       landingTimeline.to(
-        "#rainyday-logo",
+        "#rainyday-svg",
         {
-          y: remainingHeight,
+          y: translateVal,
           ease: "none",
         },
         0
       );
-
-      // gsap.from("#rainyday-logo", {
-      //   scrollTrigger: {
-      //     target: "#landing",
-      //     start: "top top",
-      //     end: "100px",
-      //     scrub: true,
-      //     markers: true,
-      //   },
-      //   opacity: 0,
-      //   ease: "none",
-      // });
-
-      // gsap.from("#landing-image", {
-      //   scrollTrigger: {
-      //     target: "#landing",
-      //     start: "top top",
-      //     end: "100px",
-      //     scrub: true,
-      //     markers: true,
-      //   },
-      //   xPercent: -45,
-      //   ease: "none",
-      // });
-
-      // gsap.from("#landing-image", {
-      //   scrollTrigger: {
-      //     target: "#landing",
-      //     start: "top top",
-      //     end: "100px",
-      //     scrub: true,
-      //     markers: true,
-      //   },
-      //   height: "80vh",
-      //   ease: "none",
-      // });
 
       //landing-section pinning
       gsap.from("#landing", {
@@ -154,7 +151,7 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#home-info",
           start: "top center",
-          end: "85%",
+          end: "45%",
           scrub: true,
           // pin: true,
         },
@@ -211,6 +208,45 @@ const Home = ({ scPostsData }) => {
         },
       });
 
+      const projectTextTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#home-video",
+          start: "10%",
+          end: "75%",
+          scrub: true,
+        },
+      });
+
+      projectTextTimeline.from(
+        "#home-projects-text",
+        {
+          y: 250,
+          ease: "none",
+        },
+        0
+      );
+
+      const projectSectionTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#home-video",
+          start: "10%",
+          end: "75%",
+          scrub: true,
+        },
+      });
+
+      const projectResponsiveWidth =
+        document.querySelector("#home-project-section").offsetWidth * 0.25;
+
+      projectSectionTimeline.from(
+        "#home-project-section",
+        {
+          x: projectResponsiveWidth,
+          ease: "none",
+        },
+        0
+      );
+
       //!SERVICES
       const servicesText = SplitText.create("#services-text-container", {
         type: "lines",
@@ -218,19 +254,31 @@ const Home = ({ scPostsData }) => {
 
       const servicesTimeline = gsap.timeline({
         scrollTrigger: {
-          trigger: "#services",
-          start: "top center",
-          end: "85%",
+          trigger: "#home-projects",
+          start: "50%",
+          end: "120%",
           scrub: true,
           // pin: true,
         },
       });
 
-      servicesTimeline.from(servicesText.lines, {
-        y: -30,
-        autoAlpha: 0,
-        stagger: 0.1,
-      });
+      servicesTimeline.from(
+        servicesText.lines,
+        {
+          y: -30,
+          autoAlpha: 0,
+          stagger: 0.1,
+        },
+        0
+      );
+
+      servicesTimeline.from(
+        "#services-image-container",
+        {
+          y: 400,
+        },
+        0
+      );
 
       gsap.from("#services", {
         scrollTrigger: {
@@ -251,7 +299,7 @@ const Home = ({ scPostsData }) => {
           <div id="landing" ref={landingRef}>
             <div id="landing-body">
               <div id="rainyday-logo-container">
-                <h1 id="rainyday-logo">RAINYDAY</h1>
+                <RainydayLogoSVG />
               </div>
               <div id="landing-image-container">
                 {landing.imageStack.map((image, index) => {
@@ -301,25 +349,25 @@ const Home = ({ scPostsData }) => {
             </div>
             <div id="home-project-section">
               <div className="home-project-container" id="project-1-container">
-                <div className="home-project-image-container"></div>
+                <div className="home-project-image-container">
+                  <img src={project1.imageStack[3]} />
+                </div>
                 <div className="home-project-details">
-                  <h3>PROJECT 1</h3>
-                  <p>Some small write up and description about Project 1</p>
+                  <h3>{project1.title}</h3>
+                  <p>{project1.description}</p>
                 </div>
               </div>
               <div className="home-project-container" id="project-2-container">
-                <div className="home-project-image-container"></div>
+                <div className="home-project-image-container">
+                  <img src={project2.imageStack[2]} />
+                </div>
                 <div className="home-project-details">
-                  <h3>PROJECT 2</h3>
-                  <p>
-                    Another small write up and description about Project 2 Lorem
-                    ipsum, dolor sit amet consectetur adipisicing elit.
-                    Aspernatur aperiam eum accusantium eligendi nesciunt
-                    perferendis maiores iure quae quidem cupiditate!
-                  </p>
+                  <h3>{project2.title}</h3>
+                  <p>{project2.description}</p>
                 </div>
               </div>
             </div>
+            <div id="home-projects-block"></div>
           </div>
           <div id="services">
             <div id="services-text-container">
@@ -328,7 +376,7 @@ const Home = ({ scPostsData }) => {
               })}
             </div>
             <div id="services-image-container">
-              <img src={services.imageStack[landingImageIndex]} />
+              <img src={services.imageStack[0]} />
             </div>
           </div>
           <div id="contact">
