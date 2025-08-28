@@ -24,7 +24,7 @@ const NavBar = ({ context }) => {
       <div ref={navBar} className="navbar">
         <div className="navbar-left">
           <Link to={"/"} className="global_link navbar__title">
-            <span>dsplaced.</span>
+            <span>RAINYDAY</span>
           </Link>
         </div>
         <div className="navbar-right">

@@ -2,7 +2,7 @@
   "name": "displaced-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.dsplaced.co.uk/",
+  "homepage": "https://www.rainydaystudio.co.uk/",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
