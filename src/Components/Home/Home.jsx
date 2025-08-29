@@ -36,7 +36,6 @@ const RainydayLogoSVG = () => {
 
 const Home = ({ scPostsData }) => {
   const [landingImageIndex, setLandingImageIndex] = useState(0);
-  const [landingBodyWidth, setLandingBodyWidth] = useState(0);
 
   //stub data
   const servicesList = [
@@ -93,18 +92,6 @@ const Home = ({ scPostsData }) => {
   );
 
   const landingLogoContainer = useRef();
-  const landingImage = useRef();
-
-  useEffect(() => {
-    if (landingLogoContainer.current && landingImage.current) {
-      console.log(landingLogoContainer.current.offsetWidth);
-      console.log(landingImage.current.width);
-      setLandingBodyWidth(
-        landingLogoContainer.current.offsetWidth +
-          landingImage.current.offsetWidth
-      );
-    }
-  }, [landingLogoContainer.current, landingImage.current]);
 
   useGSAP(() => {
     let mm = gsap.matchMedia();
