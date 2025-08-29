@@ -36,6 +36,7 @@ const RainydayLogoSVG = () => {
 
 const Home = ({ scPostsData }) => {
   const [landingImageIndex, setLandingImageIndex] = useState(0);
+  const [landingBodyWidth, setLandingBodyWidth] = useState(0);
 
   //stub data
   const servicesList = [
@@ -91,6 +92,20 @@ const Home = ({ scPostsData }) => {
     { scope: wrapper }
   );
 
+  const landingLogoContainer = useRef();
+  const landingImage = useRef();
+
+  useEffect(() => {
+    if (landingLogoContainer.current && landingImage.current) {
+      console.log(landingLogoContainer.current.offsetWidth);
+      console.log(landingImage.current.width);
+      setLandingBodyWidth(
+        landingLogoContainer.current.offsetWidth +
+          landingImage.current.offsetWidth
+      );
+    }
+  }, [landingLogoContainer.current, landingImage.current]);
+
   useGSAP(() => {
     let mm = gsap.matchMedia();
 
@@ -99,6 +114,7 @@ const Home = ({ scPostsData }) => {
 
       //!LANDING
       //rainyday logo translation;
+
       const landingTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: "#landing",
@@ -290,7 +306,7 @@ const Home = ({ scPostsData }) => {
         },
       });
     });
-  });
+  }, []);
 
   return (
     <div id="smooth-wrapper" ref={wrapper}>
@@ -298,7 +314,7 @@ const Home = ({ scPostsData }) => {
         <div className="home">
           <div id="landing" ref={landingRef}>
             <div id="landing-body">
-              <div id="rainyday-logo-container">
+              <div ref={landingLogoContainer} id="rainyday-logo-container">
                 <RainydayLogoSVG />
               </div>
               <div id="landing-image-container">

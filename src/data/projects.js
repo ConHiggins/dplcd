@@ -1,12 +1,12 @@
 //IMPORTS
 //landing
 import landingVideo from "../Assets/landing/landing-video-desat-slowed.mp4";
-import landing1 from "../Assets/landing/landing-1-sd.jpg";
-import landing2 from "../Assets/landing/landing-2-sd.jpg";
-import landing3 from "../Assets/landing/landing-3-sd.jpg";
-import landing4 from "../Assets/landing/landing-4-sd.jpg";
-import landing5 from "../Assets/landing/landing-5-sd.jpg";
-import landing6 from "../Assets/landing/landing-6-sd.jpg";
+import landing1 from "../Assets/landing/landing-1.webp";
+import landing2 from "../Assets/landing/landing-2.webp";
+import landing3 from "../Assets/landing/landing-3.webp";
+import landing4 from "../Assets/landing/landing-4.webp";
+import landing5 from "../Assets/landing/landing-5.webp";
+import landing6 from "../Assets/landing/landing-6.webp";
 
 //services
 import servicesCollage from "../Assets/services/services-collage.png";
