@@ -96,12 +96,12 @@ const Home = ({ scPostsData }) => {
   useGSAP(() => {
     let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 768px)", () => {
-      const pinSectionVal = "+=1200";
+    let pinSectionVal = "+=600";
 
+    mm.add("(min-width: 768px)", () => {
       //!LANDING
       //rainyday logo translation;
-
+      pinSectionVal = "+=1200";
       const landingTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: "#landing",
@@ -112,7 +112,6 @@ const Home = ({ scPostsData }) => {
           onUpdate: (self) => {
             let val = Math.ceil(self.progress * 6 - 1);
             if (val < 0) val = 0;
-            console.log(Math.abs(val));
             setLandingImageIndex(Math.abs(val));
           },
         },
@@ -156,7 +155,6 @@ const Home = ({ scPostsData }) => {
           start: "top center",
           end: "45%",
           scrub: true,
-          // pin: true,
         },
       });
 
@@ -172,7 +170,6 @@ const Home = ({ scPostsData }) => {
           start: "top center",
           end: "30%",
           scrub: true,
-          // pin: true,
         },
         y: 400,
         easing: "none",
@@ -201,6 +198,7 @@ const Home = ({ scPostsData }) => {
       });
 
       //!HOME-PROJECTS
+      //home-projects-pinning
       gsap.from("#home-projects", {
         scrollTrigger: {
           trigger: "#home-projects",
@@ -261,7 +259,6 @@ const Home = ({ scPostsData }) => {
           start: "50%",
           end: "120%",
           scrub: true,
-          // pin: true,
         },
       });
 
@@ -323,6 +320,9 @@ const Home = ({ scPostsData }) => {
             </div>
           </div>
           <div id="home-info">
+            <div id="home-info-right">
+              <img id="home-info-image" src={alfie.imageStack[0]} />
+            </div>
             <div id="home-info-left">
               <div id="home-info-text-container">
                 {/* <h2>RAINYDAY</h2> */}
@@ -339,9 +339,6 @@ const Home = ({ scPostsData }) => {
                 </p>
               </div>
             </div>
-            <div id="home-info-right">
-              <img id="home-info-image" src={alfie.imageStack[0]} />
-            </div>
           </div>
           <div id="home-video">
             <HomeVideo type="video" post={alfie} playVid={true} />
@@ -353,7 +350,7 @@ const Home = ({ scPostsData }) => {
             <div id="home-project-section">
               <div className="home-project-container" id="project-1-container">
                 <div className="home-project-image-container">
-                  <img src={project1.imageStack[3]} />
+                  <img src={project1.imageStack[4]} />
                 </div>
                 <div className="home-project-details">
                   <h3>{project1.title}</h3>
@@ -365,8 +362,10 @@ const Home = ({ scPostsData }) => {
                   <img src={project2.imageStack[2]} />
                 </div>
                 <div className="home-project-details">
-                  <h3>{project2.title}</h3>
-                  <p>{project2.description}</p>
+                  <div className="home-project-text">
+                    <h3>{project2.title}</h3>
+                    <p>{project2.description}</p>
+                  </div>
                 </div>
               </div>
             </div>
