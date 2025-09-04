@@ -60,9 +60,12 @@ const Home = ({ scPostsData }) => {
     return p.slug === "myprotein-alfie";
   });
 
-  const terrasyn = scPostsData.find((p) => {
-    return p.slug === "fractel-x-dsplaced-terrasyn";
+  const byu = scPostsData.find((p) => {
+    return p.slug === "myprotein-byu";
   });
+  // const terrasyn = scPostsData.find((p) => {
+  //   return p.slug === "fractel-x-dsplaced-terrasyn";
+  // });
 
   const lockholds = scPostsData.find((p) => {
     return p.slug === "lock-holds-supernova";
@@ -249,7 +252,7 @@ const Home = ({ scPostsData }) => {
       );
 
       //!SERVICES
-      const servicesText = SplitText.create("#services-text-container", {
+      const servicesText = SplitText.create("#services-text", {
         type: "lines",
       });
 
@@ -341,7 +344,7 @@ const Home = ({ scPostsData }) => {
             </div>
           </div>
           <div id="home-video">
-            <HomeVideo type="video" post={alfie} playVid={true} />
+            <HomeVideo type="video" post={byu} playVid={true} />
           </div>
           <div id="home-projects">
             <div id="home-projects-text-container">
@@ -373,9 +376,11 @@ const Home = ({ scPostsData }) => {
           </div>
           <div id="services">
             <div id="services-text-container">
-              {servicesList.map((service) => {
-                return <p>{service}</p>;
-              })}
+              <div id="services-text">
+                {servicesList.map((service) => {
+                  return <p>{service}</p>;
+                })}
+              </div>
             </div>
             <div id="services-image-container">
               <img src={services.imageStack[0]} />
@@ -394,7 +399,7 @@ const Home = ({ scPostsData }) => {
                 webkit-playsinline="true"
                 loop
               >
-                <source src={terrasyn.video} />
+                <source src={alfie.video} />
               </video>
             </div>
             <div id="contact-footer">

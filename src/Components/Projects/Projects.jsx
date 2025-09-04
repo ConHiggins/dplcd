@@ -17,7 +17,7 @@ import "./Projects.scss";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 export const Projects = ({ scPostsData }) => {
-  const projects = scPostsData;
+  const data = scPostsData;
   const [modalOpen, setModalOpen] = useState(false);
   const [modalProject, setModalProject] = useState(undefined);
   const [modalMode, setModalMode] = useState(undefined);
@@ -29,6 +29,11 @@ export const Projects = ({ scPostsData }) => {
   //     return p.slug === "fractel_folio";
   //   });
 
+  const projects = data.filter((project) => {
+    return project.projectsPage;
+  });
+
+  console.log(projects);
   const wrapper = useRef();
   const content = useRef();
 
@@ -37,7 +42,7 @@ export const Projects = ({ scPostsData }) => {
       wrapper.current = ScrollSmoother.create({
         wrapper: wrapper.current,
         content: content.current,
-        smooth: 3,
+        smooth: 1.5,
       });
     }
     // { scope: wrapper }

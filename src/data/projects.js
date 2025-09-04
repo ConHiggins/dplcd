@@ -14,12 +14,31 @@ import servicesCollage from "../Assets/services/services-collage.png";
 //myprotein-alfie
 import alfieVideo from "../Assets/myprotein-alfie/alfie-video.mp4";
 import alfie1 from "../Assets/myprotein-alfie/alfie-1.jpg";
+import alfie2 from "../Assets/myprotein-alfie/alfie-2.jpg";
+import alfie3 from "../Assets/myprotein-alfie/alfie-3.jpg";
+import alfie4 from "../Assets/myprotein-alfie/alfie-4.jpg";
+import alfie5 from "../Assets/myprotein-alfie/alfie-5.jpg";
+import alfie6 from "../Assets/myprotein-alfie/alfie-6.jpg";
 
-//SIS
+//myprotein-byu
+import byuVideo from "../Assets/myprotein-byu/byu-video.mp4";
+import byu1 from "../Assets/myprotein-byu/byu-1.jpg";
+import byu2 from "../Assets/myprotein-byu/byu-2.jpg";
+import byu3 from "../Assets/myprotein-byu/byu-3.jpg";
+import byu4 from "../Assets/myprotein-byu/byu-4.jpg";
+import byu5 from "../Assets/myprotein-byu/byu-5.jpg";
+import byu6 from "../Assets/myprotein-byu/byu-6.jpg";
+import byu7 from "../Assets/myprotein-byu/byu-7.jpg";
+import byu8 from "../Assets/myprotein-byu/byu-8.jpg";
+
+//sis
 //! assets to follow
 
 //myprotein-ross-edgely
 import rossEdgelyVideo from "../Assets/myprotein-ross-edgely/ross-edgely-video.mp4";
+import rossEdgely1 from "../Assets/myprotein-ross-edgely/ross-edgely-1.jpg";
+import rossEdgely2 from "../Assets/myprotein-ross-edgely/ross-edgely-2.jpg";
+import rossEdgely3 from "../Assets/myprotein-ross-edgely/ross-edgely-3.jpg";
 
 //myprotein-hyrox-chicago
 //! assets to follow
@@ -94,6 +113,19 @@ const projects = [
     projectsPage: false,
   },
   {
+    slug: "myprotein-byu",
+    title: "Back Yard Ultra Warm Up ",
+    client: "Myprotein",
+    year: 2025,
+    description:
+      "Creative direction, video production and photography for Myprotein Pro ahead of the Back Yard Ultra Event",
+    badges: ["CREATIVE DIRECTION", "VIDEO PRODUCTION", "PHOTOGRAPHY"],
+    gridLayout: 0,
+    imageStack: [byu1, byu2, byu3, byu4, byu6, byu7, byu8],
+    video: byuVideo,
+    projectsPage: true,
+  },
+  {
     slug: "myprotein-alfie",
     title: "Alfie",
     client: "Myprotein",
@@ -102,7 +134,7 @@ const projects = [
       "Video production and photography for Myprotein Pro with Alfie Manthorpe ahead of the British Championships",
     badges: ["VIDEO PRODUCTION", "PHOTOGRAPHY"],
     gridLayout: 0,
-    imageStack: [alfie1],
+    imageStack: [alfie1, alfie2, alfie3, alfie4, alfie5, alfie6],
     video: alfieVideo,
     projectsPage: true,
   },
@@ -119,19 +151,19 @@ const projects = [
   //   video: undefined,
   //   projectsPage: true,
   // },
-  // {
-  //   slug: "myprotein-ross-edgely",
-  //   title: "Ross Edgely",
-  //   client: "Myprotein",
-  //   year: 2025,
-  //   description:
-  //     "Video production for Myprotein ahead of ross Edgley's historic swim around Iceland",
-  //   badges: ["VIDEO PRODUCTION"],
-  //   gridLayout: 0,
-  //   imageStack: undefined,
-  //   video: rossEdgelyVideo,
-  //   projectsPage: true,
-  // },
+  {
+    slug: "myprotein-ross-edgely",
+    title: "Ross Edgely",
+    client: "Myprotein",
+    year: 2025,
+    description:
+      "Video production for Myprotein ahead of ross Edgley's historic swim around Iceland",
+    badges: ["VIDEO PRODUCTION"],
+    gridLayout: 0,
+    imageStack: [rossEdgely1, rossEdgely2, rossEdgely3],
+    video: rossEdgelyVideo,
+    projectsPage: true,
+  },
   // {
   //   slug: "myprotein-hyrox-chicago",
   //   title: "Hyrox Chicago",
@@ -184,7 +216,7 @@ const projects = [
     client: "Myprotein",
     year: 2024,
     description: "Photography for MyProtein x Runna",
-    badges: ["Photography"],
+    badges: ["PHOTOGRAPHY"],
     gridLayout: 0,
     imageStack: [runna1, runna2, runna3, runna4, runna5, runna6, runna7],
     video: undefined,
