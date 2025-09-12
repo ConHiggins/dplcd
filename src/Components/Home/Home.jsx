@@ -85,6 +85,7 @@ const Home = ({ scPostsData }) => {
         content: content.current,
         smooth: 1.5,
         effects: true,
+        normalizeScroll: true,
       });
     },
     { scope: wrapper }
@@ -96,6 +97,56 @@ const Home = ({ scPostsData }) => {
     let mm = gsap.matchMedia();
 
     let pinSectionVal = "+=600";
+
+    gsap.from("#landing", {
+      scrollTrigger: {
+        trigger: "#landing",
+        start: "top top",
+        end: pinSectionVal,
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    gsap.from("#home-info", {
+      scrollTrigger: {
+        trigger: "#home-info",
+        start: "top top",
+        end: pinSectionVal,
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    gsap.from("#home-video", {
+      scrollTrigger: {
+        trigger: "#home-video",
+        start: "top top",
+        end: pinSectionVal,
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    gsap.from("#home-projects", {
+      scrollTrigger: {
+        trigger: "#home-projects",
+        start: "top top",
+        end: pinSectionVal,
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    gsap.from("#services", {
+      scrollTrigger: {
+        trigger: "#services",
+        start: "top top",
+        end: pinSectionVal,
+        scrub: true,
+        pin: true,
+      },
+    });
 
     mm.add("(min-width: 768px)", () => {
       //!LANDING
@@ -133,15 +184,6 @@ const Home = ({ scPostsData }) => {
       );
 
       //landing-section pinning
-      gsap.from("#landing", {
-        scrollTrigger: {
-          trigger: "#landing",
-          start: "top top",
-          end: pinSectionVal,
-          scrub: true,
-          pin: true,
-        },
-      });
 
       //!HOME-INFO
       const infoText = SplitText.create("#home-info-text-container", {
@@ -175,38 +217,11 @@ const Home = ({ scPostsData }) => {
       });
 
       //home-info pinning
-      gsap.from("#home-info", {
-        scrollTrigger: {
-          trigger: "#home-info",
-          start: "top top",
-          end: pinSectionVal,
-          scrub: true,
-          pin: true,
-        },
-      });
 
       //!HOME-VIDEO
-      gsap.from("#home-video", {
-        scrollTrigger: {
-          trigger: "#home-video",
-          start: "top top",
-          end: pinSectionVal,
-          scrub: true,
-          pin: true,
-        },
-      });
 
       //!HOME-PROJECTS
       //home-projects-pinning
-      gsap.from("#home-projects", {
-        scrollTrigger: {
-          trigger: "#home-projects",
-          start: "top top",
-          end: pinSectionVal,
-          scrub: true,
-          pin: true,
-        },
-      });
 
       const projectTextTimeline = gsap.timeline({
         scrollTrigger: {
@@ -278,16 +293,6 @@ const Home = ({ scPostsData }) => {
         },
         0
       );
-
-      gsap.from("#services", {
-        scrollTrigger: {
-          trigger: "#services",
-          start: "top top",
-          end: pinSectionVal,
-          scrub: true,
-          pin: true,
-        },
-      });
     });
   }, []);
 
