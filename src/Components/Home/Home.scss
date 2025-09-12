@@ -656,3 +656,14 @@
     }
   }
 }
+
+//*RESPONSIVE mobile
+@media screen and (min-width: 1px) and (max-width: 768px) {
+  #home-projects {
+    height: 100vh;
+  }
+
+  #project-1-container {
+    display: none;
+  }
+}
