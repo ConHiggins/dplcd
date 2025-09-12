@@ -71,12 +71,8 @@ const Home = ({ scPostsData }) => {
     return p.slug === "lock-holds-supernova";
   });
 
-  const cotic = scPostsData.find((p) => {
-    return p.slug === "cotic-flaremax";
-  });
-
   const project1 = lockholds;
-  const project2 = cotic;
+  const project2 = byu;
 
   const wrapper = useRef();
   const content = useRef();
@@ -353,7 +349,7 @@ const Home = ({ scPostsData }) => {
             <div id="home-project-section">
               <div className="home-project-container" id="project-1-container">
                 <div className="home-project-image-container">
-                  <img src={project1.imageStack[4]} />
+                  <img src={project1.imageStack[3]} />
                 </div>
                 <div className="home-project-details">
                   <h3>{project1.title}</h3>
@@ -362,7 +358,7 @@ const Home = ({ scPostsData }) => {
               </div>
               <div className="home-project-container" id="project-2-container">
                 <div className="home-project-image-container">
-                  <img src={project2.imageStack[2]} />
+                  <img src={project2.imageStack[0]} />
                 </div>
                 <div className="home-project-details">
                   <div className="home-project-text">

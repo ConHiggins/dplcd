@@ -4,23 +4,21 @@ const Info = ({ scPostsData }) => {
   const services = scPostsData.find((p) => {
     return p.slug === "services";
   });
-
   const info = {
     title: "RAINYDAY",
     blurb1:
-      "RAINYDAY is a UK based creative studio & production house working globally across creative direction, film & still image.",
+      "RAINYDAY is a UK based creative studio & production house working globally across creative direction, film & still image. ",
     blurb2:
-      "We offer a full service approach RAINYDAY works from concept development and ideation through to production and execution of creative campaigns.",
+      "RAINYDAY works from concept development and ideation through to production and execution of creative campaigns.",
+    blurb3:
+      "We believe in a relationship first approach, creating work with meaning. RAINYDAY exists to create work that connects with people; creativity with soul.",
     services: [
-      "FILM & PHOTOGRAPHY",
       "CREATIVE DIRECTION",
       "BRAND",
+      "FILM & PHOTOGRAPHY",
       "PRODUCTION",
-      "EXPERIENCES",
       "DESIGN",
-      "2D/3D MOTION",
-      "WEB DEVELOPMENT",
-      "SOUND",
+      "2D / 3D MOTION",
     ],
     emailTo: "mailto:contact@raindaystudio.co.uk",
     email: "contact@raindaystudio.co.uk",
@@ -32,9 +30,10 @@ const Info = ({ scPostsData }) => {
       <div className="info">
         <div className="info-left">
           <div className="info-text-container">
-            <h1 className="info-title">{info.title}</h1>
+            {/* <h1 className="info-title">{info.title}</h1> */}
             <p className="info-blurb">{info.blurb1}</p>
             <p className="info-blurb">{info.blurb2}</p>
+            <p className="info-blurb">{info.blurb3}</p>
             <div className="info-services">
               <p className="info-services-title">SERVICES</p>
               <>

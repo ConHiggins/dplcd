@@ -21,6 +21,8 @@
 .info-left {
   min-height: 100vh;
   width: 50vw;
+  display: flex;
+  align-items: center;
 }
 
 .info-right {
@@ -36,24 +38,23 @@
 }
 
 .info-text-container {
-  margin-top: 128px;
   margin-left: 64px;
   margin-right: 96px;
 }
 
 .info-title {
-  font-size: 36px;
+  font-size: 44px;
   margin: 0;
 }
 
 .info-blurb {
-  font-size: 18px;
+  font-size: 24px;
   margin: 0;
   margin-top: 1em;
 }
 
 .info-services {
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 .info-services-title {
@@ -71,7 +72,7 @@
 .info-email {
   font-size: 18px;
   margin: 0;
-  margin-top: 1em;
+  margin-top: 2em;
   text-decoration: underline;
   a {
     color: $RainydayBlue;
