@@ -659,6 +659,16 @@
 
 //*RESPONSIVE mobile
 @media screen and (min-width: 1px) and (max-width: 768px) {
+  #home-info-image {
+    // width: 100vw;
+    // height: auto;
+    object-position: 0 -40px;
+    // img {
+    //   width: 100vw;
+    //   object-fit: cover;
+    // }
+  }
+
   #home-projects {
     height: 100vh;
   }
