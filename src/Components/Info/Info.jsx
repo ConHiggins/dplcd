@@ -14,7 +14,7 @@ const Info = ({ scPostsData }) => {
       "We believe in a relationship first approach, creating work with meaning. RAINYDAY exists to create work that connects with people; creativity with soul.",
     services: [
       "CREATIVE DIRECTION",
-      "BRAND",
+      "CREATIVE STRATEGY",
       "FILM & PHOTOGRAPHY",
       "PRODUCTION",
       "DESIGN",

@@ -40,7 +40,7 @@ const Home = ({ scPostsData }) => {
   //stub data
   const servicesList = [
     "CREATIVE DIRECTION",
-    "BRAND",
+    "CREATIVE STRATEGY",
     "FILM & PHOTOGRAPHY",
     "PRODUCTION",
     "DESIGN",
@@ -440,8 +440,8 @@ const Home = ({ scPostsData }) => {
                 <span>
                   <span className="contact-footer-bold">E:</span>{" "}
                   <span className="contact-footer-link">
-                    <a href="mailto:contact@raindaystudio.co.uk">
-                      contact@raindaystudio.co.uk
+                    <a href="mailto:hello@raindaystudio.co.uk">
+                      hello@raindaystudio.co.uk
                     </a>
                   </span>
                 </span>
