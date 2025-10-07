@@ -73,6 +73,7 @@ const Home = ({ scPostsData }) => {
 
   const project1 = lockholds;
   const project2 = byu;
+  const project3 = alfie;
 
   const wrapper = useRef();
   const content = useRef();
@@ -146,6 +147,47 @@ const Home = ({ scPostsData }) => {
         scrub: true,
         pin: true,
       },
+    });
+
+    mm.add("(min-width: 1024px)", () => {
+      const projectSectionTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#home-video",
+          start: "60%",
+          end: "100%",
+          scrub: true,
+        },
+      });
+
+      // const projectResponsiveWidth =
+      //   document.querySelector("#home-project-section").offsetWidth * 0.25;
+
+      projectSectionTimeline.from(
+        "#project-1-container",
+        {
+          y: 100,
+          ease: "none",
+        },
+        0
+      );
+
+      projectSectionTimeline.from(
+        "#project-2-container",
+        {
+          y: 125,
+          ease: "none",
+        },
+        0
+      );
+
+      projectSectionTimeline.from(
+        "#project-3-container",
+        {
+          y: 150,
+          ease: "none",
+        },
+        0
+      );
     });
 
     mm.add("(min-width: 768px)", () => {
@@ -236,36 +278,6 @@ const Home = ({ scPostsData }) => {
         "#home-projects-text",
         {
           y: 250,
-          ease: "none",
-        },
-        0
-      );
-
-      const projectSectionTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#home-video",
-          start: "60%",
-          end: "100%",
-          scrub: true,
-        },
-      });
-
-      // const projectResponsiveWidth =
-      //   document.querySelector("#home-project-section").offsetWidth * 0.25;
-
-      projectSectionTimeline.from(
-        "#project-1-container",
-        {
-          y: 100,
-          ease: "none",
-        },
-        0
-      );
-
-      projectSectionTimeline.from(
-        "#project-2-container",
-        {
-          y: 150,
           ease: "none",
         },
         0
@@ -375,6 +387,17 @@ const Home = ({ scPostsData }) => {
                   <div className="home-project-text">
                     <h3>{project2.title}</h3>
                     <p>{project2.description}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="home-project-container" id="project-3-container">
+                <div className="home-project-image-container">
+                  <img src={project3.imageStack[0]} />
+                </div>
+                <div className="home-project-details">
+                  <div className="home-project-text">
+                    <h3>{project3.title}</h3>
+                    <p>{project3.description}</p>
                   </div>
                 </div>
               </div>

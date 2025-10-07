@@ -109,7 +109,7 @@ span {
 
   p {
     font-family: Stolzl-Regular;
-    font-size: 52px;
+    font-size: 3.4vw;
     text-align: left;
     color: $Black;
     margin: 2rem 0 2rem 0;
@@ -213,11 +213,11 @@ span {
   margin-right: 2.9vw;
   // padding: 1vw;
   padding-top: 2vw;
-  width: 29vw;
+  width: 25vw;
 }
 
 .home-project-image-container {
-  width: 29vw;
+  width: 25vw;
   aspect-ratio: 4/5;
   overflow: hidden;
   img {
@@ -229,10 +229,10 @@ span {
 }
 
 .home-project-details {
-  width: 29vw;
+  width: 25vw;
 }
 
-#project-2-container {
+#project-3-container {
   margin-right: 0vw;
 }
 
@@ -389,6 +389,11 @@ span {
       height: 60vh;
     }
   }
+
+  //PROJECTS
+  #project-1-container {
+    display: none;
+  }
 }
 
 //*RESPONSIVE Tablet & Mobile
@@ -419,7 +424,7 @@ span {
     flex-direction: column;
 
     p {
-      font-size: 48px;
+      font-size: 32px;
       text-align: left;
     }
   }
@@ -451,7 +456,6 @@ span {
 
   //PROJECTS
   #home-projects {
-    height: 200vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -526,6 +530,14 @@ span {
     padding-right: 0;
   }
 
+  #project-1-container {
+    display: none;
+  }
+
+  #project-3-container {
+    display: none;
+  }
+
   //SERVICES
   #services {
     //   height: 100vh;
@@ -537,24 +549,24 @@ span {
       text-align: left;
       font-family: Stolzl-Medium;
       margin: 0;
-      font-size: 24px;
+      font-size: 36px;
       margin-bottom: 8px;
-      color: $RainydayBlue;
     }
     // }
 
     #services-text-container {
-      height: 40vh;
+      height: 50vh;
       display: flex;
       //   flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 32px;
+      margin-left: 0;
     }
 
     #services-image-container {
-      height: 60vh;
+      height: 50vh;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -674,6 +686,12 @@ span {
 
 //*RESPONSIVE mobile
 @media screen and (min-width: 1px) and (max-width: 768px) {
+  #home-info {
+    p {
+      font-size: 24px;
+    }
+  }
+
   #home-info-image {
     // width: 100vw;
     // height: auto;
@@ -690,5 +708,15 @@ span {
 
   #project-1-container {
     display: none;
+  }
+
+  #project-3-container {
+    display: none;
+  }
+
+  #services {
+    p {
+      font-size: 24px;
+    }
   }
 }
