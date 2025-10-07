@@ -105,7 +105,7 @@ const Home = ({ scPostsData }) => {
   useGSAP(() => {
     let mm = gsap.matchMedia();
 
-    let pinSectionVal = "+=600";
+    let pinSectionVal = "+=1200";
 
     gsap.from("#landing", {
       scrollTrigger: {
@@ -204,10 +204,11 @@ const Home = ({ scPostsData }) => {
       pinSectionVal = "+=1200";
       const landingTimeline = gsap.timeline({
         scrollTrigger: {
-          trigger: "#landing",
+          trigger: ".navbar",
           start: "top top",
-          end: "85%",
+          end: "+=1200",
           scrub: true,
+          markers: true,
           //switch inages on scroll
           onUpdate: (self) => {
             let val = Math.ceil(self.progress * 6 - 1);
@@ -361,15 +362,16 @@ const Home = ({ scPostsData }) => {
                 {/* <h2>RAINYDAY</h2> */}
                 <p>
                   <span className="emph">RAINYDAY</span> is a UK based creative
-                  studio & production house working globally across creative
-                  direction, film & still image.
+                  studio & production house working globally from concept
+                  development and ideation through to production and execution
+                  of impactful creative campaigns.
                 </p>
-                <p>
-                  {/* We offer a full service approach,{" "} */}
+                {/* <p>
                   <span className="emph">RAINYDAY</span> works from concept
                   development and ideation through to production and execution
                   of creative campaigns.
-                </p>
+                </p>                  
+                */}
               </div>
             </div>
           </div>

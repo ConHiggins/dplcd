@@ -6,16 +6,17 @@
   width: 100vw;
   background-color: $LighterOffWhite;
   display: flex;
-  p,
-  span {
-    color: $RainydayBlue;
-    font-family: "Stolzl-Regular";
-  }
 
   h1 {
-    color: $RainydayBlue;
-    font-family: "Stolzl-Medium";
+    color: $Black;
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 500;
   }
+}
+
+.info-emph {
+  font-family: Stolzl-Medium;
+  color: $RainydayBlue;
 }
 
 .info-left {
@@ -40,6 +41,9 @@
 .info-text-container {
   margin-left: 64px;
   margin-right: 96px;
+  color: $Black;
+  font-family: neue-haas-grotesk-text, sans-serif;
+  font-weight: 400;
 }
 
 .info-title {
@@ -61,30 +65,34 @@
   font-size: 18px;
   text-decoration: underline;
   margin-bottom: 0.5em;
+  font-weight: 500;
 }
 
 .info-services-item {
   font-size: 18px;
   margin: 0;
   opacity: 70%;
+  font-weight: 500;
 }
 
 .info-email {
   font-size: 18px;
+  font-weight: 300;
   margin: 0;
   margin-top: 2em;
   text-decoration: underline;
   a {
-    color: $RainydayBlue;
+    color: $Black;
   }
 }
 
 .info-instagram {
   font-size: 18px;
+  font-weight: 300;
   margin-top: 0.25em;
   text-decoration: underline;
   a {
-    color: $RainydayBlue;
+    color: $Black;
   }
 }
 

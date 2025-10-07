@@ -101,15 +101,19 @@ span {
   z-index: 30;
 
   h2 {
-    font-family: Stolzl-Medium;
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 500;
+    font-style: normal;
     text-align: left;
     color: $Black;
     margin: 2rem 0 2rem 0;
   }
 
   p {
-    font-family: Stolzl-Regular;
-    font-size: 3.2vw;
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 3.5vw;
     text-align: left;
     color: $Black;
     margin: 2rem 0 2rem 0;
@@ -176,12 +180,18 @@ span {
   align-items: center;
   h3 {
     text-transform: uppercase;
-    color: $RainydayBlue;
-    font-family: Roboto;
+    color: $Black;
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 600;
+    font-style: normal;
   }
 
   p {
-    font-family: Roboto;
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: $Black;
+    padding-top: 0;
   }
 }
 
@@ -245,9 +255,11 @@ span {
   grid-template-columns: 50% 50%;
   p {
     text-align: left;
-    font-family: Stolzl-Medium;
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 500;
+    font-style: normal;
     margin: 0;
-    font-size: 52px;
+    font-size: 42px;
     margin-bottom: 1rem;
     color: $Black;
   }
@@ -297,7 +309,7 @@ span {
   color: #606060;
   span {
     font-size: 14px;
-    font-family: Roboto;
+    font-family: neue-haas-grotesk-text, sans-serif;
     display: inline-block;
   }
 }
@@ -546,13 +558,13 @@ span {
     display: flex;
     flex-direction: column;
     //   grid-template-columns: 45% 55%;
-    p {
-      text-align: left;
-      font-family: Stolzl-Medium;
-      margin: 0;
-      font-size: 36px;
-      margin-bottom: 8px;
-    }
+    // p {
+    //   text-align: left;
+    //   font-family: Stolzl-Medium;
+    //   margin: 0;
+    //   font-size: 16px;
+    //   margin-bottom: 8px;
+    // }
     // }
 
     #services-text-container {
