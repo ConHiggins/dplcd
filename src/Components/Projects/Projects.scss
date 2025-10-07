@@ -84,6 +84,10 @@
   margin-right: 2rem;
   display: flex;
   font-weight: 200;
+  p,
+  span {
+    color: $White;
+  }
 }
 
 .project-panel-badge {

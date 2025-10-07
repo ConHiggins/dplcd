@@ -32,7 +32,15 @@ import byu7 from "../Assets/myprotein-byu/byu-7.jpg";
 import byu8 from "../Assets/myprotein-byu/byu-8.jpg";
 
 //sis
-//! assets to follow
+import hydroVideo from "../Assets/sis-hydro/hydro-video.mp4";
+import hydro1 from "../Assets/sis-hydro/hydro-1.jpg";
+import hydro2 from "../Assets/sis-hydro/hydro-2.jpg";
+import hydro3 from "../Assets/sis-hydro/hydro-3.jpg";
+import hydro4 from "../Assets/sis-hydro/hydro-4.jpg";
+import hydro5 from "../Assets/sis-hydro/hydro-5.jpg";
+import hydro6 from "../Assets/sis-hydro/hydro-6.jpg";
+import hydro7 from "../Assets/sis-hydro/hydro-7.jpg";
+import hydro8 from "../Assets/sis-hydro/hydro-8.jpg";
 
 //myprotein-ross-edgely
 import rossEdgelyVideo from "../Assets/myprotein-ross-edgely/ross-edgely-video.mp4";
@@ -41,7 +49,11 @@ import rossEdgely2 from "../Assets/myprotein-ross-edgely/ross-edgely-2.jpg";
 import rossEdgely3 from "../Assets/myprotein-ross-edgely/ross-edgely-3.jpg";
 
 //myprotein-hyrox-chicago
-//! assets to follow
+import hyroxChicago1 from "../Assets/hyrox-chicago/hyrox-chicago-1.jpg";
+import hyroxChicago2 from "../Assets/hyrox-chicago/hyrox-chicago-2.jpg";
+import hyroxChicago3 from "../Assets/hyrox-chicago/hyrox-chicago-3.jpg";
+import hyroxChicago4 from "../Assets/hyrox-chicago/hyrox-chicago-4.jpg";
+import hyroxChicago5 from "../Assets/hyrox-chicago/hyrox-chicago-5.jpg";
 
 //fractel-x-dsplaced-terrasyn
 import terrasynVideo from "../Assets/fractel-x-dsplaced-terrasyn/terrasyn-video.mp4";
@@ -52,9 +64,6 @@ import terrasyn4 from "../Assets/fractel-x-dsplaced-terrasyn/terrasyn-4.jpg";
 import terrasyn5 from "../Assets/fractel-x-dsplaced-terrasyn/terrasyn-5.jpg";
 import terrasyn6 from "../Assets/fractel-x-dsplaced-terrasyn/terrasyn-6.jpg";
 import terrasyn7 from "../Assets/fractel-x-dsplaced-terrasyn/terrasyn-7.jpg";
-
-//lucy-davis-???
-//! assets to follow
 
 //my-protein-runna
 import runna1 from "../Assets/myprotein-runna/runna-1.jpg";
@@ -98,6 +107,15 @@ import stillness2 from "../Assets/aj-stillness/stillness-2.jpg";
 import stillness3 from "../Assets/aj-stillness/stillness-3.jpg";
 import stillness4 from "../Assets/aj-stillness/stillness-4.jpg";
 
+//lululemn
+import lululemon1 from "../Assets/lululemon/lululemon-1.jpg";
+import lululemon2 from "../Assets/lululemon/lululemon-2.jpg";
+import lululemon3 from "../Assets/lululemon/lululemon-3.jpg";
+import lululemon4 from "../Assets/lululemon/lululemon-4.jpg";
+import lululemon5 from "../Assets/lululemon/lululemon-5.jpg";
+import lululemon6 from "../Assets/lululemon/lululemon-6.jpg";
+import lululemon7 from "../Assets/lululemon/lululemon-7.jpg";
+
 const projects = [
   {
     slug: "landing",
@@ -138,19 +156,28 @@ const projects = [
     video: alfieVideo,
     projectsPage: true,
   },
-  // {
-  //   slug: "sis-hydro",
-  //   title: "Hydro Campaign",
-  //   client: "SIS",
-  //   year: 2025,
-  //   description:
-  //     "Video production and photography for the new Hydro campaign by SIS",
-  //   badges: ["VIDEO PRODUCTION", "PHOTOGRAPHY"],
-  //   gridLayout: 0,
-  //   imageStack: undefined,
-  //   video: undefined,
-  //   projectsPage: true,
-  // },
+  {
+    slug: "sis-hydro",
+    title: "Hydro Campaign",
+    client: "SIS",
+    year: 2025,
+    description:
+      "Video production and photography for the new Hydro campaign by SIS",
+    badges: ["VIDEO PRODUCTION", "PHOTOGRAPHY"],
+    gridLayout: 0,
+    imageStack: [
+      hydro1,
+      hydro2,
+      hydro3,
+      hydro4,
+      hydro5,
+      hydro6,
+      hydro7,
+      hydro8,
+    ],
+    video: hydroVideo,
+    projectsPage: true,
+  },
   {
     slug: "myprotein-ross-edgely",
     title: "Ross Edgely",
@@ -164,19 +191,25 @@ const projects = [
     video: rossEdgelyVideo,
     projectsPage: true,
   },
-  // {
-  //   slug: "myprotein-hyrox-chicago",
-  //   title: "Hyrox Chicago",
-  //   client: "Myprotein",
-  //   year: 2025,
-  //   description:
-  //     "Video production for Myprotein ahead of ross Edgley's historic swim around Iceland",
-  //   badges: ["Photography"],
-  //   gridLayout: 0,
-  //   imageStack: undefined,
-  //   video: undefined,
-  //projectsPage: true,
-  // },
+  {
+    slug: "myprotein-hyrox-chicago",
+    title: "Hyrox Chicago",
+    client: "Myprotein",
+    year: 2025,
+    description:
+      "Photography for Myprotein for the Hyrox World Championships in Chicago",
+    badges: ["PHOTOGRAPHY"],
+    gridLayout: 0,
+    imageStack: [
+      hyroxChicago1,
+      hyroxChicago2,
+      hyroxChicago3,
+      hyroxChicago4,
+      hyroxChicago5,
+    ],
+    video: undefined,
+    projectsPage: true,
+  },
   {
     slug: "fractel-x-dsplaced-terrasyn",
     title: "Terrasyn",
@@ -287,6 +320,27 @@ const projects = [
     gridLayout: 4,
     video: stillnessVideo,
     imageStack: [stillness1, stillness2, stillness3, stillness4],
+    projectsPage: true,
+  },
+  {
+    slug: "lululemon",
+    title: "Lululemon",
+    client: "Lulelemon",
+    year: 2025,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida felis et turpis fringilla suscipit nec nec massa. Nunc eleifend vel turpis a posuere. Nunc feugiat congue malesuada. Vivamus eu.",
+    badges: ["PHOTOGRAPHY"],
+    gridLayout: 3,
+    video: null,
+    imageStack: [
+      lululemon1,
+      lululemon2,
+      lululemon3,
+      lululemon4,
+      lululemon5,
+      lululemon6,
+      lululemon7,
+    ],
     projectsPage: true,
   },
 ];
