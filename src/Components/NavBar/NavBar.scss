@@ -66,7 +66,15 @@
     z-index: 999;
     border-bottom: 0;
 
-    a {
+    a,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span {
       mix-blend-mode: difference;
       color: white;
       font-family: "Stolzl-Regular";

@@ -194,7 +194,7 @@ const Home = ({ scPostsData }) => {
         scrollTrigger: {
           trigger: "#home-info",
           start: "top center",
-          end: "45%",
+          end: "25%",
           scrub: true,
         },
       });
@@ -244,19 +244,28 @@ const Home = ({ scPostsData }) => {
       const projectSectionTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: "#home-video",
-          start: "10%",
-          end: "75%",
+          start: "60%",
+          end: "100%",
           scrub: true,
         },
       });
 
-      const projectResponsiveWidth =
-        document.querySelector("#home-project-section").offsetWidth * 0.25;
+      // const projectResponsiveWidth =
+      //   document.querySelector("#home-project-section").offsetWidth * 0.25;
 
       projectSectionTimeline.from(
-        "#home-project-section",
+        "#project-1-container",
         {
-          x: projectResponsiveWidth,
+          y: 100,
+          ease: "none",
+        },
+        0
+      );
+
+      projectSectionTimeline.from(
+        "#project-2-container",
+        {
+          y: 150,
           ease: "none",
         },
         0
@@ -336,7 +345,7 @@ const Home = ({ scPostsData }) => {
                   direction, film & still image.
                 </p>
                 <p>
-                  We offer a full service approach,{" "}
+                  {/* We offer a full service approach,{" "} */}
                   <span className="emph">RAINYDAY</span> works from concept
                   development and ideation through to production and execution
                   of creative campaigns.
@@ -348,9 +357,6 @@ const Home = ({ scPostsData }) => {
             <HomeVideo type="video" post={byu} playVid={true} />
           </div>
           <div id="home-projects">
-            <div id="home-projects-text-container">
-              <h1 id="home-projects-text">PROJECTS</h1>
-            </div>
             <div id="home-project-section">
               <div className="home-project-container" id="project-1-container">
                 <div className="home-project-image-container">
