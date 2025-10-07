@@ -1,5 +1,6 @@
 //react
 import { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 //gsap
 import { gsap } from "gsap";
@@ -79,6 +80,12 @@ const Home = ({ scPostsData }) => {
   const wrapper = useRef();
   const content = useRef();
   const landingRef = useRef();
+
+  let navigate = useNavigate();
+
+  const handleProjectClick = () => {
+    navigate("/projects");
+  };
 
   useGSAP(
     () => {
@@ -372,7 +379,10 @@ const Home = ({ scPostsData }) => {
           <div id="home-projects">
             <div id="home-project-section">
               <div className="home-project-container" id="project-1-container">
-                <div className="home-project-image-container">
+                <div
+                  className="home-project-image-container"
+                  onClick={handleProjectClick}
+                >
                   <img src={project1.imageStack[0]} />
                 </div>
                 <div className="home-project-details">
@@ -381,7 +391,10 @@ const Home = ({ scPostsData }) => {
                 </div>
               </div>
               <div className="home-project-container" id="project-2-container">
-                <div className="home-project-image-container">
+                <div
+                  className="home-project-image-container"
+                  onClick={handleProjectClick}
+                >
                   <img src={project2.imageStack[0]} />
                 </div>
                 <div className="home-project-details">
@@ -392,7 +405,10 @@ const Home = ({ scPostsData }) => {
                 </div>
               </div>
               <div className="home-project-container" id="project-3-container">
-                <div className="home-project-image-container">
+                <div
+                  className="home-project-image-container"
+                  onClick={handleProjectClick}
+                >
                   <img src={project3.imageStack[2]} />
                 </div>
                 <div className="home-project-details">

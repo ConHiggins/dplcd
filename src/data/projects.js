@@ -113,7 +113,6 @@ import lululemon2 from "../Assets/lululemon/lululemon-2.jpg";
 import lululemon3 from "../Assets/lululemon/lululemon-3.jpg";
 import lululemon4 from "../Assets/lululemon/lululemon-4.jpg";
 import lululemon5 from "../Assets/lululemon/lululemon-5.jpg";
-import lululemon6 from "../Assets/lululemon/lululemon-6.jpg";
 import lululemon7 from "../Assets/lululemon/lululemon-7.jpg";
 
 const projects = [
@@ -327,8 +326,7 @@ const projects = [
     title: "Lululemon",
     client: "Lulelemon",
     year: 2025,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida felis et turpis fringilla suscipit nec nec massa. Nunc eleifend vel turpis a posuere. Nunc feugiat congue malesuada. Vivamus eu.",
+    description: "Campaign photography for Lululemons new Wunder Train range.",
     badges: ["PHOTOGRAPHY"],
     gridLayout: 3,
     video: null,
@@ -338,7 +336,6 @@ const projects = [
       lululemon3,
       lululemon4,
       lululemon5,
-      lululemon6,
       lululemon7,
     ],
     projectsPage: true,
