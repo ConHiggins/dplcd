@@ -213,7 +213,8 @@ const Home = ({ scPostsData }) => {
           onUpdate: (self) => {
             let val = Math.ceil(self.progress * 6 - 1);
             if (val < 0) val = 0;
-            setLandingImageIndex(Math.abs(val));
+            Math.abs(val) !== landingImageIndex &&
+              setLandingImageIndex(Math.abs(val));
           },
         },
       });
@@ -341,7 +342,6 @@ const Home = ({ scPostsData }) => {
                     <img
                       key={image + "_" + index}
                       style={{
-                        display: index === landingImageIndex ? "block" : "none",
                         visibility:
                           index === landingImageIndex ? "visible" : "hidden",
                       }}
