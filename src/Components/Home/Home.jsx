@@ -92,7 +92,7 @@ const Home = ({ scPostsData }) => {
       wrapper.current = ScrollSmoother.create({
         wrapper: wrapper.current,
         content: content.current,
-        smooth: 1.5,
+        smooth: 1,
         effects: true,
         normalizeScroll: true,
       });
@@ -208,7 +208,7 @@ const Home = ({ scPostsData }) => {
           start: "top top",
           end: "+=1200",
           scrub: true,
-          markers: true,
+          // markers: true,
           //switch inages on scroll
           onUpdate: (self) => {
             let val = Math.ceil(self.progress * 6 - 1);

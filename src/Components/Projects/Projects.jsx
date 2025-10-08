@@ -42,7 +42,7 @@ export const Projects = ({ scPostsData }) => {
       wrapper.current = ScrollSmoother.create({
         wrapper: wrapper.current,
         content: content.current,
-        smooth: 1.5,
+        smooth: 1,
       });
     }
     // { scope: wrapper }
