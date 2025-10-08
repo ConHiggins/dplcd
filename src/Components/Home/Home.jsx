@@ -201,7 +201,7 @@ const Home = ({ scPostsData }) => {
     mm.add("(min-width: 768px)", () => {
       //!LANDING
       //rainyday logo translation;
-      pinSectionVal = "+=1200";
+      pinSectionVal = "+=600";
       const landingTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: ".navbar",
