@@ -74,6 +74,17 @@ import runna5 from "../Assets/myprotein-runna/runna-5.jpg";
 import runna6 from "../Assets/myprotein-runna/runna-6.jpg";
 import runna7 from "../Assets/myprotein-runna/runna-7.jpg";
 
+//columbia-at95
+import at95Video from "../Assets/columbia-at95/columbia-at95-video.mp4";
+import at951 from "../Assets/columbia-at95/columbia-at95-001.jpg";
+import at952 from "../Assets/columbia-at95/columbia-at95-002.jpg";
+import at953 from "../Assets/columbia-at95/columbia-at95-003.jpg";
+import at954 from "../Assets/columbia-at95/columbia-at95-004.jpg";
+import at955 from "../Assets/columbia-at95/columbia-at95-005.jpg";
+import at956 from "../Assets/columbia-at95/columbia-at95-006.jpg";
+import at957 from "../Assets/columbia-at95/columbia-at95-007.jpg";
+import at958 from "../Assets/columbia-at95/columbia-at95-008.jpg";
+
 //cotic-flaremax
 import flaremaxVideo from "../Assets/cotic-flaremax/flaremax-video.mp4";
 import flaremax1 from "../Assets/cotic-flaremax/flaremax-1.jpg";
@@ -252,6 +263,19 @@ const projects = [
     gridLayout: 0,
     imageStack: [runna1, runna2, runna3, runna4, runna5, runna6, runna7],
     video: undefined,
+    projectsPage: true,
+  },
+  {
+    slug: "hike-society-AT95",
+    title: "Hike Society x AT95 Film",
+    client: "Columbia",
+    year: 2024,
+    description:
+      "Short film created for Columbia as part of their Hike Society series, featuring AT95",
+    badges: ["VIDEO PRODUCTION"],
+    gridLayout: 2,
+    video: at95Video,
+    imageStack: [at951, at952, at953, at954, at955, at956, at957, at958],
     projectsPage: true,
   },
   {

@@ -362,7 +362,7 @@ const Home = ({ scPostsData }) => {
                 {/* <h2>RAINYDAY</h2> */}
                 <p>
                   <span className="emph">RAINYDAY</span> is a UK based creative
-                  studio & production house working globally from concept
+                  studio and production house working globally from concept
                   development and ideation through to production and execution
                   of impactful creative campaigns.
                 </p>
@@ -388,8 +388,10 @@ const Home = ({ scPostsData }) => {
                   <img src={project1.imageStack[0]} />
                 </div>
                 <div className="home-project-details">
-                  <h3>{project1.title}</h3>
-                  <p>{project1.description}</p>
+                  <h3 className="home-project-title">{project1.title}</h3>
+                  <p className="home-project-description">
+                    {project1.description}
+                  </p>
                 </div>
               </div>
               <div className="home-project-container" id="project-2-container">
