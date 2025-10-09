@@ -105,7 +105,7 @@ const Home = ({ scPostsData }) => {
   useGSAP(() => {
     let mm = gsap.matchMedia();
 
-    let pinSectionVal = "+=1200";
+    let pinSectionVal = "+=600";
 
     gsap.from("#landing", {
       scrollTrigger: {
