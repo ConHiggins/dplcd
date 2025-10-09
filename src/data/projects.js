@@ -156,7 +156,7 @@ const projects = [
   {
     slug: "lululemon",
     title: "Lululemon",
-    client: "Lulelemon",
+    client: "Lululemon",
     year: 2025,
     description: "Campaign photography for Lululemons new Wunder Train range.",
     badges: ["PHOTOGRAPHY"],
