@@ -74,16 +74,16 @@ import runna5 from "../Assets/myprotein-runna/runna-5.jpg";
 import runna6 from "../Assets/myprotein-runna/runna-6.jpg";
 import runna7 from "../Assets/myprotein-runna/runna-7.jpg";
 
-//columbia-at95
-import at95Video from "../Assets/columbia-at95/columbia-at95-video.mp4";
-import at951 from "../Assets/columbia-at95/columbia-at95-001.jpg";
-import at952 from "../Assets/columbia-at95/columbia-at95-002.jpg";
-import at953 from "../Assets/columbia-at95/columbia-at95-003.jpg";
-import at954 from "../Assets/columbia-at95/columbia-at95-004.jpg";
-import at955 from "../Assets/columbia-at95/columbia-at95-005.jpg";
-import at956 from "../Assets/columbia-at95/columbia-at95-006.jpg";
-import at957 from "../Assets/columbia-at95/columbia-at95-007.jpg";
-import at958 from "../Assets/columbia-at95/columbia-at95-008.jpg";
+//columbia-highline
+import highlineVideo from "../Assets/columbia-highline/columbia-highline-video.mp4";
+import highline1 from "../Assets/columbia-highline/columbia-highline-001.jpg";
+import highline2 from "../Assets/columbia-highline/columbia-highline-002.jpg";
+import highline3 from "../Assets/columbia-highline/columbia-highline-003.jpg";
+import highline4 from "../Assets/columbia-highline/columbia-highline-004.jpg";
+import highline5 from "../Assets/columbia-highline/columbia-highline-005.jpg";
+import highline6 from "../Assets/columbia-highline/columbia-highline-006.jpg";
+import highline7 from "../Assets/columbia-highline/columbia-highline-007.jpg";
+import highline8 from "../Assets/columbia-highline/columbia-highline-008.jpg";
 
 //cotic-flaremax
 import flaremaxVideo from "../Assets/cotic-flaremax/flaremax-video.mp4";
@@ -154,6 +154,25 @@ const projects = [
     projectsPage: true,
   },
   {
+    slug: "lululemon",
+    title: "Lululemon",
+    client: "Lulelemon",
+    year: 2025,
+    description: "Campaign photography for Lululemons new Wunder Train range.",
+    badges: ["PHOTOGRAPHY"],
+    gridLayout: 3,
+    video: null,
+    imageStack: [
+      lululemon1,
+      lululemon2,
+      lululemon3,
+      lululemon4,
+      lululemon5,
+      lululemon7,
+    ],
+    projectsPage: true,
+  },
+  {
     slug: "myprotein-alfie",
     title: "Alfie",
     client: "Myprotein",
@@ -189,16 +208,37 @@ const projects = [
     projectsPage: true,
   },
   {
-    slug: "myprotein-ross-edgely",
-    title: "Ross Edgely",
-    client: "Myprotein",
-    year: 2025,
+    slug: "fractel-x-dsplaced-terrasyn",
+    title: "Terrasyn",
+    client: "Fractel X Dsplaced",
+    year: 2024,
     description:
-      "Video production for Myprotein ahead of ross Edgley's historic swim around Iceland",
-    badges: ["VIDEO PRODUCTION"],
+      "Terrasyn Concept development, creative direction, design and production for a limited edition cap design with Fractel",
+    badges: ["CREATIVE DIRECTION", "CONCEPT", "DESIGN"],
     gridLayout: 0,
-    imageStack: [rossEdgely1, rossEdgely2, rossEdgely3],
-    video: rossEdgelyVideo,
+    imageStack: [
+      terrasyn1,
+      terrasyn2,
+      terrasyn3,
+      terrasyn4,
+      terrasyn5,
+      terrasyn6,
+      terrasyn7,
+    ],
+    video: terrasynVideo,
+    projectsPage: true,
+  },
+  {
+    slug: "niagra",
+    title: "Niagra Music Video",
+    client: "Fthmlss",
+    year: 2023,
+    description:
+      "Performance film for Fthmlss' latest release 'Niagra'. Performance by Olivia Richards.",
+    badges: ["VIDEO PRODUCTION"],
+    gridLayout: 1,
+    video: niagraVideo,
+    imageStack: [niagra1, niagra2, niagra3, niagra4, niagra5],
     projectsPage: true,
   },
   {
@@ -221,81 +261,16 @@ const projects = [
     projectsPage: true,
   },
   {
-    slug: "fractel-x-dsplaced-terrasyn",
-    title: "Terrasyn",
-    client: "Fractel X Dsplaced",
-    year: 2024,
+    slug: "alan-johnson-stillness",
+    title: "Stillness",
+    client: "Sneaker Social Club X Alan Johnson with 180FACT",
+    year: 2022,
     description:
-      "Terrasyn Concept development, creative direction, design and production for a limited edition cap design with Fractel",
-    badges: ["CREATIVE DIRECTION", "CONCEPT", "DESIGN"],
-    gridLayout: 0,
-    imageStack: [
-      terrasyn1,
-      terrasyn2,
-      terrasyn3,
-      terrasyn4,
-      terrasyn5,
-      terrasyn6,
-      terrasyn7,
-    ],
-    video: terrasynVideo,
-    projectsPage: true,
-  },
-  // {
-  //   slug: "lucy-davis",
-  //   title: "Lucy Davis",
-  //   client: "Lucy Davis",
-  //   year: 10000,
-  //   description: "TBC",
-  //   badges: ["TBC"],
-  //   gridLayout: 0,
-  //   imageStack: undefined,
-  //   video: undefined,
-  //    projectsPage: true,
-  // },
-  {
-    slug: "myprotein-runna",
-    title: "Manchester Run Club with Runna",
-    client: "Myprotein",
-    year: 2024,
-    description: "Photography for MyProtein x Runna",
-    badges: ["PHOTOGRAPHY"],
-    gridLayout: 0,
-    imageStack: [runna1, runna2, runna3, runna4, runna5, runna6, runna7],
-    video: undefined,
-    projectsPage: true,
-  },
-  {
-    slug: "hike-society-AT95",
-    title: "Hike Society x AT95 Film",
-    client: "Columbia",
-    year: 2024,
-    description:
-      "Short film created for Columbia as part of their Hike Society series, featuring AT95",
+      "Music video for the title track of the latest Alan Johnson EP, Stillness. Created for Sneaker Social Club, and featured by 180FACT, with an additional write-up on their website.",
     badges: ["VIDEO PRODUCTION"],
-    gridLayout: 2,
-    video: at95Video,
-    imageStack: [at951, at952, at953, at954, at955, at956, at957, at958],
-    projectsPage: true,
-  },
-  {
-    slug: "cotic-flaremax",
-    title: "Flaremax",
-    client: "Cotic",
-    year: 2024,
-    description: "Video prodroduction for Cotic for their Flaremax",
-    badges: ["VIDEO PRODUCTION"],
-    gridLayout: 2,
-    video: flaremaxVideo,
-    imageStack: [
-      flaremax1,
-      flaremax2,
-      flaremax3,
-      flaremax4,
-      flaremax5,
-      flaremax6,
-    ],
-    video: undefined,
+    gridLayout: 4,
+    video: stillnessVideo,
+    imageStack: [stillness1, stillness2, stillness3, stillness4],
     projectsPage: true,
   },
   {
@@ -320,48 +295,69 @@ const projects = [
     projectsPage: true,
   },
   {
-    slug: "niagra",
-    title: "Niagra Music Video",
-    client: "Fthmlss",
-    year: 2023,
-    description:
-      "Performance film for Fthmlss' latest release 'Niagra'. Performance by Olivia Richards.",
-    badges: ["VIDEO PRODUCTION"],
-    gridLayout: 1,
-    video: niagraVideo,
-    imageStack: [niagra1, niagra2, niagra3, niagra4, niagra5],
-    projectsPage: true,
-  },
-  {
-    slug: "alan-johnson-stillness",
-    title: "Stillness",
-    client: "Sneaker Social Club X Alan Johnson with 180FACT",
-    year: 2022,
-    description:
-      "Music video for the title track of the latest Alan Johnson EP, Stillness. Created for Sneaker Social Club, and featured by 180FACT, with an additional write-up on their website.",
-    badges: ["VIDEO PRODUCTION"],
-    gridLayout: 4,
-    video: stillnessVideo,
-    imageStack: [stillness1, stillness2, stillness3, stillness4],
-    projectsPage: true,
-  },
-  {
-    slug: "lululemon",
-    title: "Lululemon",
-    client: "Lulelemon",
+    slug: "myprotein-ross-edgely",
+    title: "Ross Edgely",
+    client: "Myprotein",
     year: 2025,
-    description: "Campaign photography for Lululemons new Wunder Train range.",
-    badges: ["PHOTOGRAPHY"],
-    gridLayout: 3,
-    video: null,
+    description:
+      "Video production for Myprotein ahead of ross Edgley's historic swim around Iceland",
+    badges: ["VIDEO PRODUCTION"],
+    gridLayout: 0,
+    imageStack: [rossEdgely1, rossEdgely2, rossEdgely3],
+    video: rossEdgelyVideo,
+    projectsPage: true,
+  },
+  {
+    slug: "cotic-flaremax",
+    title: "Flaremax",
+    client: "Cotic",
+    year: 2024,
+    description: "Video prodroduction for Cotic for their Flaremax",
+    badges: ["VIDEO PRODUCTION"],
+    gridLayout: 2,
+    video: flaremaxVideo,
     imageStack: [
-      lululemon1,
-      lululemon2,
-      lululemon3,
-      lululemon4,
-      lululemon5,
-      lululemon7,
+      flaremax1,
+      flaremax2,
+      flaremax3,
+      flaremax4,
+      flaremax5,
+      flaremax6,
     ],
+    projectsPage: true,
+  },
+  {
+    slug: "colombia-highline",
+    title: "Highline Film",
+    client: "Columbia",
+    year: 2024,
+    description:
+      "A short film as part of a wider highlining project with Columbia",
+    badges: ["VIDEO PRODUCTION"],
+    gridLayout: 2,
+    video: highlineVideo,
+    imageStack: [
+      highline1,
+      highline2,
+      highline3,
+      highline4,
+      highline5,
+      highline6,
+      highline7,
+      highline8,
+    ],
+    projectsPage: true,
+  },
+  {
+    slug: "myprotein-runna",
+    title: "Manchester Run Club with Runna",
+    client: "Myprotein",
+    year: 2024,
+    description: "Photography for MyProtein x Runna",
+    badges: ["PHOTOGRAPHY"],
+    gridLayout: 0,
+    imageStack: [runna1, runna2, runna3, runna4, runna5, runna6, runna7],
+    video: undefined,
     projectsPage: true,
   },
 ];
